@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GUIStructure>
+    <GUI>
+        <Window>
+            <Attributes>
+                <Property>
+                    <Name>Title</Name>
+                    <Value>Window</Value>
+                </Property>
+                <Property>
+                    <Name>Modal</Name>
+                    <Value>false</Value>
+                </Property>
+                <Property>
+                    <Name>Rootwindow</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>visible</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>layout</Name>
+                    <Value>FormLayout {}</Value>
+                </Property>
+                <Property>
+                    <Name>visible</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>font</Name>
+                    <Value>Font {2047481332}</Value>
+                </Property>
+                <Property>
+                    <Name>background</Name>
+                    <Value>Color {240, 240, 240}</Value>
+                </Property>
+                <Property>
+                    <Name>foreground</Name>
+                    <Value>Color {0, 0, 0}</Value>
+                </Property>
+            </Attributes>
+        </Window>
+        <Container>
+            <Contents>
+                <Container>
+                    <Attributes>
+                        <Property>
+                            <Name>ID</Name>
+                            <Value>w44877964</Value>
+                        </Property>
+                        <Property>
+                            <Name>Class</Name>
+                            <Value>org.eclipse.swt.widgets.Shell</Value>
+                        </Property>
+                        <Property>
+                            <Name>Type</Name>
+                            <Value>SYSTEM INTERACTION</Value>
+                        </Property>
+                        <Property>
+                            <Name>X</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Y</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value></Value>
+                        </Property>
+                    </Attributes>
+                    <Contents>
+                        <Widget>
+                            <Attributes>
+<Property>
+    <Name>ID</Name>
+    <Value>w3761795524</Value>
+</Property>
+<Property>
+    <Name>Class</Name>
+    <Value>org.eclipse.swt.widgets.Label</Value>
+</Property>
+<Property>
+    <Name>Type</Name>
+    <Value>SYSTEM INTERACTION</Value>
+</Property>
+<Property>
+    <Name>X</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Y</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
+</Property>
+                            </Attributes>
+                        </Widget>
+                        <Widget>
+                            <Attributes>
+<Property>
+    <Name>ID</Name>
+    <Value>w2592830684</Value>
+</Property>
+<Property>
+    <Name>Class</Name>
+    <Value>org.eclipse.swt.widgets.List</Value>
+</Property>
+<Property>
+    <Name>Type</Name>
+    <Value>SYSTEM INTERACTION</Value>
+</Property>
+<Property>
+    <Name>X</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Y</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
+</Property>
+                            </Attributes>
+                        </Widget>
+                    </Contents>
+                </Container>
+            </Contents>
+        </Container>
+    </GUI>
+</GUIStructure>
