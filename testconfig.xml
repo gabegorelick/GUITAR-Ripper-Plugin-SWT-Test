@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Configuration>
+	
+	<IgnoredComponents>
+		<FullComponent>
+			<Window>
+				<Attributes>
+					<Property>
+                    <Name>ID</Name>
+                    <Value>w1894274842</Value>
+					</Property>
+				</Attributes>
+			</Window>
+			<Component>
+				<Attributes>
+					<Property>
+						<Name>Class</Name>
+						<Value>org.eclipse.swt.widgets.Button</Value>
+					</Property>                    
+				</Attributes>
+			</Component>
+		</FullComponent>		
+	</IgnoredComponents>
+	
+	<TerminalComponents>
+		</TerminalComponents>
+	
+</Configuration>
