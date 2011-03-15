@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GUIStructure>
+    <GUI>
+        <Window>
+            <Attributes>
+                <Property>
+                    <Name>Title</Name>
+                    <Value></Value>
+                </Property>
+                <Property>
+                    <Name>Modal</Name>
+                    <Value>false</Value>
+                </Property>
+                <Property>
+                    <Name>Rootwindow</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>visible</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>visible</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>font</Name>
+                    <Value>Font {50990950}</Value>
+                </Property>
+                <Property>
+                    <Name>background</Name>
+                    <Value>Color {240, 240, 240}</Value>
+                </Property>
+                <Property>
+                    <Name>foreground</Name>
+                    <Value>Color {0, 0, 0}</Value>
+                </Property>
+            </Attributes>
+        </Window>
+        <Container>
+            <Contents>
+                <Container>
+                    <Attributes>
+                        <Property>
+                            <Name>ID</Name>
+                            <Value>w873193676</Value>
+                        </Property>
+                        <Property>
+                            <Name>Class</Name>
+                            <Value>org.eclipse.swt.widgets.Shell</Value>
+                        </Property>
+                        <Property>
+                            <Name>Type</Name>
+                            <Value>SYSTEM INTERACTION</Value>
+                        </Property>
+                        <Property>
+                            <Name>X</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Y</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value></Value>
+                        </Property>
+                    </Attributes>
+                    <Contents>
+                        <Container>
+                            <Attributes>
+<Property>
+    <Name>ID</Name>
+    <Value>w3150545040</Value>
+</Property>
+<Property>
+    <Name>Class</Name>
+    <Value>org.eclipse.swt.widgets.Menu</Value>
+</Property>
+<Property>
+    <Name>Type</Name>
+    <Value>SYSTEM INTERACTION</Value>
+</Property>
+<Property>
+    <Name>X</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Y</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
+</Property>
+                            </Attributes>
+                            <Contents>
+<Container>
+    <Attributes>
+        <Property>
+            <Name>ID</Name>
+            <Value>w2490794668</Value>
+        </Property>
+        <Property>
+            <Name>Class</Name>
+            <Value>org.eclipse.swt.widgets.MenuItem</Value>
+        </Property>
+        <Property>
+            <Name>Type</Name>
+            <Value>SYSTEM INTERACTION</Value>
+        </Property>
+        <Property>
+            <Name>X</Name>
+            <Value>0</Value>
+        </Property>
+        <Property>
+            <Name>Y</Name>
+            <Value>0</Value>
+        </Property>
+        <Property>
+            <Name>Title</Name>
+            <Value>&amp;File</Value>
+        </Property>
+    </Attributes>
+    <Contents>
+        <Container>
+            <Attributes>
+                <Property>
+                    <Name>ID</Name>
+                    <Value>w4014959264</Value>
+                </Property>
+                <Property>
+                    <Name>Class</Name>
+                    <Value>org.eclipse.swt.widgets.Menu</Value>
+                </Property>
+                <Property>
+                    <Name>Type</Name>
+                    <Value>SYSTEM INTERACTION</Value>
+                </Property>
+                <Property>
+                    <Name>X</Name>
+                    <Value>0</Value>
+                </Property>
+                <Property>
+                    <Name>Y</Name>
+                    <Value>0</Value>
+                </Property>
+                <Property>
+                    <Name>Title</Name>
+                    <Value></Value>
+                </Property>
+            </Attributes>
+            <Contents>
+                <Widget>
+                    <Attributes>
+                        <Property>
+                            <Name>ID</Name>
+                            <Value>w4093105484</Value>
+                        </Property>
+                        <Property>
+                            <Name>Class</Name>
+                            <Value>org.eclipse.swt.widgets.MenuItem</Value>
+                        </Property>
+                        <Property>
+                            <Name>Type</Name>
+                            <Value>SYSTEM INTERACTION</Value>
+                        </Property>
+                        <Property>
+                            <Name>X</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Y</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>Print 'HI'</Value>
+                        </Property>
+                    </Attributes>
+                </Widget>
+            </Contents>
+        </Container>
+    </Contents>
+</Container>
+                            </Contents>
+                        </Container>
+                        <Widget>
+                            <Attributes>
+<Property>
+    <Name>ID</Name>
+    <Value>w3953349126</Value>
+</Property>
+<Property>
+    <Name>Class</Name>
+    <Value>org.eclipse.swt.widgets.Text</Value>
+</Property>
+<Property>
+    <Name>Type</Name>
+    <Value>SYSTEM INTERACTION</Value>
+</Property>
+<Property>
+    <Name>X</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Y</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
+</Property>
+                            </Attributes>
+                        </Widget>
+                        <Widget>
+                            <Attributes>
+<Property>
+    <Name>ID</Name>
+    <Value>w1894274904</Value>
+</Property>
+<Property>
+    <Name>Class</Name>
+    <Value>org.eclipse.swt.widgets.Button</Value>
+</Property>
+<Property>
+    <Name>Type</Name>
+    <Value>SYSTEM INTERACTION</Value>
+</Property>
+<Property>
+    <Name>X</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Y</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
+</Property>
+                            </Attributes>
+                        </Widget>
+                        <Widget>
+                            <Attributes>
+<Property>
+    <Name>ID</Name>
+    <Value>w1894274966</Value>
+</Property>
+<Property>
+    <Name>Class</Name>
+    <Value>org.eclipse.swt.widgets.Button</Value>
+</Property>
+<Property>
+    <Name>Type</Name>
+    <Value>SYSTEM INTERACTION</Value>
+</Property>
+<Property>
+    <Name>X</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Y</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
+</Property>
+                            </Attributes>
+                        </Widget>
+                    </Contents>
+                </Container>
+            </Contents>
+        </Container>
+    </GUI>
+</GUIStructure>
