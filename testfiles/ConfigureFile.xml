@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GUIStructure>
+    <GUI>
+        <Window>
+            <Attributes>
+                <Property>
+                    <Name>Title</Name>
+                    <Value>org.eclipse.swt.widgets.Shell</Value>
+                </Property>
+                <Property>
+                    <Name>Modal</Name>
+                    <Value>false</Value>
+                </Property>
+                <Property>
+                    <Name>Rootwindow</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>visible</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>visible</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>layout</Name>
+                    <Value>GridLayout {numColumns=2 marginWidth=5 marginHeight=5 horizontalSpacing=5 verticalSpacing=5}</Value>
+                </Property>
+                <Property>
+                    <Name>background</Name>
+                    <Value>Color {242, 241, 240}</Value>
+                </Property>
+                <Property>
+                    <Name>font</Name>
+                    <Value>Font {154229312}</Value>
+                </Property>
+                <Property>
+                    <Name>foreground</Name>
+                    <Value>Color {76, 76, 76}</Value>
+                </Property>
+            </Attributes>
+        </Window>
+        <Container>
+            <Contents>
+                <Widget>
+                    <Attributes>
+                        <Property>
+                            <Name>ID</Name>
+                            <Value>w1311575748</Value>
+                        </Property>
+                        <Property>
+                            <Name>Class</Name>
+                            <Value>org.eclipse.swt.widgets.Shell</Value>
+                        </Property>
+                        <Property>
+                            <Name>Type</Name>
+                            <Value>SYSTEM INTERACTION</Value>
+                        </Property>
+                        <Property>
+                            <Name>X</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Y</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value></Value>
+                        </Property>
+                    </Attributes>
+                </Widget>
+            </Contents>
+        </Container>
+    </GUI>
+</GUIStructure>
