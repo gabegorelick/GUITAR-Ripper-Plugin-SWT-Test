@@ -34,6 +34,7 @@ public class SWTWindowTest {
 		assertEquals(swtWindow.getY(), 1);
 	}
 
+	@Test
 	public void testShellIsValid() {
 		Shell shell = new Shell();
 		shell.setText("ShellTitle");
@@ -42,6 +43,7 @@ public class SWTWindowTest {
 		assertEquals(swtWindow.isValid(), true);
 	}
 
+	@Test
 	public void testShellIsValidFalse() {
 		Shell shell = new Shell();
 		shell.setText("ShellTitle");
@@ -50,12 +52,14 @@ public class SWTWindowTest {
 		assertEquals(swtWindow.isValid(), false);
 	}
 
+	@Test
 	public void testShellIsModal() {
 		Shell shell = new Shell(SWT.APPLICATION_MODAL);
 		SWTWindow swtWindow = new SWTWindow(shell);
 		assertEquals(swtWindow.isModal(), true);
 	}
 
+	@Test
 	public void testShellIsModalFalse() {
 		Shell shell = new Shell();
 		SWTWindow swtWindow = new SWTWindow(shell);
