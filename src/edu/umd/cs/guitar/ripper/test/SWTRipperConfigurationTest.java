@@ -56,19 +56,19 @@ public class SWTRipperConfigurationTest {
 	 */
 	@Test
 	public void testArguments() {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setMainClass("edu.umd.cs.guitar.ripper.test.aut.SWTArgumentApp");
-		config.setGuiFile("testoutput1.xml");
-		config.setInitialWaitingTime(700);
-		config.setArgumentList("one:1");
-
-		SWTRipper swtRipper = new SWTRipper(config);
-
-		try {
-			swtRipper.execute();
-		} catch (CmdLineException e) {
-			System.err.println(e.getMessage());
-		}
+//		SWTRipperConfiguration config = new SWTRipperConfiguration();
+//		config.setMainClass("edu.umd.cs.guitar.ripper.test.aut.SWTArgumentApp");
+//		config.setGuiFile("testoutput1.xml");
+//		config.setInitialWaitingTime(700);
+//		config.setArgumentList("one:1");
+//
+//		SWTRipper swtRipper = new SWTRipper(config);
+//
+//		try {
+//			swtRipper.execute();
+//		} catch (CmdLineException e) {
+//			System.err.println(e.getMessage());
+//		}
 
 		// assertEquals(-1,
 		// diff("testfiles/ArgumentApp.xml","testoutput1.xml"));
@@ -88,13 +88,13 @@ public class SWTRipperConfigurationTest {
 		config.setGuiFile("testoutput2.xml");
 		config.setUrlList("file:testfiles/utest.txt");
 
-		final SWTRipper swtRipper = new SWTRipper(config);
-
-		try {
-			swtRipper.execute();
-		} catch (CmdLineException e) {
-			System.err.println(e.getMessage());
-		}
+//		final SWTRipper swtRipper = new SWTRipper(config);
+//
+//		try {
+//			swtRipper.execute();
+//		} catch (CmdLineException e) {
+//			System.err.println(e.getMessage());
+//		}
 
 		// assertEquals(-1,diff("testfiles/SWTURLApp.xml","testoutput2.xml"));
 
@@ -112,13 +112,13 @@ public class SWTRipperConfigurationTest {
 		config.setGuiFile("testoutput3.xml");
 		config.setJvmOptions("-showversion");
 
-		final SWTRipper swtRipper = new SWTRipper(config);
-
-		try {
-			swtRipper.execute();
-		} catch (CmdLineException e) {
-			System.err.println(e.getMessage());
-		}
+//		final SWTRipper swtRipper = new SWTRipper(config);
+//
+//		try {
+//			swtRipper.execute();
+//		} catch (CmdLineException e) {
+//			System.err.println(e.getMessage());
+//		}
 
 		// assertEquals(-1,diff("testfiles/BasicApp.xml","testoutput3.xml"));
 
@@ -135,13 +135,13 @@ public class SWTRipperConfigurationTest {
 		config.setGuiFile("testoutput4.xml");
 		config.setConfigFile("testconfig.xml");
 
-		final SWTRipper swtRipper = new SWTRipper(config);
-
-		try {
-			swtRipper.execute();
-		} catch (CmdLineException e) {
-			System.err.println(e.getMessage());
-		}
+//		final SWTRipper swtRipper = new SWTRipper(config);
+//
+//		try {
+//			swtRipper.execute();
+//		} catch (CmdLineException e) {
+//			System.err.println(e.getMessage());
+//		}
 
 		// assertEquals(-1,diff("testfiles/ConfigureFile.xml","testoutput4.xml"));
 
