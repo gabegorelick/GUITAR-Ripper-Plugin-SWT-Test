@@ -51,7 +51,7 @@ public class IntegrationTest {
 		}
 		
 		String name = "expected/" + filename + ".xml";
-//		assertEquals(-1, diff(name, config.getGuiFile()));
+		assertEquals(-1, diff(name, config.getGuiFile()));
 
 	}
 
@@ -88,13 +88,13 @@ public class IntegrationTest {
 				}
 				if (!s1.equals(s2)) {
 					// TODO fix our expected models now that title returns what it should
-					if (!s1.contains("Font") && !s2.contains("org.eclipse.swt.widgets.Shell")) {
+//					if (!s1.contains("Font") && !s2.contains("org.eclipse.swt.widgets.Shell")) {
 						System.out.println(i);
 						System.out.println(s1);
 						System.out.println(s2);
 						equal = false;
 						break;
-					}
+//					}
 				}
 				i++;
 			}

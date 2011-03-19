@@ -5,7 +5,7 @@
             <Attributes>
                 <Property>
                     <Name>Title</Name>
-                    <Value></Value>
+                    <Value>org.eclipse.swt.widgets.Shell</Value>
                 </Property>
                 <Property>
                     <Name>Modal</Name>
@@ -16,8 +16,12 @@
                     <Value>true</Value>
                 </Property>
                 <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
+                    <Name>background</Name>
+                    <Value>Color {242, 241, 240}</Value>
+                </Property>
+                <Property>
+                    <Name>foreground</Name>
+                    <Value>Color {76, 76, 76}</Value>
                 </Property>
                 <Property>
                     <Name>layout</Name>
@@ -27,18 +31,6 @@
                     <Name>visible</Name>
                     <Value>true</Value>
                 </Property>
-                <Property>
-                    <Name>font</Name>
-                    <Value>Font {218762843}</Value>
-                </Property>
-                <Property>
-                    <Name>background</Name>
-                    <Value>Color {240, 240, 240}</Value>
-                </Property>
-                <Property>
-                    <Name>foreground</Name>
-                    <Value>Color {0, 0, 0}</Value>
-                </Property>
             </Attributes>
         </Window>
         <Container>
@@ -47,7 +39,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w873193676</Value>
+                            <Value>w1311575748</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -75,7 +67,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w4220361588</Value>
+    <Value>w682146660</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -103,7 +95,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w1894274842</Value>
+    <Value>w2651027210</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -131,7 +123,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w4220361712</Value>
+    <Value>w682146784</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -159,7 +151,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w4220361774</Value>
+    <Value>w682146846</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -187,7 +179,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w1894275028</Value>
+    <Value>w2651027396</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -215,7 +207,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w3753419326</Value>
+    <Value>w215204398</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -243,7 +235,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2016257076</Value>
+    <Value>w2773009444</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -271,7 +263,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w1351917650</Value>
+    <Value>w2108670018</Value>
 </Property>
 <Property>
     <Name>Class</Name>
