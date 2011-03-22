@@ -16,14 +16,6 @@
                     <Value>true</Value>
                 </Property>
                 <Property>
-                    <Name>background</Name>
-                    <Value>Color {242, 241, 240}</Value>
-                </Property>
-                <Property>
-                    <Name>foreground</Name>
-                    <Value>Color {76, 76, 76}</Value>
-                </Property>
-                <Property>
                     <Name>layout</Name>
                     <Value>GridLayout {numColumns=2 marginWidth=5 marginHeight=5 horizontalSpacing=5 verticalSpacing=5}</Value>
                 </Property>
@@ -39,7 +31,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w1311575748</Value>
+                            <Value>w2994222756</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -58,8 +50,16 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
-                            <Name>Title</Name>
+                            <Name>enabled</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>text</Name>
                             <Value></Value>
+                        </Property>
+                        <Property>
+                            <Name>visible</Name>
+                            <Value>true</Value>
                         </Property>
                     </Attributes>
                     <Contents>
@@ -67,7 +67,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w682146660</Value>
+    <Value>w2169095940</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -86,8 +86,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>A lable</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -95,7 +103,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2651027210</Value>
+    <Value>w1970027690</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -114,8 +122,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>Press Me</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -123,7 +139,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w682146784</Value>
+    <Value>w2169096064</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -142,8 +158,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>This is a label</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -151,7 +175,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w682146846</Value>
+    <Value>w2169096126</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -170,8 +194,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
     <Value></Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -179,7 +211,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2651027396</Value>
+    <Value>w1970027876</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -198,8 +230,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>New Button</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -207,7 +247,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w215204398</Value>
+    <Value>w769729230</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -226,8 +266,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>500</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -235,7 +283,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2773009444</Value>
+    <Value>w2358981316</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -254,8 +302,12 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -263,7 +315,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2108670018</Value>
+    <Value>w2152703714</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -282,8 +334,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>This is my group</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>

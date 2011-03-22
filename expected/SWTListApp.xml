@@ -16,28 +16,12 @@
                     <Value>true</Value>
                 </Property>
                 <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
-                </Property>
-                <Property>
                     <Name>layout</Name>
                     <Value>FormLayout {}</Value>
                 </Property>
                 <Property>
                     <Name>visible</Name>
                     <Value>true</Value>
-                </Property>
-                <Property>
-                    <Name>font</Name>
-                    <Value>Font {2047481332}</Value>
-                </Property>
-                <Property>
-                    <Name>background</Name>
-                    <Value>Color {240, 240, 240}</Value>
-                </Property>
-                <Property>
-                    <Name>foreground</Name>
-                    <Value>Color {0, 0, 0}</Value>
                 </Property>
             </Attributes>
         </Window>
@@ -47,7 +31,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w44877964</Value>
+                            <Value>w1727524972</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -66,8 +50,16 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
-                            <Name>Title</Name>
-                            <Value></Value>
+                            <Name>enabled</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>text</Name>
+                            <Value>Window</Value>
+                        </Property>
+                        <Property>
+                            <Name>visible</Name>
+                            <Value>true</Value>
                         </Property>
                     </Attributes>
                     <Contents>
@@ -75,7 +67,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w3761795524</Value>
+    <Value>w2261501412</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -94,8 +86,16 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>Item 1</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
@@ -103,7 +103,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2592830684</Value>
+    <Value>w3618942716</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -122,8 +122,12 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>

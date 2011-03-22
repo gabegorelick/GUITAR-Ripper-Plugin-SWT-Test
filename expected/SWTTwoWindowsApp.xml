@@ -19,22 +19,6 @@
                     <Name>visible</Name>
                     <Value>true</Value>
                 </Property>
-                <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
-                </Property>
-                <Property>
-                    <Name>font</Name>
-                    <Value>Font {-1324739308}</Value>
-                </Property>
-                <Property>
-                    <Name>background</Name>
-                    <Value>Color {240, 240, 240}</Value>
-                </Property>
-                <Property>
-                    <Name>foreground</Name>
-                    <Value>Color {0, 0, 0}</Value>
-                </Property>
             </Attributes>
         </Window>
         <Container>
@@ -43,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w3725840584</Value>
+                            <Value>w1113520296</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -62,8 +46,16 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
-                            <Name>Title</Name>
-                            <Value></Value>
+                            <Name>enabled</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>text</Name>
+                            <Value>Window 1</Value>
+                        </Property>
+                        <Property>
+                            <Name>visible</Name>
+                            <Value>true</Value>
                         </Property>
                     </Attributes>
                 </Widget>
@@ -89,22 +81,6 @@
                     <Name>visible</Name>
                     <Value>true</Value>
                 </Property>
-                <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
-                </Property>
-                <Property>
-                    <Name>font</Name>
-                    <Value>Font {-1324739308}</Value>
-                </Property>
-                <Property>
-                    <Name>background</Name>
-                    <Value>Color {240, 240, 240}</Value>
-                </Property>
-                <Property>
-                    <Name>foreground</Name>
-                    <Value>Color {0, 0, 0}</Value>
-                </Property>
             </Attributes>
         </Window>
         <Container>
@@ -113,7 +89,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w3725840708</Value>
+                            <Value>w1113520420</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -132,8 +108,16 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
-                            <Name>Title</Name>
-                            <Value></Value>
+                            <Name>enabled</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>text</Name>
+                            <Value>Window 2</Value>
+                        </Property>
+                        <Property>
+                            <Name>visible</Name>
+                            <Value>true</Value>
                         </Property>
                     </Attributes>
                 </Widget>

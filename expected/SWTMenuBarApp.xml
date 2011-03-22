@@ -19,22 +19,6 @@
                     <Name>visible</Name>
                     <Value>true</Value>
                 </Property>
-                <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
-                </Property>
-                <Property>
-                    <Name>font</Name>
-                    <Value>Font {520754132}</Value>
-                </Property>
-                <Property>
-                    <Name>background</Name>
-                    <Value>Color {240, 240, 240}</Value>
-                </Property>
-                <Property>
-                    <Name>foreground</Name>
-                    <Value>Color {0, 0, 0}</Value>
-                </Property>
             </Attributes>
         </Window>
         <Container>
@@ -43,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w44877964</Value>
+                            <Value>w1727524972</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -62,8 +46,16 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
-                            <Name>Title</Name>
-                            <Value></Value>
+                            <Name>enabled</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>text</Name>
+                            <Value>Window</Value>
+                        </Property>
+                        <Property>
+                            <Name>visible</Name>
+                            <Value>true</Value>
                         </Property>
                     </Attributes>
                     <Contents>
@@ -71,7 +63,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2691978976</Value>
+    <Value>w3619045888</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -90,8 +82,12 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                             <Contents>
@@ -99,7 +95,7 @@
     <Attributes>
         <Property>
             <Name>ID</Name>
-            <Value>w4124469772</Value>
+            <Value>w1036879524</Value>
         </Property>
         <Property>
             <Name>Class</Name>
@@ -118,7 +114,15 @@
             <Value>0</Value>
         </Property>
         <Property>
-            <Name>Title</Name>
+            <Name>accelerator</Name>
+            <Value>0</Value>
+        </Property>
+        <Property>
+            <Name>enabled</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>text</Name>
             <Value>&amp;File</Value>
         </Property>
     </Attributes>
@@ -127,7 +131,7 @@
             <Attributes>
                 <Property>
                     <Name>ID</Name>
-                    <Value>w2223600608</Value>
+                    <Value>w3748701072</Value>
                 </Property>
                 <Property>
                     <Name>Class</Name>
@@ -146,8 +150,12 @@
                     <Value>0</Value>
                 </Property>
                 <Property>
-                    <Name>Title</Name>
-                    <Value></Value>
+                    <Name>enabled</Name>
+                    <Value>true</Value>
+                </Property>
+                <Property>
+                    <Name>visible</Name>
+                    <Value>false</Value>
                 </Property>
             </Attributes>
             <Contents>
@@ -155,7 +163,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w854752916</Value>
+                            <Value>w485566340</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -174,7 +182,15 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
-                            <Name>Title</Name>
+                            <Name>accelerator</Name>
+                            <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>enabled</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>text</Name>
                             <Value>&amp;Exit</Value>
                         </Property>
                     </Attributes>
