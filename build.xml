@@ -117,7 +117,7 @@
 		
 	<!-- Build and copy swtripper.jar unless it's already here -->
 	<target name="build-ripper" depends="check-ripper" unless="swtripper.present">
-		<ant antfile="build.xml" dir="${swtripper.project.dir}" target="dist"/>
+		<ant antfile="build.xml" dir="${swtripper.project.dir}" target="dist" inheritall="false"/>
 		<copy file="${swtripper.project.dir}/dist/swtripper.jar" todir="${lib.dir}"/>
 	</target>
 		
