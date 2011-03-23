@@ -6,13 +6,11 @@
 # Eclipse's .classpath contains developer-specific paths (e.g. to linked sources)
 /.classpath
 
-# Should always build model from source
+# Should always build model and ripper from source
 /lib/swtmodel.jar
+/lib/swtripper.jar
 
-# FindBugs output
-/test/ripper-fb.xml
-
-/test/bin
+/test
 
 # JUnit results
 /test/testresults
@@ -22,15 +20,20 @@
 /test/coverage/cobertura.ser
 /test/coverage/coverage.xml
 
+# FindBugs output
+/swtguitar-fb.xml
+
 # Ripper output
 *.log
 /GUITAR-Default.GUI
 /log_widget.xml
 
 /testoutput.xml
-/testoutput3.xml
-/testoutput4.xml
 /testoutput1.xml
 /testoutput2.xml
+/testoutput3.xml
+/testoutput4.xml
+
+/coverage
 
 # EGit needs trailing newline

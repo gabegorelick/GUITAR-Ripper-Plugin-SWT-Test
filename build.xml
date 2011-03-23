@@ -20,11 +20,12 @@
 	<property name="test.out.dir" value="${test.dir}/testresults"/>
 	<property name="swtmodel.jar.name" value="swtmodel.jar"/>
 	<property name="swtmodel.jar" value="${lib.dir}/${swtmodel.jar.name}"/>
-	<property name="swtripper.jar" value="${lib.dir}/swtripper.jar"/>
+	<property name="swtripper.jar.name" value="swtripper.jar"/>
+	<property name="swtripper.jar" value="${lib.dir}/${swtripper.jar.name}"/>
 	<property name="junit.dir" value="${lib.dir}/junit-4.8.2"/>
 	<property name="junit.jar" value="${junit.dir}/junit.jar"/>
 	<property name="findbugs.home" value="${lib.dir}/findbugs-1.3.9"/>
-	<property name="findbugs.out" value="${test.dir}/ripper-fb.xml"/>
+	<property name="findbugs.out" value="swtguitar-fb.xml"/>
 	<path id="findbugs.classpath">
 		<fileset dir="${findbugs.home}">
 			<!-- this is why you should have something manage dependencies like maven,
@@ -32,8 +33,8 @@
 			<include name="**/*.jar"/>
 		</fileset>
 	</path>
-	<property name="coverage.dir" value="${lib.dir}/coverage"/>
-	<property name="cobertura.dir" value="${coverage.dir}/cobertura-1.9.4.1"/>
+	<property name="coverage.dir" value="coverage"/>
+	<property name="cobertura.dir" value="${lib.dir}/cobertura-1.9.4.1"/>
 	<property name="cob.instrumented.dir" value="${coverage.dir}/instrumented"/>
 	<property name="cobertura.datafile" value="cobertura.ser"/>
 	<path id="cobertura.classpath">
@@ -94,26 +95,28 @@
         </javac>
     </target>
 	
-	<target name="check-model" description="Check if SWTModel is in lib">
+	<!-- Check if SWTModel is in lib -->
+	<target name="check-model">
 		<!-- set swtmodel.present if swtmodel.jar is in lib, 
 			 this has the effect of checking whether this is a Jenkins build-->
 		<available file="${swtmodel.jar}" property="swtmodel.present"/>
 	</target>
 	
 	<!-- Build and copy swtmodel.jar unless it's already here -->
-	<target name="build-model" depends="check-model" description="Build SWTModel and copy" unless="swtmodel.present">
+	<target name="build-model" depends="check-model" unless="swtmodel.present">
 		<ant antfile="build.xml" dir="${swtmodel.project.dir}" target="dist"/>
 		<copy file="${swtmodel.project.dir}/dist/swtmodel.jar" todir="${lib.dir}"/>
 	</target>
 	
-	<target name="check-ripper" description="Check if SWTModel is in lib">
+	<!-- Check if SWTModel is in lib -->
+	<target name="check-ripper">
 		<!-- set swtripper.present if swtripper.jar is in lib, 
 			 this has the effect of checking whether this is a Jenkins build-->
 		<available file="${swtripper.jar}" property="swtripper.present"/>
 	</target>
 		
 	<!-- Build and copy swtripper.jar unless it's already here -->
-	<target name="build-ripper" depends="check-ripper" description="Build SWTModel and copy" unless="swtripper.present">
+	<target name="build-ripper" depends="check-ripper" unless="swtripper.present">
 		<ant antfile="build.xml" dir="${swtripper.project.dir}" target="dist"/>
 		<copy file="${swtripper.project.dir}/dist/swtripper.jar" todir="${lib.dir}"/>
 	</target>
@@ -149,6 +152,7 @@
 			<!-- must specify instrumented classes before original ones! -->
 			<classpath location="${cob.instrumented.dir}"/>
 			<classpath location="${cob.instrumented.dir}/${swtmodel.jar.name}"/>
+			<classpath location="${cob.instrumented.dir}/${swtripper.jar.name}"/>
 			<classpath>
 				<pathelement location="${junit.jar}"/>
 				<path refid="SWTRipperTest.classpath"/>
@@ -166,12 +170,14 @@
 	</target>
 	
 	<target name="instrument" depends="build">
+		<mkdir dir="${coverage.dir}"/>
 		<mkdir dir="${cob.instrumented.dir}"/>		
 		<cobertura-instrument todir="${cob.instrumented.dir}">
 			<fileset dir="${build.dir}">
 				<include name="**/*.class"/>
 			</fileset>
 			<fileset file="${swtmodel.jar}"/>
+			<fileset file="${swtripper.jar}"/>
 		</cobertura-instrument>
 	</target>
 	
@@ -198,9 +204,7 @@
 	<target name="clean">
         <delete dir="${build.dir}"/>
 		<delete dir="${test.dir}"/>
-		<delete dir="${cob.instrumented.dir}"/>
-		<delete file="${coverage.dir}/${cobertura.datafile}"/>
-		<delete file="${coverage.dir}/coverage.xml"/>
+		<delete dir="${coverage.dir}"/>
 		<delete file="${cobertura.datafile}"/> <!-- this sometimes gets left over -->
 		<delete file="${findbugs.out}"/>
 		<delete>
