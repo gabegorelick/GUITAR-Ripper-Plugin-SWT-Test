@@ -9,11 +9,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import org.junit.Test;
-import org.kohsuke.args4j.CmdLineException;
 
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
-import edu.umd.cs.guitar.ripper.SWTRipperMonitor;
+import edu.umd.cs.guitar.ripper.SWTRipperRunner;
 
 public class IntegrationTest {
 
@@ -25,30 +24,8 @@ public class IntegrationTest {
 		config.setMainClass(fullName);
 		
 		final SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-
-		Thread ripperThread = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					swtRipper.execute();
-				} catch (CmdLineException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		
-		ripperThread.setName("ripper-thread");
-		ripperThread.start();
-		SWTRipperMonitor monitor = (SWTRipperMonitor) swtRipper.getMonitor();
-		
-		monitor.getApplication().startGUI(); // start GUI on main thread, this blocks until GUI terminates
-		try {
-			// we don't want the main thread closing (and thus the JVM) before the ripper is done  
-			ripperThread.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
+		new SWTRipperRunner(swtRipper).start();
+				
 		String name = "expected/" + filename + ".xml";
 		assertEquals(-1, diff(name, config.getGuiFile()));
 
