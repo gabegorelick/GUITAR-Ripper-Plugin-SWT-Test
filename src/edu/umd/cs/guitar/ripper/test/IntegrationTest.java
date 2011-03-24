@@ -1,6 +1,6 @@
 package edu.umd.cs.guitar.ripper.test;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,10 +9,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import org.junit.Test;
-import org.kohsuke.args4j.CmdLineException;
 
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
+import edu.umd.cs.guitar.ripper.SWTRipperRunner;
 
 public class IntegrationTest {
 
@@ -23,16 +23,11 @@ public class IntegrationTest {
 		String fullName = "edu.umd.cs.guitar.ripper.test.aut." + filename;
 		config.setMainClass(fullName);
 		
-		SWTRipper swtRipper = new SWTRipper(config);
-
-		try {
-			swtRipper.execute();
-		} catch (CmdLineException e) {
-			fail(e.getMessage());
-		}
-
+		final SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
+		new SWTRipperRunner(swtRipper).start();
+				
 		String name = "expected/" + filename + ".xml";
-		diff(name, config.getGuiFile());
+		assertEquals(-1, diff(name, config.getGuiFile()));
 
 	}
 
@@ -40,43 +35,41 @@ public class IntegrationTest {
 	 * Reads and compares two files for any differences, returns the line number
 	 * if different, -1 if the files are the same.
 	 */
-	private int diff(String file1, String file2) {
-		File f1 = new File(file1);
-		File f2 = new File(file2);
-		BufferedReader read1 = null;
-		BufferedReader read2 = null;
+	private int diff(String expectedFile, String actualFile) {
+		File expected = new File(expectedFile);
+		File actual = new File(actualFile);
+		BufferedReader expectedReader = null;
+		BufferedReader actualReader = null;
 
 		try {
-			read1 = new BufferedReader(new FileReader(f1));
-			read2 = new BufferedReader(new FileReader(f2));
+			expectedReader = new BufferedReader(new FileReader(expected));
+			actualReader = new BufferedReader(new FileReader(actual));
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
 
-		int i = 0;
+		int lineNumber = 1;
 		String s1 = new String();
 		String s2 = new String();
 
 		boolean equal = true;
 		try {
-			while (read1.ready()) {
-				s1 = read1.readLine();
-				if (read2.ready()) {
-					s2 = read2.readLine();
+			while (expectedReader.ready()) {
+				s1 = expectedReader.readLine();
+				if (actualReader.ready()) {
+					s2 = actualReader.readLine();
 				} else {
 					equal = false;
 					break;
 				}
 				if (!s1.equals(s2)) {
-					if (!s1.contains("Font")) {
-						System.out.println(i);
-						System.out.println(s1);
-						System.out.println(s2);
-						equal = false;
-						break;
-					}
+					System.err.println("Failed at line " + lineNumber);
+					System.err.println("Expected: " + s1);
+					System.err.println("Actual: " + s2);
+					equal = false;
+					break;
 				}
-				i++;
+				lineNumber++;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -85,7 +78,7 @@ public class IntegrationTest {
 		if (equal) {
 			return -1;
 		} else {
-			return i;
+			return lineNumber;
 		}
 
 	}
@@ -127,7 +120,7 @@ public class IntegrationTest {
 
 	@Test
 	public void testTwoWindowsApp() {
-		ripAndDiff("SWTTwoWindowsApp");
+		ripAndDiff("SWTTwoWindowsApp"); // FIXME can't rip subcomponents of multi-window apps
 	}
 
 	@Test

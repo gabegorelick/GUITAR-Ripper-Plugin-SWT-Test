@@ -5,7 +5,7 @@
             <Attributes>
                 <Property>
                     <Name>Title</Name>
-                    <Value></Value>
+                    <Value>org.eclipse.swt.widgets.Shell</Value>
                 </Property>
                 <Property>
                     <Name>Modal</Name>
@@ -19,22 +19,6 @@
                     <Name>visible</Name>
                     <Value>true</Value>
                 </Property>
-                <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
-                </Property>
-                <Property>
-                    <Name>font</Name>
-                    <Value>Font {-234220990}</Value>
-                </Property>
-                <Property>
-                    <Name>background</Name>
-                    <Value>Color {240, 240, 240}</Value>
-                </Property>
-                <Property>
-                    <Name>foreground</Name>
-                    <Value>Color {0, 0, 0}</Value>
-                </Property>
             </Attributes>
         </Window>
         <Container>
@@ -43,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w873193676</Value>
+                            <Value>w2994222756</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -62,8 +46,16 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
-                            <Name>Title</Name>
+                            <Name>enabled</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>text</Name>
                             <Value></Value>
+                        </Property>
+                        <Property>
+                            <Name>visible</Name>
+                            <Value>true</Value>
                         </Property>
                     </Attributes>
                     <Contents>
@@ -71,7 +63,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w3310749592</Value>
+    <Value>w550765256</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -90,8 +82,20 @@
     <Value>0</Value>
 </Property>
 <Property>
-    <Name>Title</Name>
-    <Value></Value>
+    <Name>editable</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>Hello World SWT</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
 </Property>
                             </Attributes>
                         </Widget>
