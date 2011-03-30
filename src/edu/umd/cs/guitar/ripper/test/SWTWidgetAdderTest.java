@@ -39,7 +39,7 @@ public class SWTWidgetAdderTest {
 		Shell shell = new Shell(display);
 		Menu menu = new Menu(shell);
 		Menu menu2 = new Menu(menu);
-		
+
 		MenuItem item1 = new MenuItem(menu, SWT.CASCADE);
 		item1.setText("One");
 		item1.setMenu(menu2);
@@ -81,7 +81,9 @@ public class SWTWidgetAdderTest {
 		List<GComponent> chi5 = SWTWidgetAdder.handleWidget(item4, null);
 		assertEquals(2, chi.size());
 		assertEquals(1, chi2.size());
-
+		assertEquals(1, chi3.size());
+		assertEquals(1, chi4.size());
+		assertEquals(1, chi5.size());
 		display.dispose();
 	}
 
@@ -133,10 +135,10 @@ public class SWTWidgetAdderTest {
 
 		List<GComponent> chi = SWTWidgetAdder.handleWidget(table, null);
 		List<GComponent> chi2 = SWTWidgetAdder.handleWidget(tt, null);
-		SWTWidgetAdder.handleWidget(tti, null);
+		List<GComponent> chi3 = SWTWidgetAdder.handleWidget(tti, null);
 		assertEquals(3, chi.size());
 		assertEquals(2, chi2.size());
-
+		assertEquals(2, chi2.size());
 		display.dispose();
 	}
 

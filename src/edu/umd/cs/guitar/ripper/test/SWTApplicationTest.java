@@ -16,41 +16,6 @@ import edu.umd.cs.guitar.model.GWindow;
 import edu.umd.cs.guitar.model.SWTApplication;
 
 public class SWTApplicationTest {
-	@Test
-	//getThreadField never initialized
-	public void testGetThreadField() {
-		String[] s = new String[1];
-		s[0] = "http://www.google.com/";
-		try {
-			SWTApplication swtApp = new SWTApplication(
-					"edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp", s, Thread.currentThread());
-			
-			assertEquals(null,swtApp.getThreadField());
-			swtApp = null;
-		} catch (MalformedURLException e) {
-			assertTrue(false);
-		} catch (ClassNotFoundException e) {
-			assertTrue(false);
-		}
-		
-	}
-
-	@Test
-	public void testGetThread() {
-		String[] s = new String[1];
-		s[0] = "http://www.google.com/";
-		try {
-			SWTApplication swtApp = new SWTApplication(
-					"edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp", s, Thread.currentThread());
-			swtApp.getThread();
-			swtApp = null;
-		} catch (MalformedURLException e) {
-			assertTrue(false);
-		} catch (ClassNotFoundException e) {
-			assertTrue(false);
-		}
-
-	}
 	
 	@Test
 	public void testAppThread() {
@@ -128,8 +93,7 @@ public class SWTApplicationTest {
 	}
 
 	@Test
-	/*requires change to SWTApplication.getAllWindow, Display.getDefault() is not 
-	finding the right display */
+	 //TODO still needs work
 	public void testGetAllWindow() {
 		String[] s = { "http://www.google.com/" };
 		Display display = new Display();
@@ -144,10 +108,7 @@ public class SWTApplicationTest {
 			SWTApplication swtApp = new
 			SWTApplication("edu.umd.cs.guitar.ripper.test.aut.SWTTwoWindowsApp", s,Thread.currentThread());
 			Set<GWindow> windows = swtApp.getAllWindow();
-			System.out.println(swtApp.getDisplay().getShells().length);////
-			System.out.println(Display.getDefault().getShells().length);////
-			System.out.println(swtApp.getDisplay().getShells()[0].getText());////
-			System.out.println(Display.getDefault().getShells()[0].getText());////
+			//should eventually get 2 windows
 			assertEquals(2,windows.size());
 
 		} catch (MalformedURLException e) {
