@@ -47,18 +47,6 @@ public class SWTApplicationTest {
 	}
 
 	@Test
-	public void testDeprecatedConstructor() {
-		try {
-			@SuppressWarnings("deprecation") // duh, we're only testing it, silly compiler
-			SWTApplication swtApp = new SWTApplication("edu.umd.cs.guitar.ripper.SWTRipperConfiguration", 0);
-			swtApp.getThread();
-			swtApp = null;
-		} catch (ClassNotFoundException e) {
-			assertTrue(false);
-		}
-	}
-
-	@Test
 	public void testConnect() {
 //		String[] s = new String[1];
 //		s[0] = "http://www.google.com/";
