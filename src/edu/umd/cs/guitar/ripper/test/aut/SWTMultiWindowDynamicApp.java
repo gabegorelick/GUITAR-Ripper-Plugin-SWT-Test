@@ -6,7 +6,9 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 
 public class SWTMultiWindowDynamicApp {
 	private ArrayList<Shell> shellList = new ArrayList<Shell>();
@@ -22,7 +24,7 @@ public class SWTMultiWindowDynamicApp {
 		Button addWindow = new Button(shell, SWT.PUSH);
 		addWindow.setText("Add Window");
 		addWindow.setBounds(85, 110, 80, 30);
-		
+
 		addWindow.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				Shell tempShell = new Shell(globalDisplay);
@@ -32,17 +34,17 @@ public class SWTMultiWindowDynamicApp {
 				tempShell.open();
 			}
 		});
-		
+
 		Button changeColor = new Button(shell, SWT.PUSH);
 		changeColor.setBounds(20, 20, 80, 30);
 		changeColor.setText("Change Color");
-		
+
 		changeColor.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				shell.setBackground(new Color(globalDisplay, 255, 0, 0));
 			}
 		});
-		
+
 		shell.open();
 		for (int i = 0; i < shellList.size(); i++) {
 			Shell currentShell = shellList.get(i);
