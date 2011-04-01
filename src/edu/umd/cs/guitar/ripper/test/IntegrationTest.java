@@ -16,7 +16,7 @@ import edu.umd.cs.guitar.ripper.SWTRipperRunner;
 
 public class IntegrationTest {
 
-	private void ripAndDiff(String filename) {
+	public static void ripAndDiff(String filename) {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
 		config.setGuiFile("testoutput.xml");
 
@@ -35,7 +35,7 @@ public class IntegrationTest {
 	 * Reads and compares two files for any differences, returns the line number
 	 * if different, -1 if the files are the same.
 	 */
-	private int diff(String expectedFile, String actualFile) {
+	private static int diff(String expectedFile, String actualFile) {
 		File expected = new File(expectedFile);
 		File actual = new File(actualFile);
 		BufferedReader expectedReader = null;
