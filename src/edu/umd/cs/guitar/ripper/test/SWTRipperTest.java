@@ -3,32 +3,28 @@ package edu.umd.cs.guitar.ripper.test;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
-import org.kohsuke.args4j.CmdLineException;
 
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
+import edu.umd.cs.guitar.ripper.SWTRipperRunner;
+import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorld;
 
 public class SWTRipperTest {
 
 	@Test
 	public void testSWTRipper() {
-//		SWTRipper ripper = new SWTRipper(null);
-//		assertNotNull(ripper.getMonitor());
-//		
-//		SWTRipperConfiguration config = new SWTRipperConfiguration();
-//        config.setMainClass("edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorld");
-//        
-//        final SWTRipper swtRipper = new SWTRipper(config);
+		SWTRipper ripper = new SWTRipper(null, Thread.currentThread());
+		assertNotNull(ripper.getMonitor());
+		
+		SWTRipperConfiguration config = new SWTRipperConfiguration();
+        config.setMainClass(SWTHelloWorld.class.getName());
         
-//        try {
-//			swtRipper.execute();
-//		} catch (CmdLineException e) {
-//			e.printStackTrace();
-//		}
+        SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
+        new SWTRipperRunner(swtRipper);
 	}
 	
 	@Test
 	public void testEventList() {
-		
+		// TODO test this once it's implemented
 	}
 }

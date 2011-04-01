@@ -1,108 +1,57 @@
 package edu.umd.cs.guitar.ripper.test;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
-import java.net.MalformedURLException;
-
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 import org.junit.Test;
 
 import edu.umd.cs.guitar.model.SWTApplication;
+import edu.umd.cs.guitar.ripper.SWTRipper;
+import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
+import edu.umd.cs.guitar.ripper.SWTRipperRunner;
+import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 
 public class SWTApplicationTest {
+	
+	private final static String TEST_CLASS_NAME = SWTBasicApp.class.getName();
+	
+	/**
+	 * Test that the application is set to run on the <code>main</code> thread.
+	 */
 	@Test
-	public void testGetThreadField() {
-//		String[] s = new String[1];
-//		s[0] = "http://www.google.com/";
-//		try {
-//			SWTApplication swtApp = new SWTApplication(
-//					"edu.umd.cs.guitar.ripper.SWTRipperConfiguration", s);
-//			swtApp.getThreadField();
-//			swtApp = null;
-//		} catch (MalformedURLException e) {
-//			assertTrue(false);
-//		} catch (ClassNotFoundException e) {
-//			assertTrue(false);
-//		}
-
+	public void testAppThread() {
+		SWTApplication swtApp = new SWTApplication(TEST_CLASS_NAME, Thread.currentThread());
+		Thread thr = swtApp.getAppThread();
+		assertEquals("main", thr.getName());
 	}
-
-	@Test
-	public void testGetThread() {
-//		String[] s = new String[1];
-//		s[0] = "http://www.google.com/";
-//		try {
-//			SWTApplication swtApp = new SWTApplication(
-//					"edu.umd.cs.guitar.ripper.SWTRipperConfiguration", s);
-//			swtApp.getThread();
-//			swtApp = null;
-//		} catch (MalformedURLException e) {
-//			assertTrue(false);
-//		} catch (ClassNotFoundException e) {
-//			assertTrue(false);
-//		}
-
-	}
-
+	
+	/**
+	 * Test that {@link SWTApplication#connect()} doesn't throw an exception.
+	 */
 	@Test
 	public void testConnect() {
-//		String[] s = new String[1];
-//		s[0] = "http://www.google.com/";
-//		try {
-//			SWTApplication swtApp = new SWTApplication(
-//					"edu.umd.cs.guitar.ripper.SWTRipperConfiguration", s);
-//			swtApp.connect();
-//			swtApp = null;
-//		} catch (MalformedURLException e) {
-//			assertTrue(false);
-//		} catch (ClassNotFoundException e) {
-//			assertTrue(false);
-//		}
-
+		SWTApplication swtApp = new SWTApplication(TEST_CLASS_NAME, Thread.currentThread());
+		swtApp.connect();
 	}
 
+	/**
+	 * Test that {@link SWTApplication#connect(String[])} doesn't throw an exception.
+	 */
 	@Test
 	public void testConnectArgs() {
-//		String[] s = new String[1];
-//		s[0] = "http://www.google.com/";
-//		try {
-//			String[] fakeArgs = new String[1];
-//			fakeArgs[0] = "fake";
-//			SWTApplication swtApp = new SWTApplication(
-//					"edu.umd.cs.guitar.ripper.SWTRipperConfiguration", s);
-//			swtApp.connect(fakeArgs);
-//			swtApp = null;
-//		} catch (MalformedURLException e) {
-//			fail(e.getMessage());
-//		} catch (ClassNotFoundException e) {
-//			fail(e.getMessage());
-//		}
-
+		String[] fakeArgs = new String[1];
+		fakeArgs[0] = "fake";
+		SWTApplication swtApp = new SWTApplication(TEST_CLASS_NAME, Thread.currentThread());
+		swtApp.connect(fakeArgs);
 	}
 
 	@Test
 	public void testGetAllWindow() {
-//		String[] s = { "http://www.google.com/" };
-//		Display display = new Display();
-//		Shell shell = new Shell(display);
-//		
-//		shell.setVisible(true);
-//		shell.setText("Test text");
-//				
-//		try {
-//			SWTApplication swtApp = new SWTApplication("edu.umd.cs.guitar.ripper.SWTRipperConfiguration", s);
-//			swtApp.getAllWindow(); // TODO figure out how to test this
-//			
-//			
-//		} catch (MalformedURLException e) {
-//			fail(e.getMessage());
-//		} catch (ClassNotFoundException e) {
-//			fail(e.getMessage());
-//		} finally {
-//			display.dispose();
-//		}
-
+		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		config.setMainClass(TEST_CLASS_NAME);
+		SWTRipper ripper = new SWTRipper(config, Thread.currentThread());
+		new SWTRipperRunner(ripper).start();
+		
+		// TODO figure out how to test this if AUT is closed by this point
+//		ripper.getMonitor().getApplication().getAllWindow();
 	}
 }
