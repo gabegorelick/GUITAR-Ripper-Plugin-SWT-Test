@@ -36,4 +36,6 @@
 
 /coverage
 
+/testresults
+
 # EGit needs trailing newline

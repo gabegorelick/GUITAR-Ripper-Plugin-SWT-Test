@@ -13,17 +13,13 @@
 	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="bin"/>
 	<property name="lib.dir" value="lib"/>
-	<property name="test.dir" value="test"/>
-	<property name="test.src.dir" value="${test.dir}/src"/>
-	<property name="test.build.dir" value="${test.dir}/bin"/>
-	<property name="test.lib.dir" value="${test.dir}/lib"/>
-	<property name="test.out.dir" value="${test.dir}/testresults"/>
 	<property name="swtmodel.jar.name" value="swtmodel.jar"/>
 	<property name="swtmodel.jar" value="${lib.dir}/${swtmodel.jar.name}"/>
 	<property name="swtripper.jar.name" value="swtripper.jar"/>
 	<property name="swtripper.jar" value="${lib.dir}/${swtripper.jar.name}"/>
 	<property name="junit.dir" value="${lib.dir}/junit-4.8.2"/>
 	<property name="junit.jar" value="${junit.dir}/junit.jar"/>
+	<property name="junit.out" value="testresults"/>
 	<property name="findbugs.home" value="${lib.dir}/findbugs-1.3.9"/>
 	<property name="findbugs.out" value="swtguitar-fb.xml"/>
 	<path id="findbugs.classpath">
@@ -71,8 +67,8 @@
     	<pathelement location="${lib.dir}/junit.jar"/>
     	<pathelement location="${coverage.dir}"/>
         
-        <!-- swtmodel.jar is currently copied from the ripper job by Jenkins at runtime -->
-        <!-- TODO when we do a release, make sure we include swtmodel.jar in lib directly so that it can build without Jenkins -->
+        <!-- these are copied from other jobs by Jenkins before the build
+             or built from source in build-model and build-ripper -->
     	<pathelement location="${swtmodel.jar}"/>
     	<pathelement location="${swtripper.jar}"/> 
     </path>
@@ -120,30 +116,9 @@
 		<ant antfile="build.xml" dir="${swtripper.project.dir}" target="dist" inheritall="false"/>
 		<copy file="${swtripper.project.dir}/dist/swtripper.jar" todir="${lib.dir}"/>
 	</target>
-		
-	<target name="test" depends="unit-test"/>
-	
-	<target name="init-test">
-		<mkdir dir="${test.build.dir}"/>
-		<copy includeemptydirs="false" todir="${test.build.dir}">
-            <fileset dir="${src.dir}">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-	</target>
-	
-	<target name="build-tests" depends="build,init-test">
-		<javac debug="true" debuglevel="${debuglevel}" destdir="${test.build.dir}" source="${source}" target="${target}">
-            <src path="${src.dir}"/>
-            <classpath>
-            	<path refid="SWTRipperTest.classpath"/>
-        	</classpath>
-        </javac>
-	</target>
-	
-	<target name="unit-test" description="Run unit tests" depends="init-test,build-tests,instrument">
-		<mkdir dir="${test.out.dir}"/>
+			
+	<target name="test" description="Run JUnit tests" depends="build,instrument">
+		<mkdir dir="${junit.out}"/>
 		
 		<!-- must fork for cobertura, see http://cobertura.sourceforge.net/anttaskreference.html -->
 		<junit fork="yes" forkmode="once" printsummary="true">
@@ -160,8 +135,8 @@
 			</classpath>
 			<classpath refid="cobertura.classpath"/>
 			
-			<batchtest todir="${test.out.dir}">
-				<fileset dir="${test.build.dir}">
+			<batchtest todir="${junit.out}">
+				<fileset dir="${build.dir}">
 					<include name="**/*Test.class"/>
 				</fileset>
 				<formatter type="xml"/>
@@ -181,7 +156,7 @@
 		</cobertura-instrument>
 	</target>
 	
-	<target name="coverage-report" depends="unit-test">
+	<target name="coverage-report" depends="test">
 		<!-- don't bother specifying src of model, that's only used for complexity and html reports -->
 		<cobertura-report format="xml" srcdir="${src.dir}" destdir="${coverage.dir}" datafile="${cobertura.datafile}"/>
 		
@@ -203,17 +178,20 @@
 				
 	<target name="clean">
         <delete dir="${build.dir}"/>
-		<delete dir="${test.dir}"/>
+		<delete dir="${junit.out}"/>
 		<delete dir="${coverage.dir}"/>
 		<delete file="${cobertura.datafile}"/> <!-- this sometimes gets left over -->
 		<delete file="${findbugs.out}"/>
 		<delete>
 			<fileset dir="." includes="*.log"/>
 		</delete>
+		<delete>
+			<fileset dir="." includes="testoutput*.xml"/>
+		</delete>
 		<delete file="GUITAR-Default.GUI"/>
 		<delete file="log_widget.xml"/>
-        <!-- remove swtmodel.jar so Jenkins can add a potentially newer version -->
-        <!-- TODO remove this when we release -->
+		
+        <!-- remove swtmodel.jar and swtripper.jar so Jenkins can add a potentially newer version -->
         <delete file="${swtmodel.jar}"/>
 		<delete file="${swtripper.jar}"/>
     </target>    
