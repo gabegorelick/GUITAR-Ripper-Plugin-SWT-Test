@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<project basedir="." default="build" name="SWTRipperTest">
+<project basedir="." default="coverage-report" name="SWTRipperTest">
 	
 	<property file="build.properties"/>
 	
@@ -13,6 +13,7 @@
 	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="bin"/>
 	<property name="lib.dir" value="lib"/>
+	<property name="doc.dir" value="doc"/>
 	<property name="swtmodel.jar.name" value="swtmodel.jar"/>
 	<property name="swtmodel.jar" value="${lib.dir}/${swtmodel.jar.name}"/>
 	<property name="swtripper.jar.name" value="swtripper.jar"/>
@@ -82,6 +83,14 @@
             </fileset>
         </copy>
     </target>
+	
+	<target name="doc" description="Generate Javadocs">
+		<mkdir dir="${doc.dir}"/>
+		<javadoc sourcepath="${src.dir}" destdir="${doc.dir}" source="${source}" classpathref="SWTRipperTest.classpath">
+			<link href="http://download.oracle.com/javase/6/docs/api/"/>
+			<!-- No good online SWT javadoc that works :( -->
+		</javadoc>
+	</target>
         
 	<target name="build" depends="init, build-model, build-ripper">
         <echo message="${ant.project.name}: ${ant.file}"/>
@@ -150,6 +159,7 @@
 		<cobertura-instrument todir="${cob.instrumented.dir}">
 			<fileset dir="${build.dir}">
 				<include name="**/*.class"/>
+				<!-- TODO exclude everything in test package -->
 			</fileset>
 			<fileset file="${swtmodel.jar}"/>
 			<fileset file="${swtripper.jar}"/>
@@ -178,6 +188,7 @@
 				
 	<target name="clean">
         <delete dir="${build.dir}"/>
+		<delete dir="${doc.dir}"/>
 		<delete dir="${junit.out}"/>
 		<delete dir="${coverage.dir}"/>
 		<delete file="${cobertura.datafile}"/> <!-- this sometimes gets left over -->

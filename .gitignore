@@ -1,4 +1,5 @@
 /bin
+/doc
 
 # build.properties is developer-specific
 /build.properties
@@ -9,16 +10,6 @@
 # Should always build model and ripper from source
 /lib/swtmodel.jar
 /lib/swtripper.jar
-
-/test
-
-# JUnit results
-/test/testresults
-
-# Cobertura output
-/test/coverage/instrumented
-/test/coverage/cobertura.ser
-/test/coverage/coverage.xml
 
 # FindBugs output
 /swtguitar-fb.xml
