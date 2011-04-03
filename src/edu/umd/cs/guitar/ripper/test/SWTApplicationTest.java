@@ -24,26 +24,6 @@ public class SWTApplicationTest {
 		assertEquals("main", thr.getName());
 	}
 	
-	/**
-	 * Test that {@link SWTApplication#connect()} doesn't throw an exception.
-	 */
-	@Test
-	public void testConnect() {
-		SWTApplication swtApp = new SWTApplication(TEST_CLASS_NAME, Thread.currentThread());
-		swtApp.connect();
-	}
-
-	/**
-	 * Test that {@link SWTApplication#connect(String[])} doesn't throw an exception.
-	 */
-	@Test
-	public void testConnectArgs() {
-		String[] fakeArgs = new String[1];
-		fakeArgs[0] = "fake";
-		SWTApplication swtApp = new SWTApplication(TEST_CLASS_NAME, Thread.currentThread());
-		swtApp.connect(fakeArgs);
-	}
-
 	@Test
 	public void testGetAllWindow() {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
