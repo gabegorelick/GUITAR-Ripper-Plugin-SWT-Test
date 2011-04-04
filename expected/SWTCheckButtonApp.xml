@@ -27,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w1727524972</Value>
+                            <Value>w1819273420</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -44,6 +44,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>Window</Value>
                         </Property>
                         <Property>
                             <Name>enabled</Name>
@@ -63,7 +67,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2062433100</Value>
+    <Value>w3753700256</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -80,6 +84,10 @@
 <Property>
     <Name>Y</Name>
     <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value>This is a Check Button</Value>
 </Property>
 <Property>
     <Name>enabled</Name>

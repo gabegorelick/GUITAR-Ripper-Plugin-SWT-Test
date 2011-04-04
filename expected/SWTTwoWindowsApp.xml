@@ -27,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w1113520296</Value>
+                            <Value>w3817861452</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -44,6 +44,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>Window 1</Value>
                         </Property>
                         <Property>
                             <Name>enabled</Name>
@@ -85,11 +89,11 @@
         </Window>
         <Container>
             <Contents>
-                <Widget>
+                <Container>
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w1113520420</Value>
+                            <Value>w3817861580</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -108,6 +112,10 @@
                             <Value>0</Value>
                         </Property>
                         <Property>
+                            <Name>Title</Name>
+                            <Value>Window 2</Value>
+                        </Property>
+                        <Property>
                             <Name>enabled</Name>
                             <Value>true</Value>
                         </Property>
@@ -120,7 +128,49 @@
                             <Value>true</Value>
                         </Property>
                     </Attributes>
-                </Widget>
+                    <Contents>
+                        <Widget>
+                            <Attributes>
+<Property>
+    <Name>ID</Name>
+    <Value>w2847103344</Value>
+</Property>
+<Property>
+    <Name>Class</Name>
+    <Value>org.eclipse.swt.widgets.Button</Value>
+</Property>
+<Property>
+    <Name>Type</Name>
+    <Value>SYSTEM INTERACTION</Value>
+</Property>
+<Property>
+    <Name>X</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Y</Name>
+    <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value>Butt0n</Value>
+</Property>
+<Property>
+    <Name>enabled</Name>
+    <Value>true</Value>
+</Property>
+<Property>
+    <Name>text</Name>
+    <Value>Butt0n</Value>
+</Property>
+<Property>
+    <Name>visible</Name>
+    <Value>true</Value>
+</Property>
+                            </Attributes>
+                        </Widget>
+                    </Contents>
+                </Container>
             </Contents>
         </Container>
     </GUI>

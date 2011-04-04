@@ -27,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w1727524972</Value>
+                            <Value>w1819273420</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -44,6 +44,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>Window</Value>
                         </Property>
                         <Property>
                             <Name>enabled</Name>

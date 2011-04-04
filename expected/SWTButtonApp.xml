@@ -27,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w2706171188</Value>
+                            <Value>w1998204876</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -44,6 +44,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>Button Window</Value>
                         </Property>
                         <Property>
                             <Name>enabled</Name>
@@ -63,7 +67,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2608956348</Value>
+    <Value>w1697545204</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -80,6 +84,10 @@
 <Property>
     <Name>Y</Name>
     <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value>Button</Value>
 </Property>
 <Property>
     <Name>enabled</Name>

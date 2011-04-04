@@ -120,7 +120,7 @@ public class IntegrationTest {
 
 	@Test
 	public void testTwoWindowsApp() {
-		ripAndDiff("SWTTwoWindowsApp"); // FIXME can't rip subcomponents of multi-window apps
+		ripAndDiff("SWTTwoWindowsApp");
 	}
 
 	@Test

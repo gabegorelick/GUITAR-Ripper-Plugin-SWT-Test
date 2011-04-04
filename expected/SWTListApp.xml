@@ -31,7 +31,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w1727524972</Value>
+                            <Value>w1819273420</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -48,6 +48,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>Window</Value>
                         </Property>
                         <Property>
                             <Name>enabled</Name>
@@ -67,7 +71,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2261501412</Value>
+    <Value>w2105164100</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -84,6 +88,10 @@
 <Property>
     <Name>Y</Name>
     <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -103,7 +111,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w3618942716</Value>
+    <Value>w936199260</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -120,6 +128,10 @@
 <Property>
     <Name>Y</Name>
     <Value>0</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
