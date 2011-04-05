@@ -87,7 +87,7 @@
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>200</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -123,11 +123,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>30</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>30</Value>
 </Property>
 <Property>
     <Name>Title</Name>

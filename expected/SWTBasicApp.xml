@@ -83,11 +83,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>11</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -123,11 +123,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>56</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -163,11 +163,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>39</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -203,11 +203,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>65</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -243,11 +243,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>37</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>72</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -283,11 +283,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>106</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -323,11 +323,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>132</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -359,11 +359,11 @@
         </Property>
         <Property>
             <Name>X</Name>
-            <Value>0</Value>
+            <Value>10</Value>
         </Property>
         <Property>
             <Name>Y</Name>
-            <Value>0</Value>
+            <Value>137</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -403,11 +403,11 @@
         </Property>
         <Property>
             <Name>X</Name>
-            <Value>0</Value>
+            <Value>10</Value>
         </Property>
         <Property>
             <Name>Y</Name>
-            <Value>0</Value>
+            <Value>163</Value>
         </Property>
         <Property>
             <Name>Title</Name>
@@ -449,11 +449,11 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>196</Value>
 </Property>
 <Property>
     <Name>Title</Name>
@@ -489,11 +489,11 @@
         </Property>
         <Property>
             <Name>X</Name>
-            <Value>0</Value>
+            <Value>10</Value>
         </Property>
         <Property>
             <Name>Y</Name>
-            <Value>0</Value>
+            <Value>216</Value>
         </Property>
         <Property>
             <Name>Title</Name>
