@@ -53,7 +53,7 @@ public class IntegrationTest {
 		String s2 = new String();
 
 		boolean equal = true;
-		try {
+		try { // TODO this doesn't work if one of the files is empty
 			while (expectedReader.ready()) {
 				s1 = expectedReader.readLine();
 				if (actualReader.ready()) {
@@ -127,5 +127,10 @@ public class IntegrationTest {
 	public void testWindowApp() {
 		ripAndDiff("SWTWindowApp");
 	}
+	
+//	@Test
+//	public void testMultiWindowDynamicApp() {
+//		ripAndDiff("SWTMultiWindowDynamicApp");
+//	}
 
 }
