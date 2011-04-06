@@ -49,27 +49,38 @@ public class IntegrationTest {
 		}
 
 		int lineNumber = 1;
-		String s1 = new String();
-		String s2 = new String();
-
+		String expectedString;
+		String actualString;
+		
+		String lastLine = null;
+		
 		boolean equal = true;
 		try { // TODO this doesn't work if one of the files is empty
 			while (expectedReader.ready()) {
-				s1 = expectedReader.readLine();
+				expectedString = expectedReader.readLine();
 				if (actualReader.ready()) {
-					s2 = actualReader.readLine();
+					actualString = actualReader.readLine();
 				} else {
 					equal = false;
 					break;
 				}
-				if (!s1.equals(s2)) {
-					System.err.println("Failed at line " + lineNumber);
-					System.err.println("Expected: " + s1);
-					System.err.println("Actual: " + s2);
-					equal = false;
-					break;
+				
+				// ignore if this is X or Y value
+				// TODO use XMLUnit to do this
+				if (!expectedString.equals(actualString)) {
+					if (lastLine != null 
+							&& !lastLine.contains("<Name>X</Name>")
+							&& !lastLine.contains("<Name>Y</Name>")) {
+					
+						System.err.println("Failed at line " + lineNumber);
+						System.err.println("Expected: " + expectedString);
+						System.err.println("Actual: " + actualString);
+						equal = false;
+						break;
+					}
 				}
 				lineNumber++;
+				lastLine = actualString;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
