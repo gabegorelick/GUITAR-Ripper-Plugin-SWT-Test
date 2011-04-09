@@ -143,5 +143,25 @@ public class IntegrationTest {
 //	public void testMultiWindowDynamicApp() {
 //		ripAndDiff("SWTMultiWindowDynamicApp");
 //	}
+	
+	@Test
+	public void testTabFolderApp() {
+		ripAndDiff("SWTTabFolderApp");
+	}
+	
+	@Test
+	public void testTableApp() {
+		ripAndDiff("SWTTableApp");
+	}
+	
+	@Test
+	public void testTreeApp() {
+		ripAndDiff("SWTTreeApp");
+	}
+	
+	@Test
+	public void testToolbarApp() {
+		ripAndDiff("SWTToolbarApp");
+	}
 
 }
