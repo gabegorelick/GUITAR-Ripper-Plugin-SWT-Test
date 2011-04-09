@@ -1,7 +1,7 @@
 package edu.umd.cs.guitar.ripper.test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Hashtable;
@@ -9,27 +9,24 @@ import java.util.List;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Tray;
-import org.eclipse.swt.widgets.TrayItem;
+import org.eclipse.swt.widgets.Spinner;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.umd.cs.guitar.event.EventManager;
 import edu.umd.cs.guitar.event.SWTEventHandler;
 import edu.umd.cs.guitar.model.GComponent;
 import edu.umd.cs.guitar.model.GUITARConstants;
-import edu.umd.cs.guitar.model.SWTComposite;
-import edu.umd.cs.guitar.model.SWTWidget;
+import edu.umd.cs.guitar.model.swtwidgets.SWTComposite;
+import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
 
 
 public class SWTCompositeTest {
 
 	private Display display;
+	private SWTWidgetFactory factory = SWTWidgetFactory.newInstance();
 	
 	@Before
 	public void setUp() {
@@ -44,76 +41,62 @@ public class SWTCompositeTest {
 	}
 	
 	@Test
-	public void testGetControl() {
-//		Shell shell = new Shell(display);		
-//		Button button = new Button(shell, SWT.PUSH);
-//		
-//		SWTComposite comp = new SWTComposite(button, null);
-//		assertEquals(button, comp.getControl());
+	public void testGetComposite() {
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+				
+		SWTComposite comp = factory.newSWTComposite(spinner, null);
+		assertEquals(spinner, comp.getWidget());
 	}
 	
 	@Test
 	public void testGetTitle() {
-//		assertEquals("", new SWTComposite(null, null).getTitle());
-//		
-//		Shell shell = new Shell(display);
-//		
-//		Button button = new Button(shell, SWT.PUSH);
-//		String buttonText = "Button text"; 
-//		button.setText(buttonText);
-//		
-//		assertEquals("", new SWTComposite(button, null).getTitle());
-//		
-//		String shellText = "Shell Title"; 
-//		shell.setText(shellText);
-//		assertEquals(shellText, new SWTComposite(button, null).getTitle());
+		// TODO test once we implement this
 	}
 	
 	@Test
 	public void testGetX() {
-//		Shell shell = new Shell(display);
-//				
-//		assertEquals(0, new SWTComposite(null, null).getX());
-//		assertEquals(0, new SWTComposite(shell, null).getX());
-//		
-//		Button button = new Button(shell, SWT.PUSH);
-//		assertEquals(0, new SWTComposite(button, null).getX());
-//		
-//		button.setBounds(85, 110, 80, 30);
-//		assertEquals(85, new SWTComposite(button, null).getX());
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+				
+		assertEquals(0, factory.newSWTComposite(null, null).getX());
+		assertEquals(0, factory.newSWTComposite(spinner, null).getX());
+				
+		spinner.setBounds(85, 110, 80, 30);
+		assertEquals(85, factory.newSWTControl(spinner, null).getX());
 	}
 	
 	@Test
 	public void testGetY() {
-//		Shell shell = new Shell(display);
-//		
-//		assertEquals(0, new SWTComposite(null, null).getY());
-//		assertEquals(0, new SWTComposite(shell, null).getY());
-//		
-//		Button button = new Button(shell, SWT.PUSH);
-//		assertEquals(0, new SWTComposite(button, null).getY());
-//		
-//		button.setBounds(85, 110, 80, 30);
-//		assertEquals(110, new SWTComposite(button, null).getY());
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+		
+		assertEquals(0, factory.newSWTComposite(null, null).getY());
+		assertEquals(0, factory.newSWTComposite(spinner, null).getY());
+				
+		spinner.setBounds(85, 110, 80, 30);
+		assertEquals(110, factory.newSWTControl(spinner, null).getY());
 	}
 	
 	@Test
 	public void testGetGUIProperties() {
-//		Shell shell = new Shell(display);
-//				
-//		new SWTComposite(shell, null).getGUIProperties();
-//		
-//		shell.setImage(new Image(display, 20, 20));
-//		new SWTComposite(shell, null).getGUIProperties();
-//		
-//		// TODO compare output instead of just making sure it doesn't error
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+				
+		factory.newSWTComposite(spinner, null).getGUIProperties();
+		
+		shell.setImage(new Image(display, 20, 20));
+		factory.newSWTComposite(spinner, null).getGUIProperties();
+		
+		// TODO compare output instead of just making sure it doesn't error
 	}
 	
 	@Test
 	public void testGetClassVal() {
-//		Shell shell = new Shell(display);
-//		
-//		assertEquals(shell.getClass().getName(), new SWTComposite(shell, null).getClassVal());
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+		
+		assertEquals(spinner.getClass().getName(), factory.newSWTComposite(spinner, null).getClassVal());
 	}
 	
 	@Test
@@ -122,7 +105,7 @@ public class SWTCompositeTest {
 //		Menu menu = new Menu(shell, SWT.BAR);
 //		shell.setMenuBar(menu);
 //		
-//		SWTComposite comp = new SWTComposite(shell, null);
+//		SWTComposite comp = factory.newSWTComposite(shell, null);
 //		List<GComponent> children = comp.getChildren();
 //		
 //		menu.dispose();
@@ -134,33 +117,44 @@ public class SWTCompositeTest {
 //		
 //		children = comp.getChildren();
 //		assertEquals(2, children.size());
+		// TODO figure this out
 	}
 	
 	@Test
 	public void testGetParent() {
-//		Shell shell = new Shell(display);
-//		
-//		SWTWidget parent = (SWTWidget) new SWTComposite(shell, null).getParent();
-//		assertNull(parent.getWidget());
-//		
-//		Button button = new Button(shell, SWT.PUSH);
-//		parent = (SWTWidget) new SWTComposite(button, null).getParent();
-//		assertEquals(shell, parent.getWidget());
-//		
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+		
+		SWTComposite parent = factory.newSWTComposite(spinner, null).getParent();
+		assertEquals(shell, parent.getWidget());
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testIsEnable() {
-//		Shell shell = new Shell(display);
-//		
-//		assertTrue(new SWTComposite(shell, null).isEnable());
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+		
+		assertTrue(factory.newSWTComposite(spinner, null).isEnable());
+		
+		spinner.setEnabled(false);
+		assertFalse(factory.newSWTComposite(spinner, null).isEnable());
+		
+		spinner.setEnabled(true);
+		assertTrue(factory.newSWTComposite(spinner, null).isEnable());
+		
+		// make sure disabling parent disables child
+		shell.setEnabled(false);
+		assertFalse(factory.newSWTComposite(spinner, null).isEnable());
 	}
 	
 	@Test
 	public void testGetTypeVal() {
-//		Shell shell = new Shell(display);
-//		
-//		assertEquals(GUITARConstants.SYSTEM_INTERACTION, new SWTComposite(shell, null).getTypeVal());
+		Shell shell = new Shell(display);
+		Spinner spinner = new Spinner(shell, SWT.NONE);
+		
+		assertEquals(GUITARConstants.SYSTEM_INTERACTION, 
+				factory.newSWTComposite(spinner, null).getTypeVal());
 	}
 	
 	@Test
