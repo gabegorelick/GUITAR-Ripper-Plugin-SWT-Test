@@ -11,41 +11,41 @@ import org.eclipse.swt.widgets.TableItem;
 //Based off of code found at http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/TableExample.htm
 
 public class SWTTableApp {
-  public static void main(String[] argv) {
-	    Display display = new Display();
-	    Shell shell = new Shell(display);
+	public static void main(String[] argv) {
+		Display display = new Display();
+		Shell shell = new Shell(display);
 
-	    shell.setSize(320, 200);
-	    
-	    shell.setText("Table Window");
-	    shell.setLayout(new FillLayout());
+		shell.setSize(320, 200);
 
-	    Table table = new Table(shell, SWT.BORDER);
+		shell.setText("Table Window");
+		shell.setLayout(new FillLayout());
 
-	    TableColumn tc1 = new TableColumn(table, SWT.CENTER);
-	    TableColumn tc2 = new TableColumn(table, SWT.CENTER);
-	    TableColumn tc3 = new TableColumn(table, SWT.CENTER);
-	    tc1.setText("First Column");
-	    tc2.setText("Second Column");
-	    tc3.setText("Third Column");
-	    tc1.setWidth(100);
-	    tc2.setWidth(100);
-	    tc3.setWidth(100);
-	    table.setHeaderVisible(true);
+		Table table = new Table(shell, SWT.BORDER);
 
-	    TableItem item1 = new TableItem(table, SWT.NONE);
-	    item1.setText(new String[] { "Item 1.1", "Item 1.2", "Item 1.3" });
-	    TableItem item2 = new TableItem(table, SWT.NONE);
-	    item2.setText(new String[] { "Item 2.1", "Item 2.2", "Item 2.3" });
-	    TableItem item3 = new TableItem(table, SWT.NONE);
-	    item3.setText(new String[] { "Item 3.1", "Item 3.2", "Item 3.3" });
+		TableColumn tc1 = new TableColumn(table, SWT.CENTER);
+		TableColumn tc2 = new TableColumn(table, SWT.CENTER);
+		TableColumn tc3 = new TableColumn(table, SWT.CENTER);
+		tc1.setText("First Column");
+		tc2.setText("Second Column");
+		tc3.setText("Third Column");
+		tc1.setWidth(100);
+		tc2.setWidth(100);
+		tc3.setWidth(100);
+		table.setHeaderVisible(true);
 
-	    shell.open();
-	    while (!shell.isDisposed()) {
-	      if (!display.readAndDispatch())
-	        display.sleep();
-	    }
-	    display.dispose();
-  }
+		TableItem item1 = new TableItem(table, SWT.NONE);
+		item1.setText(new String[] { "Item 1.1", "Item 1.2", "Item 1.3" });
+		TableItem item2 = new TableItem(table, SWT.NONE);
+		item2.setText(new String[] { "Item 2.1", "Item 2.2", "Item 2.3" });
+		TableItem item3 = new TableItem(table, SWT.NONE);
+		item3.setText(new String[] { "Item 3.1", "Item 3.2", "Item 3.3" });
+		
+		shell.open();
+		while (!shell.isDisposed()) {
+			if (!display.readAndDispatch())
+				display.sleep();
+		}
+		display.dispose();
+	}
 
 }
