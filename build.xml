@@ -59,7 +59,7 @@
 	</condition>
 		
     <path id="SWTRipperTest.classpath">
-    	<!-- TODO can we just specify everything in lib? -->
+    	<!-- TODO can we just specify everything in lib but swt? -->
         <pathelement location="${build.dir}"/>
         <pathelement location="${lib.dir}/args4j-2.0.12.jar"/>
         <pathelement location="${lib.dir}/${swt.jar}"/>
