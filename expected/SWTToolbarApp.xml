@@ -1,429 +1,429 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <GUIStructure>
-    <GUI>
-        <Window>
-            <Attributes>
-                <Property>
-                    <Name>Title</Name>
-                    <Value>org.eclipse.swt.widgets.Shell</Value>
-                </Property>
-                <Property>
-                    <Name>Modal</Name>
-                    <Value>false</Value>
-                </Property>
-                <Property>
-                    <Name>Rootwindow</Name>
-                    <Value>true</Value>
-                </Property>
-                <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
-                </Property>
-            </Attributes>
-        </Window>
-        <Container>
-            <Contents>
-                <Container>
-                    <Attributes>
-                        <Property>
-                            <Name>ID</Name>
-                            <Value>w1311575748</Value>
-                        </Property>
-                        <Property>
-                            <Name>Class</Name>
-                            <Value>org.eclipse.swt.widgets.Shell</Value>
-                        </Property>
-                        <Property>
-                            <Name>Type</Name>
-                            <Value>SYSTEM INTERACTION</Value>
-                        </Property>
-                        <Property>
-                            <Name>X</Name>
-                            <Value>0</Value>
-                        </Property>
-                        <Property>
-                            <Name>Y</Name>
-                            <Value>0</Value>
-                        </Property>
-                        <Property>
-                            <Name>Title</Name>
-                            <Value></Value>
-                        </Property>
-                        <Property>
-                            <Name>enabled</Name>
-                            <Value>true</Value>
-                        </Property>
-                        <Property>
-                            <Name>text</Name>
-                            <Value></Value>
-                        </Property>
-                        <Property>
-                            <Name>visible</Name>
-                            <Value>true</Value>
-                        </Property>
-                    </Attributes>
-                    <Contents>
-                        <Container>
-                            <Attributes>
-<Property>
-    <Name>ID</Name>
-    <Value>w2637749232</Value>
-</Property>
-<Property>
-    <Name>Class</Name>
-    <Value>org.eclipse.swt.widgets.ToolBar</Value>
-</Property>
-<Property>
-    <Name>Type</Name>
-    <Value>SYSTEM INTERACTION</Value>
-</Property>
-<Property>
-    <Name>X</Name>
-    <Value>5</Value>
-</Property>
-<Property>
-    <Name>Y</Name>
-    <Value>5</Value>
-</Property>
-<Property>
-    <Name>Title</Name>
-    <Value></Value>
-</Property>
-<Property>
-    <Name>enabled</Name>
-    <Value>true</Value>
-</Property>
-<Property>
-    <Name>visible</Name>
-    <Value>true</Value>
-</Property>
-                            </Attributes>
-                            <Contents>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608788</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 0</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 0</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608792</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 1</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 1</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608796</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 2</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 2</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608800</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 3</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 3</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608804</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 4</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 4</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608808</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 5</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 5</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608812</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 6</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 6</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w1123608816</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.ToolItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 7</Value>
-        </Property>
-        <Property>
-            <Name>enabled</Name>
-            <Value>true</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 7</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>54</Value>
-        </Property>
-    </Attributes>
-</Widget>
-                            </Contents>
-                        </Container>
-                    </Contents>
-                </Container>
-            </Contents>
-        </Container>
-    </GUI>
+	<GUI>
+		<Window>
+			<Attributes>
+				<Property>
+					<Name>Title</Name>
+					<Value>org.eclipse.swt.widgets.Shell</Value>
+				</Property>
+				<Property>
+					<Name>Modal</Name>
+					<Value>false</Value>
+				</Property>
+				<Property>
+					<Name>Rootwindow</Name>
+					<Value>true</Value>
+				</Property>
+				<Property>
+					<Name>visible</Name>
+					<Value>true</Value>
+				</Property>
+			</Attributes>
+		</Window>
+		<Container>
+			<Contents>
+				<Container>
+					<Attributes>
+						<Property>
+							<Name>ID</Name>
+							<Value>w1311575748</Value>
+						</Property>
+						<Property>
+							<Name>Class</Name>
+							<Value>org.eclipse.swt.widgets.Shell</Value>
+						</Property>
+						<Property>
+							<Name>Type</Name>
+							<Value>SYSTEM INTERACTION</Value>
+						</Property>
+						<Property>
+							<Name>X</Name>
+							<Value>0</Value>
+						</Property>
+						<Property>
+							<Name>Y</Name>
+							<Value>0</Value>
+						</Property>
+						<Property>
+							<Name>Title</Name>
+							<Value></Value>
+						</Property>
+						<Property>
+							<Name>enabled</Name>
+							<Value>true</Value>
+						</Property>
+						<Property>
+							<Name>text</Name>
+							<Value></Value>
+						</Property>
+						<Property>
+							<Name>visible</Name>
+							<Value>true</Value>
+						</Property>
+					</Attributes>
+					<Contents>
+						<Container>
+							<Attributes>
+								<Property>
+									<Name>ID</Name>
+									<Value>w2637749232</Value>
+								</Property>
+								<Property>
+									<Name>Class</Name>
+									<Value>org.eclipse.swt.widgets.ToolBar</Value>
+								</Property>
+								<Property>
+									<Name>Type</Name>
+									<Value>SYSTEM INTERACTION</Value>
+								</Property>
+								<Property>
+									<Name>X</Name>
+									<Value>5</Value>
+								</Property>
+								<Property>
+									<Name>Y</Name>
+									<Value>5</Value>
+								</Property>
+								<Property>
+									<Name>Title</Name>
+									<Value></Value>
+								</Property>
+								<Property>
+									<Name>enabled</Name>
+									<Value>true</Value>
+								</Property>
+								<Property>
+									<Name>visible</Name>
+									<Value>true</Value>
+								</Property>
+							</Attributes>
+							<Contents>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608788</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 0</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 0</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608792</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 1</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 1</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608796</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 2</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 2</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608800</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 3</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 3</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608804</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 4</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 4</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608808</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 5</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 5</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608812</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 6</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 6</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w1123608816</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.ToolItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 7</Value>
+										</Property>
+										<Property>
+											<Name>enabled</Name>
+											<Value>true</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 7</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>54</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+							</Contents>
+						</Container>
+					</Contents>
+				</Container>
+			</Contents>
+		</Container>
+	</GUI>
 </GUIStructure>

@@ -2,21 +2,19 @@ package edu.umd.cs.guitar.ripper.test;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.Difference;
 import org.custommonkey.xmlunit.DifferenceListener;
 import org.custommonkey.xmlunit.NodeDetail;
+import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import edu.umd.cs.guitar.model.GUITARConstants;
@@ -39,9 +37,21 @@ public class IntegrationTest {
 				
 		String name = "expected/" + filename + ".xml";
 		
-		Document result = buildDoc(config.getGuiFile());
-		Document test = buildDoc(name);
-		DetailedDiff diff = new DetailedDiff(new Diff(test, result));
+		XMLUnit.setNormalizeWhitespace(true);
+		
+		Document actual;
+		Document expected;
+		try {			
+			actual = XMLUnit.buildTestDocument(new InputSource(new FileReader(name)));
+			expected = XMLUnit.buildControlDocument(new InputSource(new FileReader(config.getGuiFile())));
+		} catch (SAXException e) {
+			// so calling methods don't have to declare this as checked exception
+			throw new AssertionError(e);
+		} catch (IOException e) {
+			throw new AssertionError(e);
+		}
+		
+		DetailedDiff diff = new DetailedDiff(new Diff(expected, actual));
 		
 		diff.overrideDifferenceListener(new DifferenceListener() {
 			@Override
@@ -52,7 +62,7 @@ public class IntegrationTest {
 			@Override
 			public int differenceFound(Difference difference) {				
 				NodeDetail actualNodeDetail = difference.getTestNodeDetail();
-				try {					
+				try {
 					Node valueNode = actualNodeDetail.getNode().getParentNode();
 					Node nameNode = valueNode.getPreviousSibling().getPreviousSibling();
 					Node xyNode = nameNode.getFirstChild();
@@ -73,7 +83,7 @@ public class IntegrationTest {
 						return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
 					}
 				} catch (NullPointerException e) {
-					GUITARLog.log.warn("Unexpected GUI structure", e);
+					GUITARLog.log.warn("Unexpected GUI structure ", e);
 					return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 				}
 				
@@ -87,24 +97,7 @@ public class IntegrationTest {
 		
 		assertTrue(diff.similar());	
 	}
-		
-	private static Document buildDoc(String filename) {
-		Document doc = null;
-		try {
-			File file = new File(filename);
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			DocumentBuilder db = dbf.newDocumentBuilder();
-			doc = db.parse(file);
-		} catch (SAXException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		}
-		return doc;
-	}
-
+	
 	@Test
 	public void testBasicApp() {
 		ripAndDiff("SWTBasicApp");

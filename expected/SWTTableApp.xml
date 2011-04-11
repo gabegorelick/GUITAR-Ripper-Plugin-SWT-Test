@@ -1,317 +1,317 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <GUIStructure>
-    <GUI>
-        <Window>
-            <Attributes>
-                <Property>
-                    <Name>Title</Name>
-                    <Value>Table Window</Value>
-                </Property>
-                <Property>
-                    <Name>Modal</Name>
-                    <Value>false</Value>
-                </Property>
-                <Property>
-                    <Name>Rootwindow</Name>
-                    <Value>true</Value>
-                </Property>
-                <Property>
-                    <Name>layout</Name>
-                    <Value>FillLayout {type=SWT.HORIZONTAL}</Value>
-                </Property>
-                <Property>
-                    <Name>visible</Name>
-                    <Value>true</Value>
-                </Property>
-            </Attributes>
-        </Window>
-        <Container>
-            <Contents>
-                <Container>
-                    <Attributes>
-                        <Property>
-                            <Name>ID</Name>
-                            <Value>w2995667404</Value>
-                        </Property>
-                        <Property>
-                            <Name>Class</Name>
-                            <Value>org.eclipse.swt.widgets.Shell</Value>
-                        </Property>
-                        <Property>
-                            <Name>Type</Name>
-                            <Value>SYSTEM INTERACTION</Value>
-                        </Property>
-                        <Property>
-                            <Name>X</Name>
-                            <Value>0</Value>
-                        </Property>
-                        <Property>
-                            <Name>Y</Name>
-                            <Value>0</Value>
-                        </Property>
-                        <Property>
-                            <Name>Title</Name>
-                            <Value>Table Window</Value>
-                        </Property>
-                        <Property>
-                            <Name>enabled</Name>
-                            <Value>true</Value>
-                        </Property>
-                        <Property>
-                            <Name>text</Name>
-                            <Value>Table Window</Value>
-                        </Property>
-                        <Property>
-                            <Name>visible</Name>
-                            <Value>true</Value>
-                        </Property>
-                    </Attributes>
-                    <Contents>
-                        <Container>
-                            <Attributes>
-<Property>
-    <Name>ID</Name>
-    <Value>w363301036</Value>
-</Property>
-<Property>
-    <Name>Class</Name>
-    <Value>org.eclipse.swt.widgets.Table</Value>
-</Property>
-<Property>
-    <Name>Type</Name>
-    <Value>SYSTEM INTERACTION</Value>
-</Property>
-<Property>
-    <Name>X</Name>
-    <Value>0</Value>
-</Property>
-<Property>
-    <Name>Y</Name>
-    <Value>0</Value>
-</Property>
-<Property>
-    <Name>Title</Name>
-    <Value></Value>
-</Property>
-<Property>
-    <Name>enabled</Name>
-    <Value>true</Value>
-</Property>
-<Property>
-    <Name>visible</Name>
-    <Value>true</Value>
-</Property>
-                            </Attributes>
-                            <Contents>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w4138305244</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.TableColumn</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>First Column</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>First Column</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>100</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w203168972</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.TableColumn</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Second Column</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Second Column</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>100</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w2923564160</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.TableColumn</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Third Column</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Third Column</Value>
-        </Property>
-        <Property>
-            <Name>width</Name>
-            <Value>112</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w3755690452</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.TableItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 1.1</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 1.1</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w3755694296</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.TableItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 2.1</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 2.1</Value>
-        </Property>
-    </Attributes>
-</Widget>
-<Widget>
-    <Attributes>
-        <Property>
-            <Name>ID</Name>
-            <Value>w3755698140</Value>
-        </Property>
-        <Property>
-            <Name>Class</Name>
-            <Value>org.eclipse.swt.widgets.TableItem</Value>
-        </Property>
-        <Property>
-            <Name>Type</Name>
-            <Value>SYSTEM INTERACTION</Value>
-        </Property>
-        <Property>
-            <Name>X</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Y</Name>
-            <Value>0</Value>
-        </Property>
-        <Property>
-            <Name>Title</Name>
-            <Value>Item 3.1</Value>
-        </Property>
-        <Property>
-            <Name>text</Name>
-            <Value>Item 3.1</Value>
-        </Property>
-    </Attributes>
-</Widget>
-                            </Contents>
-                        </Container>
-                    </Contents>
-                </Container>
-            </Contents>
-        </Container>
-    </GUI>
+	<GUI>
+		<Window>
+			<Attributes>
+				<Property>
+					<Name>Title</Name>
+					<Value>Table Window</Value>
+				</Property>
+				<Property>
+					<Name>Modal</Name>
+					<Value>false</Value>
+				</Property>
+				<Property>
+					<Name>Rootwindow</Name>
+					<Value>true</Value>
+				</Property>
+				<Property>
+					<Name>layout</Name>
+					<Value>FillLayout {type=SWT.HORIZONTAL}</Value>
+				</Property>
+				<Property>
+					<Name>visible</Name>
+					<Value>true</Value>
+				</Property>
+			</Attributes>
+		</Window>
+		<Container>
+			<Contents>
+				<Container>
+					<Attributes>
+						<Property>
+							<Name>ID</Name>
+							<Value>w2995667404</Value>
+						</Property>
+						<Property>
+							<Name>Class</Name>
+							<Value>org.eclipse.swt.widgets.Shell</Value>
+						</Property>
+						<Property>
+							<Name>Type</Name>
+							<Value>SYSTEM INTERACTION</Value>
+						</Property>
+						<Property>
+							<Name>X</Name>
+							<Value>0</Value>
+						</Property>
+						<Property>
+							<Name>Y</Name>
+							<Value>0</Value>
+						</Property>
+						<Property>
+							<Name>Title</Name>
+							<Value>Table Window</Value>
+						</Property>
+						<Property>
+							<Name>enabled</Name>
+							<Value>true</Value>
+						</Property>
+						<Property>
+							<Name>text</Name>
+							<Value>Table Window</Value>
+						</Property>
+						<Property>
+							<Name>visible</Name>
+							<Value>true</Value>
+						</Property>
+					</Attributes>
+					<Contents>
+						<Container>
+							<Attributes>
+								<Property>
+									<Name>ID</Name>
+									<Value>w363301036</Value>
+								</Property>
+								<Property>
+									<Name>Class</Name>
+									<Value>org.eclipse.swt.widgets.Table</Value>
+								</Property>
+								<Property>
+									<Name>Type</Name>
+									<Value>SYSTEM INTERACTION</Value>
+								</Property>
+								<Property>
+									<Name>X</Name>
+									<Value>0</Value>
+								</Property>
+								<Property>
+									<Name>Y</Name>
+									<Value>0</Value>
+								</Property>
+								<Property>
+									<Name>Title</Name>
+									<Value></Value>
+								</Property>
+								<Property>
+									<Name>enabled</Name>
+									<Value>true</Value>
+								</Property>
+								<Property>
+									<Name>visible</Name>
+									<Value>true</Value>
+								</Property>
+							</Attributes>
+							<Contents>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w4138305244</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.TableColumn</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>First Column</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>First Column</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>100</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w203168972</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.TableColumn</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Second Column</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Second Column</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>100</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w2923564160</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.TableColumn</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Third Column</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Third Column</Value>
+										</Property>
+										<Property>
+											<Name>width</Name>
+											<Value>112</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w3755690452</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.TableItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 1.1</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 1.1</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w3755694296</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.TableItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 2.1</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 2.1</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+								<Widget>
+									<Attributes>
+										<Property>
+											<Name>ID</Name>
+											<Value>w3755698140</Value>
+										</Property>
+										<Property>
+											<Name>Class</Name>
+											<Value>org.eclipse.swt.widgets.TableItem</Value>
+										</Property>
+										<Property>
+											<Name>Type</Name>
+											<Value>SYSTEM INTERACTION</Value>
+										</Property>
+										<Property>
+											<Name>X</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Y</Name>
+											<Value>0</Value>
+										</Property>
+										<Property>
+											<Name>Title</Name>
+											<Value>Item 3.1</Value>
+										</Property>
+										<Property>
+											<Name>text</Name>
+											<Value>Item 3.1</Value>
+										</Property>
+									</Attributes>
+								</Widget>
+							</Contents>
+						</Container>
+					</Contents>
+				</Container>
+			</Contents>
+		</Container>
+	</GUI>
 </GUIStructure>
