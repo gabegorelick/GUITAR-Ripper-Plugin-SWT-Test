@@ -159,12 +159,15 @@
 		<mkdir dir="${coverage.dir}"/>
 		<mkdir dir="${cob.instrumented.dir}"/>		
 		<cobertura-instrument todir="${cob.instrumented.dir}">
-			<fileset dir="${build.dir}">
-				<include name="**/*.class"/>
-				<!-- TODO exclude everything in test package -->
-			</fileset>
-			<fileset file="${swtmodel.jar}"/>
-			<fileset file="${swtripper.jar}"/>
+			<instrumentationclasspath>
+				<pathelement location="${build.dir}"/>
+				<pathelement location="${swtmodel.jar}"/>
+				<pathelement location="${swtripper.jar}"/>
+			</instrumentationclasspath>
+			
+			<includeclasses regex=".*"/>
+			<!-- don't instrument anything in test package -->
+			<excludeclasses regex=".*\.test\..*"/>
 		</cobertura-instrument>
 	</target>
 	
