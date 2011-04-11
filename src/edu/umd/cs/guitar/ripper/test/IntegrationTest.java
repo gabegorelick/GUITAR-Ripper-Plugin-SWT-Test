@@ -1,14 +1,28 @@
 package edu.umd.cs.guitar.ripper.test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.custommonkey.xmlunit.DetailedDiff;
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.Difference;
+import org.custommonkey.xmlunit.NodeDetail;
 import org.junit.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
@@ -27,8 +41,40 @@ public class IntegrationTest {
 		new SWTRipperRunner(swtRipper).start();
 				
 		String name = "expected/" + filename + ".xml";
-		assertEquals(-1, diff(name, config.getGuiFile()));
-
+		//assertEquals(-1, diff(name, config.getGuiFile()));
+		
+		Document result = buildDoc(config.getGuiFile());
+		Document test = buildDoc(name);
+		DetailedDiff diff = new DetailedDiff(new Diff(test,result));
+		
+		List<Difference> difference = diff.getAllDifferences();
+		if (difference.size() == 0 || difference == null) {
+			assertTrue(diff.similar());
+		} else {
+			int diffcount = 0;
+			
+			for (Difference d : difference) {
+				NodeDetail nd = d.getTestNodeDetail();
+				Node parent = nd.getNode().getParentNode().getParentNode();
+				NodeList nl = parent.getChildNodes();
+				
+				for (int i = 0; i < nl.getLength(); i++) {
+					if (nl.item(i).getNodeName().equals("Name")) {
+						String text = nl.item(i).getFirstChild().getNodeValue();
+						System.out.println(text.toString());
+						
+						if (text.equals("X") || text.equals("Y")
+								|| text.equals("text")) {
+							diffcount++;
+						}
+						
+						System.out.println(d.toString());
+					}
+				}
+			}
+			assertEquals(difference.size(), diffcount);
+		}
+	
 	}
 
 	/**
@@ -92,6 +138,24 @@ public class IntegrationTest {
 			return lineNumber;
 		}
 
+	}
+	
+	private static Document buildDoc(String filename){
+		Document doc = null;
+		try {
+			File file = new File(filename);
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			doc = db.parse(file);
+			
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		return doc;
 	}
 
 	@Test
