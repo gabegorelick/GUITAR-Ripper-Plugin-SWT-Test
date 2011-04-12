@@ -41,9 +41,12 @@ public class IntegrationTest {
 		
 		Document actual;
 		Document expected;
-		try {			
-			actual = XMLUnit.buildTestDocument(new InputSource(new FileReader(name)));
-			expected = XMLUnit.buildControlDocument(new InputSource(new FileReader(config.getGuiFile())));
+		try {
+			// also called testDoc by XMLUnit
+			expected = XMLUnit.buildTestDocument(new InputSource(new FileReader(name)));
+			
+			// also called controlDoc by XMLUnit
+			actual = XMLUnit.buildControlDocument(new InputSource(new FileReader(config.getGuiFile())));
 		} catch (SAXException e) {
 			// so calling methods don't have to declare this as checked exception
 			throw new AssertionError(e);

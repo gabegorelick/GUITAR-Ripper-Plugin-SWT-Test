@@ -35,7 +35,7 @@
 						</Property>
 						<Property>
 							<Name>Type</Name>
-							<Value>SYSTEM INTERACTION</Value>
+							<Value>TERMINAL</Value>
 						</Property>
 						<Property>
 							<Name>X</Name>
@@ -101,7 +101,7 @@
 						</Property>
 						<Property>
 							<Name>Type</Name>
-							<Value>SYSTEM INTERACTION</Value>
+							<Value>TERMINAL</Value>
 						</Property>
 						<Property>
 							<Name>X</Name>

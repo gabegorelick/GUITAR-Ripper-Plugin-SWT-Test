@@ -19,6 +19,7 @@ import org.junit.Test;
 import edu.umd.cs.guitar.event.SWTEventHandler;
 import edu.umd.cs.guitar.model.GComponent;
 import edu.umd.cs.guitar.model.GUITARConstants;
+import edu.umd.cs.guitar.model.SWTWindow;
 import edu.umd.cs.guitar.model.swtwidgets.SWTComposite;
 import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
 
@@ -151,10 +152,11 @@ public class SWTCompositeTest {
 	@Test
 	public void testGetTypeVal() {
 		Shell shell = new Shell(display);
+		SWTWindow window = new SWTWindow(shell);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
 		assertEquals(GUITARConstants.SYSTEM_INTERACTION, 
-				factory.newSWTComposite(spinner, null).getTypeVal());
+				factory.newSWTComposite(spinner, window).getTypeVal());
 	}
 	
 	@Test
