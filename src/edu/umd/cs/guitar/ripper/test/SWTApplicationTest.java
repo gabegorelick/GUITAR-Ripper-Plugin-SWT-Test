@@ -35,19 +35,15 @@ public class SWTApplicationTest {
 		config.setMainClass(SWTTwoWindowsApp.class.getName());
 		SWTRipper ripper = new SWTRipper(config, Thread.currentThread());
 		
-		
-		Display display = new Display();
+		Display display = Display.findDisplay(Thread.currentThread());
 		Shell shell1 = new Shell(display);
 		Shell shell2 = new Shell(display);
+		shell2.setVisible(true);
+		shell1.setVisible(true);
+		
 		SWTApplication swtapp = ripper.getMonitor().getApplication();
-		try {
-			swtapp.startGUI();
-			assertEquals(2,swtapp.getAllWindow().size());
-		} catch (SWTApplicationStartException e) {
-			//This will get thrown
-		}
-		
-		//new SWTRipperRunner(ripper).start();
-		
+		swtapp.connect();
+		assertEquals(2,swtapp.getAllWindow().size());
+			
 	}
 }
