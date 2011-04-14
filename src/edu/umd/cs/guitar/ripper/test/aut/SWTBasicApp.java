@@ -54,7 +54,7 @@ public class SWTBasicApp {
 				false, 2, 1);
 		b.setLayoutData(data);
 
-		Spinner spinner = new Spinner(shell, SWT.READ_ONLY);
+		Spinner spinner = new Spinner(shell, SWT.READ_ONLY); // TODO add event for spinners
 		spinner.setMinimum(0);
 		spinner.setMaximum(1000);
 		spinner.setSelection(500);
@@ -72,9 +72,9 @@ public class SWTBasicApp {
 		composite.setLayoutData(gridData);
 		composite.setLayout(new GridLayout(1, false));
 		
-		
-		Text text = new Text(composite, SWT.NONE);
-		text.setText("Testing");
+		// test that SWTEditableTextAction doesn't mark read-only Texts as replayable
+		Text text = new Text(composite, SWT.READ_ONLY);
+		text.setText("Read only");
 		gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 		text.setLayoutData(gridData);
 		

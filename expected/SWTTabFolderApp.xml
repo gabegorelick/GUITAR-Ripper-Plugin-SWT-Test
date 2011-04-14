@@ -274,6 +274,10 @@
 															<Value>29</Value>
 														</Property>
 														<Property>
+															<Name>ReplayableAction</Name>
+															<Value>edu.umd.cs.guitar.event.SWTAction</Value>
+														</Property>
+														<Property>
 															<Name>Title</Name>
 															<Value></Value>
 														</Property>
@@ -424,6 +428,11 @@
 														<Property>
 															<Name>Y</Name>
 															<Value>200</Value>
+														</Property>
+														<Property>
+															<Name>ReplayableAction</Name>
+															<Value>edu.umd.cs.guitar.event.SWTEditableTextAction
+															</Value>
 														</Property>
 														<Property>
 															<Name>Title</Name>

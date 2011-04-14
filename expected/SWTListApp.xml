@@ -130,6 +130,10 @@
 									<Value>30</Value>
 								</Property>
 								<Property>
+									<Name>ReplayableAction</Name>
+									<Value>edu.umd.cs.guitar.event.SWTAction</Value>
+								</Property>
+								<Property>
 									<Name>Title</Name>
 									<Value></Value>
 								</Property>

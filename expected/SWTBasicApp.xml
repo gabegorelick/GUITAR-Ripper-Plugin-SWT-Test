@@ -372,7 +372,7 @@
 										</Property>
 										<Property>
 											<Name>editable</Name>
-											<Value>true</Value>
+											<Value>false</Value>
 										</Property>
 										<Property>
 											<Name>enabled</Name>
@@ -380,7 +380,7 @@
 										</Property>
 										<Property>
 											<Name>text</Name>
-											<Value>Testing</Value>
+											<Value>Read only</Value>
 										</Property>
 										<Property>
 											<Name>visible</Name>
@@ -409,6 +409,10 @@
 										<Property>
 											<Name>Y</Name>
 											<Value>163</Value>
+										</Property>
+										<Property>
+											<Name>ReplayableAction</Name>
+											<Value>edu.umd.cs.guitar.event.SWTEditableTextAction</Value>
 										</Property>
 										<Property>
 											<Name>Title</Name>
@@ -495,6 +499,10 @@
 										<Property>
 											<Name>Y</Name>
 											<Value>216</Value>
+										</Property>
+										<Property>
+											<Name>ReplayableAction</Name>
+											<Value>edu.umd.cs.guitar.event.SWTEditableTextAction</Value>
 										</Property>
 										<Property>
 											<Name>Title</Name>

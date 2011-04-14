@@ -86,6 +86,10 @@
 									<Value>0</Value>
 								</Property>
 								<Property>
+									<Name>ReplayableAction</Name>
+									<Value>edu.umd.cs.guitar.event.SWTEditableTextAction</Value>
+								</Property>
+								<Property>
 									<Name>Title</Name>
 									<Value></Value>
 								</Property>

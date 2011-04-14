@@ -95,7 +95,7 @@ public class IntegrationTest {
 		});
 		
 		for (Object o : diff.getAllDifferences()) {
-			GUITARLog.log.warn(o);
+			GUITARLog.log.warn(o); // TODO get line numbers
 		}
 		
 		assertTrue(diff.similar());	
