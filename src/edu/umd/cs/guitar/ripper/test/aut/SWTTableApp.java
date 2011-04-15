@@ -28,9 +28,9 @@ public class SWTTableApp {
 		tc1.setText("First Column");
 		tc2.setText("Second Column");
 		tc3.setText("Third Column");
-		tc1.setWidth(100);
-		tc2.setWidth(100);
-		tc3.setWidth(100);
+		tc1.setWidth(120);
+		tc2.setWidth(120);
+		tc3.setWidth(120);
 		table.setHeaderVisible(true);
 
 		TableItem item1 = new TableItem(table, SWT.NONE);
@@ -39,8 +39,9 @@ public class SWTTableApp {
 		item2.setText(new String[] { "Item 2.1", "Item 2.2", "Item 2.3" });
 		TableItem item3 = new TableItem(table, SWT.NONE);
 		item3.setText(new String[] { "Item 3.1", "Item 3.2", "Item 3.3" });
-		
+						
 		shell.open();
+		
 		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch())
 				display.sleep();

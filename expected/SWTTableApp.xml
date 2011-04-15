@@ -135,7 +135,7 @@
 										</Property>
 										<Property>
 											<Name>width</Name>
-											<Value>100</Value>
+											<Value>120</Value>
 										</Property>
 									</Attributes>
 								</Widget>
@@ -171,7 +171,7 @@
 										</Property>
 										<Property>
 											<Name>width</Name>
-											<Value>100</Value>
+											<Value>120</Value>
 										</Property>
 									</Attributes>
 								</Widget>
@@ -207,7 +207,7 @@
 										</Property>
 										<Property>
 											<Name>width</Name>
-											<Value>112</Value>
+											<Value>120</Value>
 										</Property>
 									</Attributes>
 								</Widget>
