@@ -70,14 +70,15 @@ public class IntegrationTest {
 				try {
 					Node valueNode = actualNodeDetail.getNode().getParentNode();
 					Node nameNode = valueNode.getPreviousSibling().getPreviousSibling();
-					Node xyNode = nameNode.getFirstChild();
-					String xy = xyNode.getTextContent();
+					Node propNode = nameNode.getFirstChild();
+					String prop = propNode.getTextContent();
 					
-					if (xy.equals(GUITARConstants.X_TAG_NAME)
-							|| xy.equals(GUITARConstants.Y_TAG_NAME)) {
+					if (prop.equals(GUITARConstants.X_TAG_NAME)
+							|| prop.equals(GUITARConstants.Y_TAG_NAME)
+							|| prop.equals("width")) {
 						
 						StringBuilder builder = new StringBuilder();
-						builder.append("Ignoring bad ").append(xy);
+						builder.append("Ignoring bad ").append(prop);
 						builder.append(" value (expected ");
 						builder.append(difference.getControlNodeDetail().getValue());
 						builder.append(" but got ");
