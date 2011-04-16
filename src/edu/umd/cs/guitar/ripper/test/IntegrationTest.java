@@ -35,17 +35,18 @@ public class IntegrationTest {
 		final SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
 		new SWTRipperRunner(swtRipper).start();
 				
-		String name = "expected/" + filename + ".xml";
+		String expectedFileName = "expected/" + filename + ".xml";
 		
 		XMLUnit.setNormalizeWhitespace(true);
 		
 		Document actual;
 		Document expected;
 		try {
-			// also called testDoc by XMLUnit
-			expected = XMLUnit.buildTestDocument(new InputSource(new FileReader(name)));
 			
 			// also called controlDoc by XMLUnit
+			expected = XMLUnit.buildTestDocument(new InputSource(new FileReader(expectedFileName)));
+			
+			// also called expectedDoc by XMLUnit
 			actual = XMLUnit.buildControlDocument(new InputSource(new FileReader(config.getGuiFile())));
 		} catch (SAXException e) {
 			// so calling methods don't have to declare this as checked exception
@@ -65,6 +66,7 @@ public class IntegrationTest {
 			@Override
 			public int differenceFound(Difference difference) {				
 				NodeDetail actualNodeDetail = difference.getTestNodeDetail();
+				
 				try {
 					Node valueNode = actualNodeDetail.getNode().getParentNode();
 					Node nameNode = valueNode.getPreviousSibling().getPreviousSibling();
@@ -86,19 +88,19 @@ public class IntegrationTest {
 						return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
 					}
 				} catch (NullPointerException e) {
-					GUITARLog.log.warn("Unexpected GUI structure ", e);
+					GUITARLog.log.warn("Unexpected GUI structure ", e);									
 					return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
-				}
+				} 
 				
 				return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 			}
 		});
 		
 		for (Object o : diff.getAllDifferences()) {
-			GUITARLog.log.warn(o); // TODO get line numbers
+			GUITARLog.log.warn(o);
 		}
 		
-		assertTrue(diff.similar());	
+		assertTrue(diff.similar());
 	}
 	
 	@Test
@@ -145,12 +147,7 @@ public class IntegrationTest {
 	public void testWindowApp() {
 		ripAndDiff("SWTWindowApp");
 	}
-	
-//	@Test
-//	public void testMultiWindowDynamicApp() {
-//		ripAndDiff("SWTMultiWindowDynamicApp");
-//	}
-	
+		
 	@Test
 	public void testTabFolderApp() {
 		ripAndDiff("SWTTabFolderApp");
@@ -170,5 +167,10 @@ public class IntegrationTest {
 	public void testToolbarApp() {
 		ripAndDiff("SWTToolbarApp");
 	}
-
+	
+	@Test
+	public void testMultiWindowDynamicApp() {
+		ripAndDiff("SWTMultiWindowDynamicApp");
+	}
+	
 }
