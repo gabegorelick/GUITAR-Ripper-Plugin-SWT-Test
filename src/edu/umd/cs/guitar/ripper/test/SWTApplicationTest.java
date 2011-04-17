@@ -31,16 +31,6 @@ public class SWTApplicationTest {
 		display.dispose();
 	}
 	
-	/**
-	 * Test that the application is set to run on the <code>main</code> thread.
-	 */
-	@Test
-	public void testAppThread() {
-		SWTApplication swtApp = new SWTApplication(TEST_CLASS_NAME, Thread.currentThread());
-		Thread thr = swtApp.getAppThread();
-		assertEquals("main", thr.getName());
-	}
-	
 	@Test
 	public void testGetAllWindow() {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
