@@ -18,9 +18,9 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import edu.umd.cs.guitar.model.GUITARConstants;
+import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
-import edu.umd.cs.guitar.ripper.SWTRipperRunner;
 import edu.umd.cs.guitar.util.GUITARLog;
 
 public class IntegrationTest {
@@ -33,7 +33,7 @@ public class IntegrationTest {
 		config.setMainClass(fullName);
 		
 		final SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTRipperRunner(swtRipper).start();
+		new SWTApplicationRunner(swtRipper).run();
 				
 		String expectedFileName = "expected/" + filename + ".xml";
 		

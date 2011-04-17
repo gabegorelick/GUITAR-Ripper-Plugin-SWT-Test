@@ -4,9 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
-import edu.umd.cs.guitar.ripper.SWTRipperRunner;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 
 public class SWTRipperConfigurationTest {
@@ -28,8 +28,8 @@ public class SWTRipperConfigurationTest {
 	@Test
 	public void testSetInitialWaitingTime() {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setInitialWaitingTime(100);
-		assertEquals(100, config.getInitialWaitingTime());
+		config.setInitialWaitTime(100);
+		assertEquals(100, config.getInitialWaitTime());
 	}
 	
 	@Test
@@ -90,7 +90,7 @@ public class SWTRipperConfigurationTest {
 		config.setConfigFile("testconfig.xml");
 
 		SWTRipper swtRipper = new SWTRipper(config);
-		new SWTRipperRunner(swtRipper).start();
+		new SWTApplicationRunner(swtRipper).run();
 		
 		// TODO finish
 		
