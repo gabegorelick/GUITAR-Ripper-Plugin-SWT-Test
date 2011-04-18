@@ -275,7 +275,7 @@
 														</Property>
 														<Property>
 															<Name>ReplayableAction</Name>
-															<Value>edu.umd.cs.guitar.event.SWTAction</Value>
+															<Value>edu.umd.cs.guitar.event.SWTDefaultAction</Value>
 														</Property>
 														<Property>
 															<Name>Title</Name>
