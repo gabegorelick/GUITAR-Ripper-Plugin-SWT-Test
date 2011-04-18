@@ -31,14 +31,7 @@ public class SWTRipperConfigurationTest {
 		config.setInitialWaitTime(100);
 		assertEquals(100, config.getInitialWaitTime());
 	}
-	
-	@Test
-	public void testSetCustomizedEventList() {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setCustomizedEventList("foo");
-		assertEquals("foo", config.getCustomizedEventList());
-	}
-	
+		
 	/**
 	 * Test that arguments are correctly passed to the application under test.
 	 */
