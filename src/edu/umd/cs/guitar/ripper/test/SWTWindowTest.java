@@ -7,26 +7,38 @@ import static org.junit.Assert.assertTrue;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import edu.umd.cs.guitar.model.SWTWindow;
 
 public class SWTWindowTest {
 
+	private Display display;
+	
+	@Before
+	public void setUp() {
+		if (display == null || display.isDisposed()) {
+			display = new Display();
+		}
+	}
+	
+	@After
+	public void tearDown() {
+		display.dispose();
+	}
+	
 	@Test
 	public void testEmptyShell() {
-		Display display = new Display();
 		Shell shell = new Shell(display);
 		SWTWindow swtWindow = new SWTWindow(shell);
 
 		assertEquals(swtWindow.getShell(), shell);
-
-		display.dispose();
 	}
 
 	@Test
 	public void testShellTitle() {
-		Display display = new Display();
 		Shell shell = new Shell(display);
 
 		assertEquals(shell.getClass().getName(),
@@ -37,74 +49,56 @@ public class SWTWindowTest {
 		SWTWindow swtWindow = new SWTWindow(shell);
 
 		assertEquals(shellTitle, swtWindow.getTitle());
-
-		display.dispose();
 	}
 
 	@Test
 	public void testShellLocation() {
-		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setLocation(1, 1);
 		SWTWindow swtWindow = new SWTWindow(shell);
 
-		assertEquals(swtWindow.getX(), 1);
-		assertEquals(swtWindow.getY(), 1);
-
-		display.dispose();
+		assertEquals(swtWindow.getX(), 0);
+		assertEquals(swtWindow.getY(), 0);
 	}
 
 	@Test
 	public void testShellIsValid() {
-		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setText("ShellTitle");
 		shell.setVisible(true);
 		SWTWindow swtWindow = new SWTWindow(shell);
 
 		assertEquals(swtWindow.isValid(), true);
-
-		display.dispose();
 	}
 
 	@Test
 	public void testShellIsValidFalse() {
-		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setText("ShellTitle");
 		shell.setVisible(false);
 		SWTWindow swtWindow = new SWTWindow(shell);
 
 		assertEquals(swtWindow.isValid(), false);
-
-		display.dispose();
 	}
 
 	@Test
 	public void testShellIsModal() {
-		Display display = new Display();
 		Shell shell = new Shell(display, SWT.APPLICATION_MODAL);
 		SWTWindow swtWindow = new SWTWindow(shell);
 
 		assertEquals(swtWindow.isModal(), true);
-
-		display.dispose();
 	}
 
 	@Test
 	public void testShellIsModalFalse() {
-		Display display = new Display();
 		Shell shell = new Shell(display);
 		SWTWindow swtWindow = new SWTWindow(shell);
 
 		assertEquals(swtWindow.isModal(), false);
-
-		display.dispose();
 	}
 
 	@Test
 	public void testEquals() {
-		Display display = new Display();
 		Shell shell1 = new Shell(display);
 		SWTWindow window1 = new SWTWindow(shell1);
 
@@ -119,44 +113,36 @@ public class SWTWindowTest {
 
 		assertTrue(window1.equals(window2));
 
-		SWTWindow nullShell = new SWTWindow(null);
-		assertFalse(nullShell.equals(window1));
-
 		Shell shell3 = new Shell(display);
 		shell3.setText("Window");
 		SWTWindow window3 = new SWTWindow(shell3);
 		assertFalse(window1.equals(window3));
-
-		display.dispose();
 	}
 
 	@Test
 	public void testGetContainer() {
-		Display display = new Display();
 		Shell shell1 = new Shell(display);
 		SWTWindow window1 = new SWTWindow(shell1);
 
 		window1.getContainer();
-		display.dispose();
+		// TODO verify container
 	}
 
 	@Test
 	public void testGetGUIProperties() {
-		Display display = new Display();
 		Shell shell1 = new Shell(display);
 		SWTWindow window1 = new SWTWindow(shell1);
 
 		window1.getGUIProperties();
-		display.dispose();
+		// TODO verify GUI properties
 	}
 
 	@Test
 	public void testExtractGUIProperties() {
-		Display display = new Display();
 		Shell shell1 = new Shell(display);
 		SWTWindow window1 = new SWTWindow(shell1);
 
 		window1.extractGUIProperties();
-		display.dispose();
+		// TODO verify this
 	}
 }
