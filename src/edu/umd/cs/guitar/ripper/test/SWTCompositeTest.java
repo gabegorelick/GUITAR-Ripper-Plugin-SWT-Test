@@ -22,8 +22,7 @@ import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
 public class SWTCompositeTest {
 
 	private Display display;
-	private SWTWidgetFactory factory = SWTWidgetFactory.newInstance();
-	
+		
 	@Before
 	public void setUp() {
 		if (display == null || display.isDisposed()) {
@@ -37,11 +36,11 @@ public class SWTCompositeTest {
 	}
 	
 	@Test
-	public void testGetComposite() {
+	public void testGetWidget() {
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 				
-		SWTComposite comp = factory.newSWTComposite(spinner, null);
+		SWTComposite comp = (SWTComposite) SWTWidgetFactory.INSTANCE.newSWTWidget(spinner, null);
 		assertEquals(spinner, comp.getWidget());
 	}
 	
@@ -52,47 +51,53 @@ public class SWTCompositeTest {
 	
 	@Test
 	public void testGetX() {
+		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
-				
-		assertEquals(0, factory.newSWTComposite(null, null).getX());
-		assertEquals(0, factory.newSWTComposite(spinner, null).getX());
+		
+		assertEquals(0, factory.newSWTWidget(spinner, null).getX());
 				
 		spinner.setBounds(85, 110, 80, 30);
-		assertEquals(85, factory.newSWTControl(spinner, null).getX());
+		assertEquals(85, factory.newSWTWidget(spinner, null).getX());
 	}
 	
 	@Test
 	public void testGetY() {
+		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
-		assertEquals(0, factory.newSWTComposite(null, null).getY());
-		assertEquals(0, factory.newSWTComposite(spinner, null).getY());
+		assertEquals(0, factory.newSWTWidget(spinner, null).getY());
 				
 		spinner.setBounds(85, 110, 80, 30);
-		assertEquals(110, factory.newSWTControl(spinner, null).getY());
+		assertEquals(110, factory.newSWTWidget(spinner, null).getY());
 	}
 	
 	@Test
 	public void testGetGUIProperties() {
+		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 				
-		factory.newSWTComposite(spinner, null).getGUIProperties();
+		factory.newSWTWidget(spinner, null).getGUIProperties();
 		
 		shell.setImage(new Image(display, 20, 20));
-		factory.newSWTComposite(spinner, null).getGUIProperties();
+		factory.newSWTWidget(spinner, null).getGUIProperties();
 		
 		// TODO compare output instead of just making sure it doesn't error
 	}
 	
 	@Test
 	public void testGetClassVal() {
+		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
-		assertEquals(spinner.getClass().getName(), factory.newSWTComposite(spinner, null).getClassVal());
+		assertEquals(spinner.getClass().getName(), factory.newSWTWidget(spinner, null).getClassVal());
 	}
 	
 	@Test
@@ -118,40 +123,46 @@ public class SWTCompositeTest {
 	
 	@Test
 	public void testGetParent() {
+		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
-		SWTComposite parent = factory.newSWTComposite(spinner, null).getParent();
+		SWTComposite parent = (SWTComposite) factory.newSWTWidget(spinner, null).getParent();
 		assertEquals(shell, parent.getWidget());
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testIsEnable() {
+		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
-		assertTrue(factory.newSWTComposite(spinner, null).isEnable());
+		assertTrue(factory.newSWTWidget(spinner, null).isEnable());
 		
 		spinner.setEnabled(false);
-		assertFalse(factory.newSWTComposite(spinner, null).isEnable());
+		assertFalse(factory.newSWTWidget(spinner, null).isEnable());
 		
 		spinner.setEnabled(true);
-		assertTrue(factory.newSWTComposite(spinner, null).isEnable());
+		assertTrue(factory.newSWTWidget(spinner, null).isEnable());
 		
 		// make sure disabling parent disables child
 		shell.setEnabled(false);
-		assertFalse(factory.newSWTComposite(spinner, null).isEnable());
+		assertFalse(factory.newSWTWidget(spinner, null).isEnable());
 	}
 	
 	@Test
 	public void testGetTypeVal() {
+		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		
 		Shell shell = new Shell(display);
 		SWTWindow window = new SWTWindow(shell);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
 		assertEquals(GUITARConstants.SYSTEM_INTERACTION, 
-				factory.newSWTComposite(spinner, window).getTypeVal());
+				factory.newSWTWidget(spinner, window).getTypeVal());
 	}
 	
 	@Test

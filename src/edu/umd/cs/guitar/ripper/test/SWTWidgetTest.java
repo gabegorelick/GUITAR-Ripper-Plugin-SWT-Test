@@ -28,7 +28,7 @@ public class SWTWidgetTest {
 	
 	@Before
 	public void setUp() {
-		factory = SWTWidgetFactory.newInstance();
+		factory = SWTWidgetFactory.INSTANCE;
 		if (display == null || display.isDisposed()) {
 			display = new Display();
 		}

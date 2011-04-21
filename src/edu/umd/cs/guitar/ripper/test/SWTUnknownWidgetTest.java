@@ -18,7 +18,7 @@ import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
 public class SWTUnknownWidgetTest {
 	
 	private Display display;
-	private SWTWidgetFactory factory = SWTWidgetFactory.newInstance();
+	private SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
 	
 	@Before
 	public void setUp() {
