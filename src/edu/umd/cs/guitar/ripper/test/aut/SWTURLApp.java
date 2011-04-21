@@ -5,8 +5,6 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.browser.*;
-import org.eclipse.swt.widgets.Composite;
 
 public class SWTURLApp {
 
@@ -33,7 +31,6 @@ public class SWTURLApp {
 	}
 
 	public static void main(String[] args) {
-		String url = "";
 		Display display = new Display();
 		new SWTURLApp(display);
 		display.dispose();
