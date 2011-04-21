@@ -89,7 +89,7 @@ public class IntegrationTest {
 						return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
 					}
 				} catch (NullPointerException e) {
-					GUITARLog.log.warn("Unexpected GUI structure ", e);									
+					GUITARLog.log.warn("Unexpected GUI structure");									
 					return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
 				} 
 				
