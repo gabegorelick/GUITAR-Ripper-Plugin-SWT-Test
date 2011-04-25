@@ -42,7 +42,7 @@
 	</path>
 	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/> 
 	
-	<!-- Use correct swt jar depending on operating system -->
+	<!-- Use correct swt jar depending on operating system and JVM architecture -->
 	<condition property="swt.jar" value="swt-linux.jar">
 		<and>
 		    <os family="unix"/>
@@ -54,10 +54,17 @@
 	<condition property="swt.jar" value="swt-mac.jar">
 		<os family="mac"/>
 	</condition>
+	<condition property="swt.jar" value="swt-windows-x86-64.jar">
+		<and>
+			<os family="windows"/>
+			<!-- this checks JVM architecture, which is all we care about anyway -->
+			<os arch="amd64"/>
+		</and>
+	</condition>
 	<condition property="swt.jar" value="swt-windows.jar">
 		<os family="windows"/>
 	</condition>
-		
+			
     <path id="SWTRipperTest.classpath">
     	<!-- TODO can we just specify everything in lib but swt? -->
         <pathelement location="${build.dir}"/>
@@ -77,6 +84,8 @@
     </path>
     
     <target name="init">
+    	<echo message="Using SWT jar ${swt.jar}"/>
+    	
         <mkdir dir="${build.dir}"/>
         <copy includeemptydirs="false" todir="${build.dir}">
             <fileset dir="${src.dir}">
