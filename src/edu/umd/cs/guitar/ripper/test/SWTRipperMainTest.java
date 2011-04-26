@@ -12,8 +12,9 @@ public class SWTRipperMainTest {
 		// TODO test output by redirecting stdout?
 	}
 
-	@Test(expected = NullPointerException.class) // TODO make this fail with ClassNotFound
+	@Test
 	public void testMain() {
-		SWTRipperMain.main(new String[] {"-c", "NOSUCHCLASS"});
+		SWTRipperMain.main(new String[] { "-c", "NOSUCHCLASS" });
+		// TODO how do we test this if it handles the exception itself?
 	}
 }

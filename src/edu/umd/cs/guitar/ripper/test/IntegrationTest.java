@@ -1,33 +1,27 @@
 package edu.umd.cs.guitar.ripper.test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.Difference;
+import org.custommonkey.xmlunit.DifferenceListener;
 import org.custommonkey.xmlunit.NodeDetail;
+import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import edu.umd.cs.guitar.model.GUITARConstants;
+import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
-import edu.umd.cs.guitar.ripper.SWTRipperRunner;
-
+import edu.umd.cs.guitar.util.GUITARLog;
 
 public class IntegrationTest {
 
@@ -39,120 +33,75 @@ public class IntegrationTest {
 		config.setMainClass(fullName);
 		
 		final SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTRipperRunner(swtRipper).start();
+		new SWTApplicationRunner(swtRipper).run();
 				
-		String name = "expected/" + filename + ".xml";
-		//assertEquals(-1, diff(name, config.getGuiFile()));
+		String expectedFileName = "expected/" + filename + ".xml";
 		
-		Document result = buildDoc(config.getGuiFile());
-		Document test = buildDoc(name);
-		DetailedDiff diff = new DetailedDiff(new Diff(test,result));
+		XMLUnit.setNormalizeWhitespace(true);
 		
-		List<Difference> difference = diff.getAllDifferences();
-		if(difference.size() == 0 || difference == null){
-			assertTrue(diff.similar());
-		}
-		else{
-			int diffcount = 0;
-			for(Difference d: difference){
-				NodeDetail nd = d.getTestNodeDetail();
-				Node parent = nd.getNode().getParentNode().getParentNode();
-				NodeList nl = parent.getChildNodes();
-				for(int i = 0; i < nl.getLength(); i++){
-					if(nl.item(i).getNodeName().equals("Name")){
-						String text = nl.item(i).getFirstChild().getNodeValue();
-						System.out.println(text.toString()); ////
-						if(text.equals("X") || text.equals("Y") || text.equals("text") ){
-							diffcount++;
-						}
-						System.out.println(d.toString()); ////
-					}
-				}
-			}
-			assertEquals(difference.size(),diffcount);
-		}
-				
-	}
-
-	/**
-	 * Reads and compares two files for any differences, returns the line number
-	 * if different, -1 if the files are the same.
-	 */
-	private static int diff(String expectedFile, String actualFile) {
-		File expected = new File(expectedFile);
-		File actual = new File(actualFile);
-		BufferedReader expectedReader = null;
-		BufferedReader actualReader = null;
-
+		Document actual;
+		Document expected;
 		try {
-			expectedReader = new BufferedReader(new FileReader(expected));
-			actualReader = new BufferedReader(new FileReader(actual));
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
-
-		int lineNumber = 1;
-		String expectedString;
-		String actualString;
-		
-		String lastLine = null;
-		
-		boolean equal = true;
-		try { // TODO this doesn't work if one of the files is empty
-			while (expectedReader.ready()) {
-				expectedString = expectedReader.readLine();
-				if (actualReader.ready()) {
-					actualString = actualReader.readLine();
-				} else {
-					equal = false;
-					break;
-				}
-				
-				// ignore if this is X or Y value
-				// TODO use XMLUnit to do this
-				if (!expectedString.equals(actualString)) {
-					if (lastLine != null 
-							&& !lastLine.contains("<Name>X</Name>")
-							&& !lastLine.contains("<Name>Y</Name>")) {
-					
-						System.err.println("Failed at line " + lineNumber);
-						System.err.println("Expected: " + expectedString);
-						System.err.println("Actual: " + actualString);
-						equal = false;
-						break;
-					}
-				}
-				lineNumber++;
-				lastLine = actualString;
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		if (equal) {
-			return -1;
-		} else {
-			return lineNumber;
-		}
-
-	}
-	
-	private static Document buildDoc(String filename){
-		Document doc = null;
-		try {
-			File file = new File(filename);
-			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			DocumentBuilder db = dbf.newDocumentBuilder();
-			doc = db.parse(file);
 			
+			// also called controlDoc by XMLUnit
+			expected = XMLUnit.buildTestDocument(new InputSource(new FileReader(expectedFileName)));
+			
+			// also called expectedDoc by XMLUnit
+			actual = XMLUnit.buildControlDocument(new InputSource(new FileReader(config.getGuiFile())));
 		} catch (SAXException e) {
-			e.printStackTrace();
+			// so calling methods don't have to declare this as checked exception
+			throw new AssertionError(e);
 		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			throw new AssertionError(e);
 		}
-		return doc;
+		
+		DetailedDiff diff = new DetailedDiff(new Diff(expected, actual));
+		
+		diff.overrideDifferenceListener(new DifferenceListener() {
+			@Override
+			public void skippedComparison(Node control, Node test) {
+				// do nothing				
+			}
+			
+			@Override
+			public int differenceFound(Difference difference) {				
+				NodeDetail actualNodeDetail = difference.getTestNodeDetail();
+				
+				try {
+					Node valueNode = actualNodeDetail.getNode().getParentNode();
+					Node nameNode = valueNode.getPreviousSibling().getPreviousSibling();
+					Node propNode = nameNode.getFirstChild();
+					String prop = propNode.getTextContent();
+					
+					if (prop.equals(GUITARConstants.X_TAG_NAME)
+							|| prop.equals(GUITARConstants.Y_TAG_NAME)
+							|| prop.equals("width")) {
+						
+						StringBuilder builder = new StringBuilder();
+						builder.append("Ignoring bad ").append(prop);
+						builder.append(" value (expected ");
+						builder.append(difference.getControlNodeDetail().getValue());
+						builder.append(" but got ");
+						builder.append(actualNodeDetail.getValue()).append(")");
+						
+						GUITARLog.log.info(builder);
+
+						return DifferenceListener.RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
+					}
+				} catch (NullPointerException e) {
+					GUITARLog.log.warn("Unexpected GUI structure");									
+					return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
+				} 
+				
+				return DifferenceListener.RETURN_ACCEPT_DIFFERENCE;
+			}
+		});
+		
+		for (Object o : diff.getAllDifferences()) {
+			GUITARLog.log.warn(o);
+		}
+		
+		assertTrue(diff.similar());
 	}
 
 	@Test
@@ -199,10 +148,30 @@ public class IntegrationTest {
 	public void testWindowApp() {
 		ripAndDiff("SWTWindowApp");
 	}
+		
+	@Test
+	public void testTabFolderApp() {
+		ripAndDiff("SWTTabFolderApp");
+	}
 	
-//	@Test
-//	public void testMultiWindowDynamicApp() {
-//		ripAndDiff("SWTMultiWindowDynamicApp");
-//	}
-
+	@Test
+	public void testTableApp() {
+		ripAndDiff("SWTTableApp");
+	}
+	
+	@Test
+	public void testTreeApp() {
+		ripAndDiff("SWTTreeApp");
+	}
+	
+	@Test
+	public void testToolbarApp() {
+		ripAndDiff("SWTToolbarApp");
+	}
+	
+	@Test
+	public void testMultiWindowDynamicApp() {
+		ripAndDiff("SWTMultiWindowDynamicApp");
+	}
+	
 }

@@ -1,5 +1,7 @@
 package edu.umd.cs.guitar.ripper.test;
 
+import java.net.URL;
+
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.spi.StringArrayOptionHandler;
@@ -20,15 +22,20 @@ public class CommandLineRipper {
         CmdLineParser parser = new CmdLineParser(configuration);
         //CmdLineParser.registerHandler(String[].class, StringArrayOptionHandler.class);
         
-        args = new String[] {"-c","/aut/SWTBasicApp"};
+        args = new String[] {"-c","edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp","-u",
+        		"file:/GUITAR-Ripper-Plugin-SWT-Test/","file:/GUITAR-Ripper-Plugin-SWT-Test/testfiles/"};
         
         try {
         	
             parser.parseArgument(args);
                         
             SWTRipper swtRipper = new SWTRipper(configuration, Thread.currentThread());
-            //SWTRipperRunner runner = new SWTRipperRunner(swtRipper);
             new SWTApplicationRunner(swtRipper).run();
+            URL[] urls = configuration.getUrls();
+            for(URL url: urls){
+    			System.out.println(url.toString());
+    		}
+            
         } catch (CmdLineException e) {
             System.err.println(e.getMessage());
             System.err.println();

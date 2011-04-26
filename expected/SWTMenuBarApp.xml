@@ -27,7 +27,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w1727524972</Value>
+                            <Value>w1819273420</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -44,6 +44,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>Window</Value>
                         </Property>
                         <Property>
                             <Name>enabled</Name>
@@ -63,7 +67,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w3619045888</Value>
+    <Value>w1035347552</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -82,6 +86,10 @@
     <Value>0</Value>
 </Property>
 <Property>
+    <Name>Title</Name>
+    <Value></Value>
+</Property>
+<Property>
     <Name>enabled</Name>
     <Value>true</Value>
 </Property>
@@ -95,7 +103,7 @@
     <Attributes>
         <Property>
             <Name>ID</Name>
-            <Value>w1036879524</Value>
+            <Value>w197569292</Value>
         </Property>
         <Property>
             <Name>Class</Name>
@@ -112,6 +120,10 @@
         <Property>
             <Name>Y</Name>
             <Value>0</Value>
+        </Property>
+        <Property>
+            <Name>Title</Name>
+            <Value>&amp;File</Value>
         </Property>
         <Property>
             <Name>accelerator</Name>
@@ -131,7 +143,7 @@
             <Attributes>
                 <Property>
                     <Name>ID</Name>
-                    <Value>w3748701072</Value>
+                    <Value>w3568906720</Value>
                 </Property>
                 <Property>
                     <Name>Class</Name>
@@ -150,6 +162,10 @@
                     <Value>0</Value>
                 </Property>
                 <Property>
+                    <Name>Title</Name>
+                    <Value></Value>
+                </Property>
+                <Property>
                     <Name>enabled</Name>
                     <Value>true</Value>
                 </Property>
@@ -163,7 +179,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w485566340</Value>
+                            <Value>w2659353236</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -180,6 +196,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value>&amp;Exit</Value>
                         </Property>
                         <Property>
                             <Name>accelerator</Name>

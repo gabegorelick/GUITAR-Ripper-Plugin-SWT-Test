@@ -31,7 +31,7 @@
                     <Attributes>
                         <Property>
                             <Name>ID</Name>
-                            <Value>w2994222756</Value>
+                            <Value>w1311575748</Value>
                         </Property>
                         <Property>
                             <Name>Class</Name>
@@ -48,6 +48,10 @@
                         <Property>
                             <Name>Y</Name>
                             <Value>0</Value>
+                        </Property>
+                        <Property>
+                            <Name>Title</Name>
+                            <Value></Value>
                         </Property>
                         <Property>
                             <Name>enabled</Name>
@@ -67,7 +71,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2169095940</Value>
+    <Value>w682146660</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -79,11 +83,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>11</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -103,7 +111,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w1970027690</Value>
+    <Value>w2099270238</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -115,11 +123,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>56</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>5</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value>Press Me</Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -139,7 +151,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2169096064</Value>
+    <Value>w682146784</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -151,11 +163,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>39</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -175,7 +191,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2169096126</Value>
+    <Value>w682146846</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -187,11 +203,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>65</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -211,7 +231,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w1970027876</Value>
+    <Value>w3396198284</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -223,11 +243,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>37</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>72</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value>New Button</Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -247,7 +271,7 @@
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w769729230</Value>
+    <Value>w215204398</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -259,11 +283,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>106</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -279,11 +307,11 @@
 </Property>
                             </Attributes>
                         </Widget>
-                        <Widget>
+                        <Container>
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2358981316</Value>
+    <Value>w2773009444</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -295,11 +323,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>132</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -310,12 +342,102 @@
     <Value>true</Value>
 </Property>
                             </Attributes>
-                        </Widget>
-                        <Widget>
+                            <Contents>
+<Widget>
+    <Attributes>
+        <Property>
+            <Name>ID</Name>
+            <Value>w382086264</Value>
+        </Property>
+        <Property>
+            <Name>Class</Name>
+            <Value>org.eclipse.swt.widgets.Text</Value>
+        </Property>
+        <Property>
+            <Name>Type</Name>
+            <Value>SYSTEM INTERACTION</Value>
+        </Property>
+        <Property>
+            <Name>X</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>Y</Name>
+            <Value>137</Value>
+        </Property>
+        <Property>
+            <Name>Title</Name>
+            <Value></Value>
+        </Property>
+        <Property>
+            <Name>editable</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>enabled</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>text</Name>
+            <Value>Testing</Value>
+        </Property>
+        <Property>
+            <Name>visible</Name>
+            <Value>true</Value>
+        </Property>
+    </Attributes>
+</Widget>
+<Widget>
+    <Attributes>
+        <Property>
+            <Name>ID</Name>
+            <Value>w382086326</Value>
+        </Property>
+        <Property>
+            <Name>Class</Name>
+            <Value>org.eclipse.swt.widgets.Text</Value>
+        </Property>
+        <Property>
+            <Name>Type</Name>
+            <Value>SYSTEM INTERACTION</Value>
+        </Property>
+        <Property>
+            <Name>X</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>Y</Name>
+            <Value>163</Value>
+        </Property>
+        <Property>
+            <Name>Title</Name>
+            <Value></Value>
+        </Property>
+        <Property>
+            <Name>editable</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>enabled</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>text</Name>
+            <Value>Another test</Value>
+        </Property>
+        <Property>
+            <Name>visible</Name>
+            <Value>true</Value>
+        </Property>
+    </Attributes>
+</Widget>
+                            </Contents>
+                        </Container>
+                        <Container>
                             <Attributes>
 <Property>
     <Name>ID</Name>
-    <Value>w2152703714</Value>
+    <Value>w2108670018</Value>
 </Property>
 <Property>
     <Name>Class</Name>
@@ -327,11 +449,15 @@
 </Property>
 <Property>
     <Name>X</Name>
-    <Value>0</Value>
+    <Value>5</Value>
 </Property>
 <Property>
     <Name>Y</Name>
-    <Value>0</Value>
+    <Value>196</Value>
+</Property>
+<Property>
+    <Name>Title</Name>
+    <Value></Value>
 </Property>
 <Property>
     <Name>enabled</Name>
@@ -346,7 +472,53 @@
     <Value>true</Value>
 </Property>
                             </Attributes>
-                        </Widget>
+                            <Contents>
+<Widget>
+    <Attributes>
+        <Property>
+            <Name>ID</Name>
+            <Value>w2600871468</Value>
+        </Property>
+        <Property>
+            <Name>Class</Name>
+            <Value>org.eclipse.swt.widgets.Text</Value>
+        </Property>
+        <Property>
+            <Name>Type</Name>
+            <Value>SYSTEM INTERACTION</Value>
+        </Property>
+        <Property>
+            <Name>X</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>Y</Name>
+            <Value>216</Value>
+        </Property>
+        <Property>
+            <Name>Title</Name>
+            <Value></Value>
+        </Property>
+        <Property>
+            <Name>editable</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>enabled</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>text</Name>
+            <Value>Another test</Value>
+        </Property>
+        <Property>
+            <Name>visible</Name>
+            <Value>true</Value>
+        </Property>
+    </Attributes>
+</Widget>
+                            </Contents>
+                        </Container>
                     </Contents>
                 </Container>
             </Contents>
