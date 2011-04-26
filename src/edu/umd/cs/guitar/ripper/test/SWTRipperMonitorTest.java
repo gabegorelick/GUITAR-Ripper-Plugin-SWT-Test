@@ -65,11 +65,5 @@ public class SWTRipperMonitorTest {
 		
 		assertFalse(monitor.isIgnoredWindow(new SWTWindow(shell)));
 	}
-		
-	@Test
-	public void testExpandGUI() {
-		// TODO test more when we implement expandGUI
-//		new SWTRipperMonitor(null).expandGUI(null);
-	}
 	
 }

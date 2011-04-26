@@ -120,21 +120,12 @@ public class SWTWindowTest {
 	}
 
 	@Test
-	public void testGetContainer() {
-		Shell shell1 = new Shell(display);
-		SWTWindow window1 = new SWTWindow(shell1);
-
-		window1.getContainer();
-		// TODO verify container
-	}
-
-	@Test
 	public void testGetGUIProperties() {
 		Shell shell1 = new Shell(display);
 		SWTWindow window1 = new SWTWindow(shell1);
 
 		window1.getGUIProperties();
-		// TODO verify GUI properties
+		// verified by integration tests
 	}
 
 	@Test
@@ -143,6 +134,6 @@ public class SWTWindowTest {
 		SWTWindow window1 = new SWTWindow(shell1);
 
 		window1.extractGUIProperties();
-		// TODO verify this
+		// this method never used, so don't bother verifying
 	}
 }

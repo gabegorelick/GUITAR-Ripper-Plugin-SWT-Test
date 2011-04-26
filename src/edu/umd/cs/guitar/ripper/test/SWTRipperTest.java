@@ -23,8 +23,4 @@ public class SWTRipperTest {
         new SWTApplicationRunner(swtRipper);
 	}
 	
-	@Test
-	public void testEventList() {
-		// TODO test this once it's implemented
-	}
 }

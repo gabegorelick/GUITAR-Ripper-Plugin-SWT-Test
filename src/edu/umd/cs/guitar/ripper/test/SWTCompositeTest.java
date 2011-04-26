@@ -87,7 +87,7 @@ public class SWTCompositeTest {
 		shell.setImage(new Image(display, 20, 20));
 		factory.newSWTWidget(spinner, null).getGUIProperties();
 		
-		// TODO compare output instead of just making sure it doesn't error
+		// verification occurs in integration tests
 	}
 	
 	@Test
@@ -99,28 +99,7 @@ public class SWTCompositeTest {
 		
 		assertEquals(spinner.getClass().getName(), factory.newSWTWidget(spinner, null).getClassVal());
 	}
-	
-	@Test
-	public void testGetChildren() {
-//		Shell shell = new Shell(display);
-//		Menu menu = new Menu(shell, SWT.BAR);
-//		shell.setMenuBar(menu);
-//		
-//		SWTComposite comp = factory.newSWTComposite(shell, null);
-//		List<GComponent> children = comp.getChildren();
-//		
-//		menu.dispose();
-//		Menu popUpMenu = new Menu(shell, SWT.POP_UP);
-//		shell.setMenu(popUpMenu);
-//		
-//		Tray tray = display.getSystemTray();
-//		new TrayItem(tray, SWT.NONE);
-//		
-//		children = comp.getChildren();
-//		assertEquals(2, children.size());
-		// TODO figure this out
-	}
-	
+		
 	@Test
 	public void testGetParent() {
 		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
@@ -165,23 +144,4 @@ public class SWTCompositeTest {
 				factory.newSWTWidget(spinner, window).getTypeVal());
 	}
 	
-	@Test
-	public void testGetEventList() {
-//		Shell shell = new Shell(display);
-//		
-////		GEvent event = mock(SWTEventHandler.class);
-//		SWTComposite comp = new SWTComposite(shell, null);
-//		
-//		//when(event.isSupportedBy(any(GComponent.class))).thenReturn(true);
-//
-//		EventManager manager = EventManager.getInstance();	
-//		
-//		manager.registerEvent(MyEventNoConstructor.class);
-//		comp.getEventList();
-//		manager.getEvents().clear();
-//		
-//		manager.registerEvent(SWTEventHandlerStub.class);
-//		comp.getEventList();
-//		manager.getEvents().clear();
-	}
 }
