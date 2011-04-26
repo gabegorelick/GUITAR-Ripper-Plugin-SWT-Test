@@ -13,11 +13,13 @@
 	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="bin"/>
 	<property name="lib.dir" value="lib"/>
+	<property name="dist.dir" value="dist"/>
 	<property name="doc.dir" value="doc"/>
 	<property name="swtmodel.jar.name" value="swtmodel.jar"/>
 	<property name="swtmodel.jar" value="${lib.dir}/${swtmodel.jar.name}"/>
 	<property name="swtripper.jar.name" value="swtripper.jar"/>
 	<property name="swtripper.jar" value="${lib.dir}/${swtripper.jar.name}"/>
+	<property name="swtrippertest.jar.name" value="swtrippertest.jar"/>
 	<property name="junit.dir" value="${lib.dir}/junit-4.8.2"/>
 	<property name="junit.jar" value="${junit.dir}/junit.jar"/>
 	<property name="junit.out" value="testresults"/>
@@ -136,6 +138,13 @@
 		<ant antfile="build.xml" dir="${swtripper.project.dir}" target="dist" inheritall="false"/>
 		<copy file="${swtripper.project.dir}/dist/swtripper.jar" todir="${lib.dir}"/>
 	</target>
+	
+	<target name="dist" depends="build" description="Build a JAR of the tests and sample apps">
+		<mkdir dir="${dist.dir}"/>
+		<jar destfile="${dist.dir}/${swtrippertest.jar.name}">
+			<fileset dir="${build.dir}"/>
+		</jar>
+	</target>
 			
 	<target name="test" description="Run JUnit tests" depends="build,instrument">
 		<mkdir dir="${junit.out}"/>
@@ -202,6 +211,7 @@
 				
 	<target name="clean">
         <delete dir="${build.dir}"/>
+		<delete dir="${dist.dir}"/>
 		<delete dir="${doc.dir}"/>
 		<delete dir="${junit.out}"/>
 		<delete dir="${coverage.dir}"/>
