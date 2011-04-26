@@ -2,11 +2,15 @@ package edu.umd.cs.guitar.ripper.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.net.URL;
+
 import org.junit.Test;
 
+import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
 import edu.umd.cs.guitar.ripper.SWTRipperRunner;
+import edu.umd.cs.guitar.ripper.test.aut.SWTArgumentApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 
 public class SWTRipperConfigurationTest {
@@ -28,53 +32,38 @@ public class SWTRipperConfigurationTest {
 	@Test
 	public void testSetInitialWaitingTime() {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setInitialWaitingTime(100);
-		assertEquals(100, config.getInitialWaitingTime());
+		config.setInitialWaitTime(100);
+		assertEquals(100, config.getInitialWaitTime());
 	}
-	
-	@Test
-	public void testSetCustomizedEventList() {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setCustomizedEventList("foo");
-		assertEquals("foo", config.getCustomizedEventList());
-	}
-	
+		
 	/**
 	 * Test that arguments are correctly passed to the application under test.
 	 */
 	@Test
 	public void testArguments() { // TODO change how we handle arguments
-//		SWTRipperConfiguration config = new SWTRipperConfiguration();
-//		config.setMainClass(SWTArgumentApp.class.getName());
-//		config.setArgumentList("one:1");
-//
-//		SWTRipper swtRipper = new SWTRipper(config);
-//		new SWTRipperRunner(swtRipper).start();
-//
-//		IntegrationTest.ripAndDiff("SWTArgumentApp");
+		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		config.setMainClass(SWTArgumentApp.class.getName());
+		config.setGuiFile("testoutput.xml");
+		config.setArgumentList(new String[] {"one","1"});
+
+		SWTRipper swtRipper = new SWTRipper(config);
+		SWTRipperRunner runner = new SWTRipperRunner(swtRipper);
+		runner.start();
+		assertEquals(2,config.getArgumentList().length);
+		assertEquals("one",config.getArgumentList()[0]);
+		IntegrationTest.ripAndDiff("SWTArgumentApp");
 	}
 
-	/*
-	 * CURRENT STATE: In SWTApplication it appears URLs are only added if the
-	 * (file:,jar:,http:) prefix is at the beginning of the URL, but the current
-	 * urlList delimiter is ':'. As far as I can tell, no URL added by
-	 * setUrlList will be in the right form.
-	 */
+	
 	@Test
-	public void testURLs() { // TODO change how we handle URLS
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setMainClass("edu.umd.cs.guitar.ripper.test.aut.SWTURLApp");
-		config.setGuiFile("testoutput2.xml");
-		config.setUrlList("file:testfiles/utest.txt");
-
-//		final SWTRipper swtRipper = new SWTRipper(config);
-//
-//		try {
-//			swtRipper.execute();
-//		} catch (CmdLineException e) {
-//			System.err.println(e.getMessage());
-//		}
-
+	public void testURLs() { 
+		SWTRipperConfiguration rc = new SWTRipperConfiguration();
+		rc.setUrlArrayList(new String[]{"file:/GUITAR-Ripper-Plugin-SWT-Test/testfiles","file:/GUITAR-Ripper-Plugin-SWT-Test/"});
+		rc.setMainClass("SWTBasicApp");
+		final SWTRipper ripper = new SWTRipper(rc);
+		
+		assertEquals(2,rc.getUrls().length);
+		assertEquals("file:/GUITAR-Ripper-Plugin-SWT-Test/testfiles", rc.getUrls()[0].toString());
 		// assertEquals(-1,diff("testfiles/SWTURLApp.xml","testoutput2.xml"));
 
 	}
@@ -90,7 +79,7 @@ public class SWTRipperConfigurationTest {
 		config.setConfigFile("testconfig.xml");
 
 		SWTRipper swtRipper = new SWTRipper(config);
-		new SWTRipperRunner(swtRipper).start();
+		new SWTApplicationRunner(swtRipper).run();
 		
 		// TODO finish
 		
