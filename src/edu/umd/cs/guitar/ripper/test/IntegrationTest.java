@@ -21,33 +21,53 @@ import edu.umd.cs.guitar.model.GUITARConstants;
 import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
+import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTButtonApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTCheckButtonApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorld;
+import edu.umd.cs.guitar.ripper.test.aut.SWTLabelApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTListApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTMenuBarApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTMultiWindowDynamicApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTTabFolderApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTTableApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTToolbarApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTTreeApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTTwoWindowsApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTWindowApp;
 import edu.umd.cs.guitar.util.GUITARLog;
 
 public class IntegrationTest {
 
-	public static void ripAndDiff(String filename) {
+	/**
+	 * Run the ripper on the given class. Returns the name of the GUI structure
+	 * output file.
+	 * 
+	 * @param clazz the class to rip
+	 * @return the name of the output file
+	 */
+	private static String rip(Class<?> clazz) {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
 		config.setGuiFile("testoutput.xml");
-
-		String fullName = "edu.umd.cs.guitar.ripper.test.aut." + filename;
-		config.setMainClass(fullName);
+		config.setMainClass(clazz.getName());
 		
-		final SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
+		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
 		new SWTApplicationRunner(swtRipper).run();
-				
-		String expectedFileName = "expected/" + filename + ".xml";
 		
+		return config.getGuiFile();
+	}
+		
+	private static void diff(String expectedFilename, String actualFilename) {
 		XMLUnit.setNormalizeWhitespace(true);
 		
 		Document actual;
 		Document expected;
 		try {
-			
 			// also called controlDoc by XMLUnit
-			expected = XMLUnit.buildTestDocument(new InputSource(new FileReader(expectedFileName)));
+			expected = XMLUnit.buildTestDocument(new InputSource(new FileReader(expectedFilename)));
 			
 			// also called expectedDoc by XMLUnit
-			actual = XMLUnit.buildControlDocument(new InputSource(new FileReader(config.getGuiFile())));
+			actual = XMLUnit.buildControlDocument(new InputSource(new FileReader(actualFilename)));
 		} catch (SAXException e) {
 			// so calling methods don't have to declare this as checked exception
 			throw new AssertionError(e);
@@ -104,74 +124,87 @@ public class IntegrationTest {
 		assertTrue(diff.similar());
 	}
 	
+	private static String getExpectedFilename(Class<?> clazz) {
+		return "expected/" + clazz.getSimpleName() + ".xml";
+	}
+	
+	private static void ripAndDiff(Class<?> clazz) {
+		diff(getExpectedFilename(clazz), rip(clazz));
+	}
+	
 	@Test
 	public void testBasicApp() {
-		ripAndDiff("SWTBasicApp");
+		ripAndDiff(SWTBasicApp.class);
 	}
 
 	@Test
 	public void testButtonApp() {
-		ripAndDiff("SWTButtonApp");
+		ripAndDiff(SWTButtonApp.class);
 	}
 
 	@Test
 	public void testCheckButtonApp() {
-		ripAndDiff("SWTCheckButtonApp");
+		ripAndDiff(SWTCheckButtonApp.class);
 	}
 
 	@Test
 	public void testHelloWorld() {
-		ripAndDiff("SWTHelloWorld");
+		ripAndDiff(SWTHelloWorld.class);
 	}
 
 	@Test
 	public void testLabelApp() {
-		ripAndDiff("SWTLabelApp");
+		ripAndDiff(SWTLabelApp.class);
 	}
 
 	@Test
 	public void testListApp() {
-		ripAndDiff("SWTListApp");
+		ripAndDiff(SWTListApp.class);
 	}
 
 	@Test
 	public void testMenuBarApp() {
-		ripAndDiff("SWTMenuBarApp");
+		ripAndDiff(SWTMenuBarApp.class);
 	}
 
 	@Test
 	public void testTwoWindowsApp() {
-		ripAndDiff("SWTTwoWindowsApp");
+		ripAndDiff(SWTTwoWindowsApp.class);
 	}
 
 	@Test
 	public void testWindowApp() {
-		ripAndDiff("SWTWindowApp");
+		ripAndDiff(SWTWindowApp.class);
 	}
 		
 	@Test
 	public void testTabFolderApp() {
-		ripAndDiff("SWTTabFolderApp");
+		ripAndDiff(SWTTabFolderApp.class);
 	}
 	
 	@Test
 	public void testTableApp() {
-		ripAndDiff("SWTTableApp");
+		ripAndDiff(SWTTableApp.class);
 	}
 	
 	@Test
 	public void testTreeApp() {
-		ripAndDiff("SWTTreeApp");
+		ripAndDiff(SWTTreeApp.class);
 	}
 	
 	@Test
 	public void testToolbarApp() {
-		ripAndDiff("SWTToolbarApp");
+		ripAndDiff(SWTToolbarApp.class);
 	}
 	
 	@Test
 	public void testMultiWindowDynamicApp() {
-		ripAndDiff("SWTMultiWindowDynamicApp");
+		ripAndDiff(SWTMultiWindowDynamicApp.class);
+	}
+	
+	@Test
+	public void testIgnoreComponents() {
+		
 	}
 	
 }
