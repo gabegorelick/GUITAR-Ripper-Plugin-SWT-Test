@@ -18,7 +18,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import edu.umd.cs.guitar.model.GUITARConstants;
-import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
+import edu.umd.cs.guitar.ripper.SWTGuitarRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
@@ -54,7 +54,7 @@ public class IntegrationTest {
 		config.setMainClass(clazz.getName());
 		
 		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTApplicationRunner(swtRipper).run();
+		new SWTGuitarRunner(swtRipper).run();
 		
 		return config.getGuiFile();
 	}
@@ -212,7 +212,7 @@ public class IntegrationTest {
 		config.setMainClass(SWTListApp.class.getName());
 		
 		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTApplicationRunner(swtRipper).run();
+		new SWTGuitarRunner(swtRipper).run();
 		
 		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}
@@ -225,7 +225,7 @@ public class IntegrationTest {
 		config.setMainClass(SWTListApp.class.getName());
 		
 		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTApplicationRunner(swtRipper).run();
+		new SWTGuitarRunner(swtRipper).run();
 		
 		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}

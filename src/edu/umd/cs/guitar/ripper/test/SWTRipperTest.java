@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
+import edu.umd.cs.guitar.ripper.SWTGuitarRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorld;
@@ -20,7 +20,7 @@ public class SWTRipperTest {
         config.setMainClass(SWTHelloWorld.class.getName());
         
         SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-        new SWTApplicationRunner(swtRipper);
+        new SWTGuitarRunner(swtRipper);
 	}
 	
 }
