@@ -10,7 +10,7 @@ import org.eclipse.swt.widgets.Shell;
 
 public class SWTArgumentApp {
 
-	public SWTArgumentApp(Display display, String part1, String part2) {
+	public SWTArgumentApp(Display display, String[] args) {
 		Shell shell = new Shell();
 		shell.setText("Window");
 		shell.setSize(250, 250);
@@ -18,18 +18,26 @@ public class SWTArgumentApp {
 		GridLayout layout = new GridLayout(2, false);
 		// set the layout of the shell
 		shell.setLayout(layout);
-		Integer p2 = Integer.parseInt(part2);
-
+		
 		Label label = new Label(shell, SWT.LEFT);
-		label.setText("Argument 1: "+part1);
+		if (args.length > 0) {
+			label.setText("Argument 1: " + args[0]);
+		} else {
+			label.setText("No arguments given");
+		}
+		
 		Point p = label.computeSize(SWT.DEFAULT, SWT.DEFAULT);
 		label.setBounds(10, 10, p.x + 10, p.y + 10);
 		
-		if(p2 == 1){
-			Button button = new Button(shell, SWT.PUSH);
-			button.setText("Argument 2");
+		Button button = new Button(shell, SWT.PUSH);
+		
+		if (args.length > 1) {
+			button.setText("Argument 2: " + args[1]);
+		} else {
+			button.setText("No second argument");
 		}
 
+		shell.pack();
 		shell.open();
 
 		while (!shell.isDisposed()) {
@@ -38,12 +46,18 @@ public class SWTArgumentApp {
 		}
 	}
 
+	private static String[] args;
+	
 	public static void main(String[] args) {
-		
+		SWTArgumentApp.args = args;
 		Display display = new Display();
-		new SWTArgumentApp(display,args[0],args[1]);
+		new SWTArgumentApp(display, args);
 		display.dispose();
 
+	}
+	
+	public static String[] getArgs() {
+		return args;
 	}
 
 }

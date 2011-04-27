@@ -2,6 +2,30 @@
 <Configuration>
 	<IgnoredComponents>
 		<FullComponent>
+			<Window>
+				<Attributes>
+					<Property>
+						<Name>Title</Name>
+						<Value>Window</Value>
+					</Property>
+					<Property>
+						<Name>Modal</Name>
+						<Value>false</Value>
+					</Property>
+					<Property>
+						<Name>Rootwindow</Name>
+						<Value>true</Value>
+					</Property>
+					<Property>
+						<Name>layout</Name>
+						<Value>FormLayout {}</Value>
+					</Property>
+					<Property>
+						<Name>visible</Name>
+						<Value>true</Value>
+					</Property>
+				</Attributes>
+			</Window>
 			<Component>
 				<Attributes>
 					<Property>

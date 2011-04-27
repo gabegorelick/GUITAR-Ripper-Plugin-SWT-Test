@@ -1,13 +1,20 @@
 package edu.umd.cs.guitar.ripper.test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.junit.Test;
 
-import edu.umd.cs.guitar.ripper.SWTApplicationRunner;
+import edu.umd.cs.guitar.model.SWTApplicationStartException;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
-import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTArgumentApp;
+import edu.umd.cs.guitar.ripper.test.aut.SWTURLApp;
 
 public class SWTRipperConfigurationTest {
 
@@ -36,60 +43,49 @@ public class SWTRipperConfigurationTest {
 	 * Test that arguments are correctly passed to the application under test.
 	 */
 	@Test
-	public void testArguments() { // TODO change how we handle arguments
-//		SWTRipperConfiguration config = new SWTRipperConfiguration();
-//		config.setMainClass(SWTArgumentApp.class.getName());
-//		config.setArgumentList("one:1");
-//
-//		SWTRipper swtRipper = new SWTRipper(config);
-//		new SWTRipperRunner(swtRipper).start();
-//
-//		IntegrationTest.ripAndDiff("SWTArgumentApp");
-	}
-
-	/*
-	 * CURRENT STATE: In SWTApplication it appears URLs are only added if the
-	 * (file:,jar:,http:) prefix is at the beginning of the URL, but the current
-	 * urlList delimiter is ':'. As far as I can tell, no URL added by
-	 * setUrlList will be in the right form.
-	 */
-	@Test
-	public void testURLs() { // TODO change how we handle URLS
+	public void testArguments() {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setMainClass("edu.umd.cs.guitar.ripper.test.aut.SWTURLApp");
-		config.setGuiFile("testoutput2.xml");
-		config.setUrlList("file:testfiles/utest.txt");
-
-//		final SWTRipper swtRipper = new SWTRipper(config);
-//
-//		try {
-//			swtRipper.execute();
-//		} catch (CmdLineException e) {
-//			System.err.println(e.getMessage());
-//		}
-
-		// assertEquals(-1,diff("testfiles/SWTURLApp.xml","testoutput2.xml"));
-
-	}
-
-	/*
-	 * CURRENT STATE: It does something. Telling it to ignore a button and it
-	 * seems to leave out a lot of the xml.
-	 */
-	@Test
-	public void testConfigureFile() {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setMainClass(SWTBasicApp.class.getName());
-		config.setConfigFile("testconfig.xml");
+		config.setMainClass(SWTArgumentApp.class.getName());
+		
+		String[] args = new String[0];
+		config.setArguments(args);
 
 		SWTRipper swtRipper = new SWTRipper(config);
-		new SWTApplicationRunner(swtRipper).run();
-		
-		// TODO finish
-		
-//		IntegrationTest.ripAndDiff(""); 
-//		
-//		assertEquals(-1,diff("testfiles/ConfigureFile.xml","testoutput4.xml"));
+		assertArrayEquals(args, swtRipper.getApplication().getArgsToApp());
 
+		args = new String[] { "one" };
+		config.setArguments(args);
+		swtRipper = new SWTRipper(config);
+		assertArrayEquals(args, swtRipper.getApplication().getArgsToApp());
+		
+		args = new String[] { "one", "two" };
+		config.setArguments(args);
+		swtRipper = new SWTRipper(config);
+		assertArrayEquals(args, swtRipper.getApplication().getArgsToApp());
 	}
+
+	@Test
+	public void testURLs() throws SWTApplicationStartException, MalformedURLException {
+		final String fileName = "README";
+		
+		File file = new File(fileName);
+		assertTrue(file.exists());
+				
+		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		config.setMainClass(SWTURLApp.class.getName());
+		config.setArguments(new String[] { fileName });
+		config.setUrls(new URL[0]);
+		
+		SWTRipper ripper = new SWTRipper(config);
+		
+		// SWTURLApp doesn't block forever, so can start it on this thread
+		ripper.getApplication().startGUI();
+				
+		config.setUrls(new URL[] { file.toURI().toURL()});
+		new SWTRipper(config);
+		
+		// TODO figure our how to test this
+				
+	}
+
 }

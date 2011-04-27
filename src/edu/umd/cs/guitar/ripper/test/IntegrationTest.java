@@ -38,7 +38,9 @@ import edu.umd.cs.guitar.ripper.test.aut.SWTWindowApp;
 import edu.umd.cs.guitar.util.GUITARLog;
 
 public class IntegrationTest {
-
+	
+	private static final String DEFAULT_GUI_FILENAME = "testoutput.xml";
+	
 	/**
 	 * Run the ripper on the given class. Returns the name of the GUI structure
 	 * output file.
@@ -48,7 +50,7 @@ public class IntegrationTest {
 	 */
 	private static String rip(Class<?> clazz) {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
-		config.setGuiFile("testoutput.xml");
+		config.setGuiFile(DEFAULT_GUI_FILENAME);
 		config.setMainClass(clazz.getName());
 		
 		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
@@ -204,7 +206,28 @@ public class IntegrationTest {
 	
 	@Test
 	public void testIgnoreComponents() {
+		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		config.setGuiFile(DEFAULT_GUI_FILENAME);
+		config.setConfigFile("testconfig.xml");
+		config.setMainClass(SWTListApp.class.getName());
 		
+		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
+		new SWTApplicationRunner(swtRipper).run();
+		
+		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
+	}
+	
+	@Test
+	public void testIgnoreComponentsWithWindow() {
+		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		config.setGuiFile(DEFAULT_GUI_FILENAME);
+		config.setConfigFile("testConfigWithWindow.xml");
+		config.setMainClass(SWTListApp.class.getName());
+		
+		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
+		new SWTApplicationRunner(swtRipper).run();
+		
+		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}
 	
 }
