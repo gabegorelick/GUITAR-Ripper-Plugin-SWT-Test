@@ -75,8 +75,10 @@ public class SWTApplicationTest {
 		if (isSauron == null || isSauron.equalsIgnoreCase("false")) {
 			shell1.setVisible(false);
 			assertEquals(0, app.getAllWindow().size());
-		} else {
+		} else if (isSauron.equalsIgnoreCase("true")) {
 			GUITARLog.log.info("isSauron=true, skipping setVisible(false) in testGetAllWindow");
+		} else {
+			GUITARLog.log.warn("Unrecognized value " + isSauron + " for property isSauron");
 		}
 						
 		shell1.setVisible(true);
