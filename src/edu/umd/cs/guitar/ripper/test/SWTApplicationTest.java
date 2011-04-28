@@ -69,6 +69,9 @@ public class SWTApplicationTest {
 		assertEquals(1, app.getAllWindow().size());
 		
 		shell1.setVisible(false);
+		shell1.redraw();
+		shell1.update();
+		display.update(); // this is probably redundant
 		assertEquals(0, app.getAllWindow().size());
 		
 		shell1.setVisible(true);
