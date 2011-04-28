@@ -69,12 +69,16 @@ public class SWTApplicationTest {
 		shell2.dispose();
 		assertEquals(1, app.getAllWindow().size());
 		
-		if (!System.getProperty("isSauron", "false").equals("true")) {
-			GUITARLog.log.info("isSauron=true, skipping setVisible(false) in testGetAllWindow");
+		// skip this check if running on sauron, this test passes everywhere 
+		// else so it's probably some weird SWT bug that causes it to fail
+		String isSauron = System.getProperty("isSauron");
+		if (isSauron == null || isSauron.equalsIgnoreCase("false")) {
 			shell1.setVisible(false);
 			assertEquals(0, app.getAllWindow().size());
+		} else {
+			GUITARLog.log.info("isSauron=true, skipping setVisible(false) in testGetAllWindow");
 		}
-				
+						
 		shell1.setVisible(true);
 		assertEquals(1, app.getAllWindow().size());
 		
