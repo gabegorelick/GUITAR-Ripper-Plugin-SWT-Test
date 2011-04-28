@@ -31,7 +31,6 @@ import edu.umd.cs.guitar.model.SWTApplication;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
-import edu.umd.cs.guitar.util.GUITARLog;
 
 public class SWTApplicationTest {
 	
@@ -68,19 +67,7 @@ public class SWTApplicationTest {
 		
 		shell2.dispose();
 		assertEquals(1, app.getAllWindow().size());
-		
-		// skip this check if running on sauron, this test passes everywhere 
-		// else so it's probably some weird SWT bug that causes it to fail
-		String isSauron = System.getProperty("isSauron");
-		if (isSauron == null || isSauron.equalsIgnoreCase("false")) {
-			shell1.setVisible(false);
-			assertEquals(0, app.getAllWindow().size());
-		} else if (isSauron.equalsIgnoreCase("true")) {
-			GUITARLog.log.info("isSauron=true, skipping setVisible(false) in testGetAllWindow");
-		} else {
-			GUITARLog.log.warn("Unrecognized value " + isSauron + " for property isSauron");
-		}
-						
+								
 		shell1.setVisible(true);
 		assertEquals(1, app.getAllWindow().size());
 		

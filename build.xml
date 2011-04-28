@@ -150,16 +150,8 @@
 	<target name="test" description="Run JUnit tests" depends="build,instrument">
 		<mkdir dir="${junit.out}"/>
 		
-		<!-- make junit.jvmargs default to empty string -->
-		<condition property="junit.jvmargs" value="">
-			<not>  
-				<isset property="junit.jvmargs"/>
-			</not>
-		</condition>
-		
 		<!-- must fork for cobertura, see http://cobertura.sourceforge.net/anttaskreference.html -->
-		<junit fork="yes" forkmode="once" printsummary="withOutAndErr">			
-			<jvmarg line="${junit.jvmargs}"/>			
+		<junit fork="yes" forkmode="once" printsummary="withOutAndErr">	
 			<sysproperty key="net.sourceforge.cobertura.datafile" file="${cobertura.datafile}"/>
 			
 			<!-- must specify instrumented classes before original ones! -->
