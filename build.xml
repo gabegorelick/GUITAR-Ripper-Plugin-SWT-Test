@@ -107,7 +107,8 @@
         
 	<target name="build" depends="init, build-model, build-ripper">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="${build.dir}" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${build.dir}" 
+        		source="${source}" target="${target}" includeantruntime="false">
             <src path="${src.dir}"/>
             <classpath refid="SWTRipperTest.classpath"/>
         </javac>
