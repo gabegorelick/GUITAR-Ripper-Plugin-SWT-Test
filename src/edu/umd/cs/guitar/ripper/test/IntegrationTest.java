@@ -43,7 +43,7 @@ import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTButtonApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTCheckButtonApp;
-import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorld;
+import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorldApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTLabelApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTListApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTMenuBarApp;
@@ -170,7 +170,7 @@ public class IntegrationTest {
 
 	@Test
 	public void testHelloWorld() {
-		ripAndDiff(SWTHelloWorld.class);
+		ripAndDiff(SWTHelloWorldApp.class);
 	}
 
 	@Test
