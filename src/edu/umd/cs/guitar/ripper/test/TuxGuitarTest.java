@@ -13,7 +13,9 @@ public class TuxGuitarTest {
 	@Test
 	public void testRipTuxGuitar() {
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		config.setInitialWaitTime(5000);
 		config.setMainClass(TGMain.class.getName());
+		config.setGuiFile("testoutput.xml");
 		SWTRipper ripper = new SWTRipper(config);
 		new SWTGuitarRunner(ripper).run();
 	}
