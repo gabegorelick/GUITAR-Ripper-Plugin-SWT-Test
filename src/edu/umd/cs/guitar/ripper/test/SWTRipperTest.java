@@ -26,7 +26,7 @@ import org.junit.Test;
 import edu.umd.cs.guitar.ripper.SWTGuitarRunner;
 import edu.umd.cs.guitar.ripper.SWTRipper;
 import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
-import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorld;
+import edu.umd.cs.guitar.ripper.test.aut.SWTHelloWorldApp;
 
 public class SWTRipperTest {
 
@@ -36,7 +36,7 @@ public class SWTRipperTest {
 		assertNotNull(ripper.getMonitor());
 		
 		SWTRipperConfiguration config = new SWTRipperConfiguration();
-        config.setMainClass(SWTHelloWorld.class.getName());
+        config.setMainClass(SWTHelloWorldApp.class.getName());
         
         SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
         new SWTGuitarRunner(swtRipper);

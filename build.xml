@@ -151,7 +151,7 @@
 		<mkdir dir="${junit.out}"/>
 		
 		<!-- must fork for cobertura, see http://cobertura.sourceforge.net/anttaskreference.html -->
-		<junit fork="yes" forkmode="once" printsummary="withOutAndErr">
+		<junit fork="yes" forkmode="once" printsummary="withOutAndErr">	
 			<sysproperty key="net.sourceforge.cobertura.datafile" file="${cobertura.datafile}"/>
 			
 			<!-- must specify instrumented classes before original ones! -->

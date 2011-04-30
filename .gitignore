@@ -30,4 +30,6 @@
 
 /testresults
 
+cobertura.ser
+
 # EGit needs trailing newline
