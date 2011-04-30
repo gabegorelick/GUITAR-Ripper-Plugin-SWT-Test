@@ -27,19 +27,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.umd.cs.guitar.model.swtwidgets.SWTDecorations;
-import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
+import edu.umd.cs.guitar.model.swtwidgets.SitarDecorations;
+import edu.umd.cs.guitar.model.swtwidgets.SitarWidgetFactory;
 
 
-public class SWTWidgetFactoryTest {
+public class SitarWidgetFactoryTest {
 
 	private Display display;
-	private SWTWidgetFactory factory;
+	private SitarWidgetFactory factory;
 	
 	@Before
 	public void setUp() {
 		display = new Display();
-		factory = SWTWidgetFactory.INSTANCE;
+		factory = SitarWidgetFactory.INSTANCE;
 	}
 	
 	@After
@@ -51,7 +51,7 @@ public class SWTWidgetFactoryTest {
 	public void testGetWidgetAdapter() {		
 		Shell shell = new Shell(display);
 		
-		assertEquals(SWTDecorations.class, factory.getWidgetAdapter(shell));
+		assertEquals(SitarDecorations.class, factory.getWidgetAdapter(shell));
 	}
 		
 }

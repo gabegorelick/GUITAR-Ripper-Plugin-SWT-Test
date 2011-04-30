@@ -35,19 +35,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.umd.cs.guitar.model.SWTWindow;
-import edu.umd.cs.guitar.model.swtwidgets.SWTWidget;
-import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
+import edu.umd.cs.guitar.model.SitarWindow;
+import edu.umd.cs.guitar.model.swtwidgets.SitarWidget;
+import edu.umd.cs.guitar.model.swtwidgets.SitarWidgetFactory;
 
 
-public class SWTWidgetTest {
+public class SitarWidgetTest {
 
 	private Display display;
-	private SWTWidgetFactory factory;
+	private SitarWidgetFactory factory;
 	
 	@Before
 	public void setUp() {
-		factory = SWTWidgetFactory.INSTANCE;
+		factory = SitarWidgetFactory.INSTANCE;
 		if (display == null || display.isDisposed()) {
 			display = new Display();
 		}
@@ -63,7 +63,7 @@ public class SWTWidgetTest {
 		final Shell shell = new Shell(display);
 		Button button = new Button(shell, SWT.PUSH);
 		
-		SWTWidget swtButton = factory.newSWTWidget(button, new SWTWindow(shell));
+		SitarWidget swtButton = factory.newSWTWidget(button, new SitarWindow(shell));
 		
 		assertFalse(swtButton.isTerminal());
 		// make sure we didn't actually close the shell
