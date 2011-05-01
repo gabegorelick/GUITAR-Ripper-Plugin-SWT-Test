@@ -19,25 +19,24 @@
  */
 package edu.umd.cs.guitar.ripper.test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Tray;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.umd.cs.guitar.model.SWTWindow;
-import edu.umd.cs.guitar.model.swtwidgets.SWTUnknownWidget;
-import edu.umd.cs.guitar.model.swtwidgets.SWTWidget;
-import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
+import edu.umd.cs.guitar.model.SitarApplication;
+import edu.umd.cs.guitar.model.SitarWindow;
+import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
+import edu.umd.cs.guitar.ripper.SitarRipperMonitor;
 
 
-public class SWTUnknownWidgetTest {
+public class SitarRipperMonitorTest {
 	
 	private Display display;
-	private SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
 	
 	@Before
 	public void setUp() {
@@ -52,25 +51,38 @@ public class SWTUnknownWidgetTest {
 	}
 	
 	@Test
-	public void testIsEnabled() {
-		Shell shell = new Shell(display);
+	public void testGetOpenedWindowCache() {
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
+		SitarApplication app = new SitarApplication(config.getMainClass(), Thread.currentThread());
 		
-		// Tray is a good test because it extends Widget (not Control) and we
-		// don't handle it explicitly
-		Tray tray = display.getSystemTray();
-		
-		SWTWidget widget = factory.newSWTWidget(tray, new SWTWindow(shell));
-		assertTrue(widget instanceof SWTUnknownWidget);
-		assertTrue(widget.isEnabled());
+		assertTrue(new SitarRipperMonitor(config, app).getOpenedWindowCache().isEmpty());
 	}
 	
 	@Test
-	public void testGetChildren() {
-		Shell shell = new Shell(display);
-		Tray tray = display.getSystemTray();
+	public void testIsWindowClosed() {
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
+		SitarApplication app = new SitarApplication(config.getMainClass(), Thread.currentThread());
 		
-		SWTWidget widget = factory.newSWTWidget(tray, new SWTWindow(shell));
-		assertTrue(widget instanceof SWTUnknownWidget);
-		assertTrue(widget.getChildren().isEmpty());
+		assertFalse(new SitarRipperMonitor(config, app).isWindowClosed());
 	}
+	
+	@Test(expected = NullPointerException.class)
+	public void testCloseWindow() {
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
+		SitarApplication app = new SitarApplication(config.getMainClass(), Thread.currentThread());
+		
+		new SitarRipperMonitor(config, app).closeWindow(null);
+	}
+	
+	@Test
+	public void testIsIgnoredWindow() {
+		Shell shell = new Shell(display);
+		
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
+		SitarApplication app = new SitarApplication(config.getMainClass(), Thread.currentThread());
+		SitarRipperMonitor monitor = new SitarRipperMonitor(config, app);
+		
+		assertFalse(monitor.isIgnoredWindow(new SitarWindow(shell)));
+	}
+	
 }

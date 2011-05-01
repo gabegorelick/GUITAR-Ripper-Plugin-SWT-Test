@@ -33,12 +33,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.umd.cs.guitar.model.GUITARConstants;
-import edu.umd.cs.guitar.model.SWTWindow;
-import edu.umd.cs.guitar.model.swtwidgets.SWTComposite;
-import edu.umd.cs.guitar.model.swtwidgets.SWTWidgetFactory;
+import edu.umd.cs.guitar.model.SitarWindow;
+import edu.umd.cs.guitar.model.swtwidgets.SitarComposite;
+import edu.umd.cs.guitar.model.swtwidgets.SitarWidgetFactory;
 
 
-public class SWTCompositeTest {
+public class SitarCompositeTest {
 
 	private Display display;
 		
@@ -59,13 +59,13 @@ public class SWTCompositeTest {
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 				
-		SWTComposite comp = (SWTComposite) SWTWidgetFactory.INSTANCE.newSWTWidget(spinner, null);
+		SitarComposite comp = (SitarComposite) SitarWidgetFactory.INSTANCE.newSWTWidget(spinner, null);
 		assertEquals(spinner, comp.getWidget());
 	}
 		
 	@Test
 	public void testGetX() {
-		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
@@ -78,7 +78,7 @@ public class SWTCompositeTest {
 	
 	@Test
 	public void testGetY() {
-		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
@@ -91,7 +91,7 @@ public class SWTCompositeTest {
 	
 	@Test
 	public void testGetGUIProperties() {
-		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
@@ -106,7 +106,7 @@ public class SWTCompositeTest {
 	
 	@Test
 	public void testGetClassVal() {
-		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
@@ -116,19 +116,19 @@ public class SWTCompositeTest {
 		
 	@Test
 	public void testGetParent() {
-		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
-		SWTComposite parent = (SWTComposite) factory.newSWTWidget(spinner, null).getParent();
+		SitarComposite parent = (SitarComposite) factory.newSWTWidget(spinner, null).getParent();
 		assertEquals(shell, parent.getWidget());
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testIsEnable() {
-		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 		
 		Shell shell = new Shell(display);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
@@ -148,10 +148,10 @@ public class SWTCompositeTest {
 	
 	@Test
 	public void testGetTypeVal() {
-		SWTWidgetFactory factory = SWTWidgetFactory.INSTANCE;
+		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 		
 		Shell shell = new Shell(display);
-		SWTWindow window = new SWTWindow(shell);
+		SitarWindow window = new SitarWindow(shell);
 		Spinner spinner = new Spinner(shell, SWT.NONE);
 		
 		assertEquals(GUITARConstants.SYSTEM_INTERACTION, 

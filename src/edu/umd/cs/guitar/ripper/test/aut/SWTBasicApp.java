@@ -91,7 +91,7 @@ public class SWTBasicApp {
 		composite.setLayoutData(gridData);
 		composite.setLayout(new GridLayout(1, false));
 		
-		// test that SWTEditableTextAction doesn't mark read-only Texts as replayable
+		// test that SitarEditableTextAction doesn't mark read-only Texts as replayable
 		Text text = new Text(composite, SWT.READ_ONLY);
 		text.setText("Read only");
 		gridData = new GridData(SWT.FILL, SWT.FILL, true, false);

@@ -27,12 +27,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.umd.cs.guitar.model.SWTApplication;
-import edu.umd.cs.guitar.ripper.SWTRipper;
-import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
+import edu.umd.cs.guitar.model.SitarApplication;
+import edu.umd.cs.guitar.ripper.SitarRipper;
+import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 
-public class SWTApplicationTest {
+public class SitarApplicationTest {
 	
 	private final static String TEST_CLASS_NAME = SWTBasicApp.class.getName();
 	
@@ -52,15 +52,15 @@ public class SWTApplicationTest {
 	
 	@Test
 	public void testGetAllWindow() {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
 		config.setMainClass(TEST_CLASS_NAME);
-		SWTRipper ripper = new SWTRipper(config, Thread.currentThread());
+		SitarRipper ripper = new SitarRipper(config, Thread.currentThread());
 		
 		Shell shell1 = new Shell(display);
 		Shell shell2 = new Shell(display);
 		shell1.setVisible(true);
 		shell2.setVisible(true);
-		SWTApplication app = ripper.getMonitor().getApplication();
+		SitarApplication app = ripper.getMonitor().getApplication();
 		app.connect();
 		
 		assertEquals(2, app.getAllWindow().size());

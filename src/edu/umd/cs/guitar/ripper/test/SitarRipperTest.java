@@ -37,9 +37,9 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import edu.umd.cs.guitar.model.GUITARConstants;
-import edu.umd.cs.guitar.ripper.SWTGuitarRunner;
-import edu.umd.cs.guitar.ripper.SWTRipper;
-import edu.umd.cs.guitar.ripper.SWTRipperConfiguration;
+import edu.umd.cs.guitar.ripper.SitarRunner;
+import edu.umd.cs.guitar.ripper.SitarRipper;
+import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTButtonApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTCheckButtonApp;
@@ -56,7 +56,7 @@ import edu.umd.cs.guitar.ripper.test.aut.SWTTwoWindowsApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTWindowApp;
 import edu.umd.cs.guitar.util.GUITARLog;
 
-public class IntegrationTest {
+public class SitarRipperTest {
 	
 	private static final String DEFAULT_GUI_FILENAME = "testoutput.xml";
 	
@@ -68,12 +68,12 @@ public class IntegrationTest {
 	 * @return the name of the output file
 	 */
 	private static String rip(Class<?> clazz) {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
 		config.setGuiFile(DEFAULT_GUI_FILENAME);
 		config.setMainClass(clazz.getName());
 		
-		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTGuitarRunner(swtRipper).run();
+		SitarRipper swtRipper = new SitarRipper(config, Thread.currentThread());
+		new SitarRunner(swtRipper).run();
 		
 		return config.getGuiFile();
 	}
@@ -225,26 +225,26 @@ public class IntegrationTest {
 	
 	@Test
 	public void testIgnoreComponents() {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
 		config.setGuiFile(DEFAULT_GUI_FILENAME);
 		config.setConfigFile("testconfig.xml");
 		config.setMainClass(SWTListApp.class.getName());
 		
-		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTGuitarRunner(swtRipper).run();
+		SitarRipper swtRipper = new SitarRipper(config, Thread.currentThread());
+		new SitarRunner(swtRipper).run();
 		
 		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}
 	
 	@Test
 	public void testIgnoreComponentsWithWindow() {
-		SWTRipperConfiguration config = new SWTRipperConfiguration();
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
 		config.setGuiFile(DEFAULT_GUI_FILENAME);
 		config.setConfigFile("testConfigWithWindow.xml");
 		config.setMainClass(SWTListApp.class.getName());
 		
-		SWTRipper swtRipper = new SWTRipper(config, Thread.currentThread());
-		new SWTGuitarRunner(swtRipper).run();
+		SitarRipper swtRipper = new SitarRipper(config, Thread.currentThread());
+		new SitarRunner(swtRipper).run();
 		
 		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}
