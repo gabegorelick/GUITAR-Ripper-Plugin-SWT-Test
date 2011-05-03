@@ -22,6 +22,8 @@ package edu.umd.cs.guitar.ripper.test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -69,14 +71,17 @@ public class SitarWidgetTest {
 		// make sure we didn't actually close the shell
 		assertFalse(shell.isDisposed());
 		
+		swtButton = factory.newSWTWidget(button, new SitarWindow(shell));
 		button.setText("Quit");
 		assertFalse(swtButton.isTerminal());
 		assertFalse(shell.isDisposed());
 		
+		swtButton = factory.newSWTWidget(button, new SitarWindow(shell));
 		button.setText("Close");
 		assertFalse(swtButton.isTerminal());
 		assertFalse(shell.isDisposed());
 		
+		swtButton = factory.newSWTWidget(button, new SitarWindow(shell));
 		button.setText("Exit");
 		assertFalse(swtButton.isTerminal());
 		assertFalse(shell.isDisposed());
@@ -88,33 +93,36 @@ public class SitarWidgetTest {
 			}
 		}; 
 		
+		swtButton = factory.newSWTWidget(button, new SitarWindow(shell));
 		button.addSelectionListener(closeShell);
 		assertTrue(swtButton.isTerminal());
 		assertFalse(shell.isDisposed());
 		
+		swtButton = factory.newSWTWidget(button, new SitarWindow(shell));
 		button.removeSelectionListener(closeShell);
 		assertFalse(swtButton.isTerminal());
 		assertFalse(shell.isDisposed());
-		
+				
 		// test that existing close listeners aren't notified
-		final boolean[] listenerNotified = { false };
+		final AtomicBoolean listenerNotified = new AtomicBoolean(false);
 		
 		ShellListener shellListener = new ShellAdapter() {
 			@Override
 			public void shellClosed(ShellEvent e) {
-				listenerNotified[0] = true;
+				listenerNotified.set(true);
 			}
 		};
 		shell.addShellListener(shellListener);
 		
+		swtButton = factory.newSWTWidget(button, new SitarWindow(shell));
 		assertFalse(swtButton.isTerminal());
-		assertFalse(listenerNotified[0]);
+		assertFalse(listenerNotified.get());
 		
 		shell.open(); // just to be sure
 		shell.close();
 		
 		// make sure existing listeners are notified if real close happens
-		assertTrue(listenerNotified[0]);
+		assertTrue(listenerNotified.get());
 		
 	}
 		
