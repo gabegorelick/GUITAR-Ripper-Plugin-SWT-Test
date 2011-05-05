@@ -32,6 +32,10 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * Sample list application.
+ *
+ */
 public class SWTListApp {
 	private Shell shell;
 

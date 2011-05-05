@@ -25,6 +25,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * Sample application with a label.
+ */
 public class SWTLabelApp {
 
 	public SWTLabelApp(Display display) {

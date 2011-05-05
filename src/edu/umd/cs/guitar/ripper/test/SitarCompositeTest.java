@@ -37,11 +37,16 @@ import edu.umd.cs.guitar.model.SitarWindow;
 import edu.umd.cs.guitar.model.swtwidgets.SitarComposite;
 import edu.umd.cs.guitar.model.swtwidgets.SitarWidgetFactory;
 
-
+/**
+ * Tests for {@link SitarComposite}.
+ */
 public class SitarCompositeTest {
 
 	private Display display;
-		
+	
+	/**
+	 * Set up the display.
+	 */
 	@Before
 	public void setUp() {
 		if (display == null || display.isDisposed()) {
@@ -49,11 +54,17 @@ public class SitarCompositeTest {
 		}
 	}
 	
+	/**
+	 * Dispose the display.
+	 */
 	@After
 	public void tearDown() {
 		display.dispose();
 	}
 	
+	/**
+	 * Test {@link SitarComposite#getWidget()}.
+	 */
 	@Test
 	public void testGetWidget() {
 		Shell shell = new Shell(display);
@@ -62,7 +73,10 @@ public class SitarCompositeTest {
 		SitarComposite comp = (SitarComposite) SitarWidgetFactory.INSTANCE.newSWTWidget(spinner, null);
 		assertEquals(spinner, comp.getWidget());
 	}
-		
+	
+	/**
+	 * Test {@link SitarComposite#getX()}.
+	 */
 	@Test
 	public void testGetX() {
 		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
@@ -76,6 +90,9 @@ public class SitarCompositeTest {
 		assertEquals(85, factory.newSWTWidget(spinner, null).getX());
 	}
 	
+	/**
+	 * Test {@link SitarComposite#getY()}.
+	 */
 	@Test
 	public void testGetY() {
 		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
@@ -89,6 +106,9 @@ public class SitarCompositeTest {
 		assertEquals(110, factory.newSWTWidget(spinner, null).getY());
 	}
 	
+	/**
+	 * Test {@link SitarComposite#getGUIProperties()}.
+	 */
 	@Test
 	public void testGetGUIProperties() {
 		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
@@ -104,6 +124,9 @@ public class SitarCompositeTest {
 		// verification occurs in integration tests
 	}
 	
+	/**
+	 * Test {@link SitarComposite#getClassVal()}.
+	 */
 	@Test
 	public void testGetClassVal() {
 		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
@@ -113,7 +136,10 @@ public class SitarCompositeTest {
 		
 		assertEquals(spinner.getClass().getName(), factory.newSWTWidget(spinner, null).getClassVal());
 	}
-		
+	
+	/**
+	 * Test {@link SitarComposite#getParent()}.
+	 */
 	@Test
 	public void testGetParent() {
 		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
@@ -125,6 +151,9 @@ public class SitarCompositeTest {
 		assertEquals(shell, parent.getWidget());
 	}
 	
+	/**
+	 * Test {@link SitarComposite#isEnable()}.
+	 */
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testIsEnable() {
@@ -146,6 +175,9 @@ public class SitarCompositeTest {
 		assertFalse(factory.newSWTWidget(spinner, null).isEnable());
 	}
 	
+	/**
+	 * Test {@link SitarComposite#getTypeVal()}.
+	 */
 	@Test
 	public void testGetTypeVal() {
 		SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;

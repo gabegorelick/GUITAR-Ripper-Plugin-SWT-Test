@@ -25,6 +25,9 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.*;
 
+/**
+ * Sample application with a label that changes when a button is pressed. 
+ */
 public class SWTDynamicLabelApp {
 	private int label_num = 0;
 

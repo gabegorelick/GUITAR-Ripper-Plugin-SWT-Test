@@ -27,6 +27,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * Sample application to test argument passing.
+ */
 public class SWTArgumentApp {
 
 	public SWTArgumentApp(Display display, String[] args) {

@@ -32,10 +32,16 @@ import org.junit.Test;
 
 import edu.umd.cs.guitar.model.SitarWindow;
 
+/**
+ * Tests for {@link SitarWindow}.
+ */
 public class SitarWindowTest {
 
 	private Display display;
-	
+
+	/**
+	 * Set up the display.
+	 */
 	@Before
 	public void setUp() {
 		if (display == null || display.isDisposed()) {
@@ -43,11 +49,17 @@ public class SitarWindowTest {
 		}
 	}
 	
+	/**
+	 * Dispose of the display.
+	 */
 	@After
 	public void tearDown() {
 		display.dispose();
 	}
 	
+	/**
+	 * Test {@link SitarWindow#getShell()}.
+	 */
 	@Test
 	public void testEmptyShell() {
 		Shell shell = new Shell(display);
@@ -56,6 +68,9 @@ public class SitarWindowTest {
 		assertEquals(swtWindow.getShell(), shell);
 	}
 
+	/**
+	 * Test {@link SitarWindow#getTitle()}.
+	 */
 	@Test
 	public void testShellTitle() {
 		Shell shell = new Shell(display);
@@ -70,6 +85,9 @@ public class SitarWindowTest {
 		assertEquals(shellTitle, swtWindow.getTitle());
 	}
 
+	/**
+	 * Test {@link SitarWindow#getX()} and {@link SitarWindow#getY()}.
+	 */
 	@Test
 	public void testShellLocation() {
 		Shell shell = new Shell(display);
@@ -80,6 +98,9 @@ public class SitarWindowTest {
 		assertEquals(swtWindow.getY(), 0);
 	}
 
+	/**
+	 * Test {@link SitarWindow#isValid()}.
+	 */
 	@Test
 	public void testShellIsValid() {
 		Shell shell = new Shell(display);
@@ -90,6 +111,9 @@ public class SitarWindowTest {
 		assertEquals(swtWindow.isValid(), true);
 	}
 
+	/**
+	 * Test {@link SitarWindow#isValid()} when shell isn't visible.
+	 */
 	@Test
 	public void testShellIsValidFalse() {
 		Shell shell = new Shell(display);
@@ -100,6 +124,9 @@ public class SitarWindowTest {
 		assertEquals(swtWindow.isValid(), false);
 	}
 
+	/**
+	 * Test {@link SitarWindow#isModal()}.
+	 */
 	@Test
 	public void testShellIsModal() {
 		Shell shell = new Shell(display, SWT.APPLICATION_MODAL);
@@ -108,6 +135,9 @@ public class SitarWindowTest {
 		assertEquals(swtWindow.isModal(), true);
 	}
 
+	/**
+	 * Test {@link SitarWindow#isModal()} when it shouldn't be.
+	 */
 	@Test
 	public void testShellIsModalFalse() {
 		Shell shell = new Shell(display);
@@ -116,6 +146,9 @@ public class SitarWindowTest {
 		assertEquals(swtWindow.isModal(), false);
 	}
 
+	/**
+	 * Test {@link SitarWindow#equals(Object)}.
+	 */
 	@Test
 	public void testEquals() {
 		Shell shell1 = new Shell(display);
@@ -138,6 +171,9 @@ public class SitarWindowTest {
 		assertFalse(window1.equals(window3));
 	}
 
+	/**
+	 * Test {@link SitarWindow#getGUIProperties()}.
+	 */
 	@Test
 	public void testGetGUIProperties() {
 		Shell shell1 = new Shell(display);
@@ -147,6 +183,9 @@ public class SitarWindowTest {
 		// verified by integration tests
 	}
 
+	/**
+	 * Test {@link SitarWindow#extractGUIProperties()}.
+	 */
 	@Test
 	public void testExtractGUIProperties() {
 		Shell shell1 = new Shell(display);

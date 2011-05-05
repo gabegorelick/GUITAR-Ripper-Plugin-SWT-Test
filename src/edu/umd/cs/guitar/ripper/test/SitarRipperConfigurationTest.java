@@ -35,8 +35,14 @@ import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTArgumentApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTURLApp;
 
+/**
+ * Tests for {@link SitarRipperConfigurationTest}.
+ */
 public class SitarRipperConfigurationTest {
 
+	/**
+	 * Test {@link SitarRipperConfiguration#setLogFile(String)}.
+	 */
 	@Test
 	public void testSetLogFile() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -44,6 +50,9 @@ public class SitarRipperConfigurationTest {
 		assertEquals("foo", config.getLogFile());
 	}
 	
+	/**
+	 * Test {@link SitarRipperConfiguration#setLogWidgetFile(String)}.
+	 */
 	@Test
 	public void testSetLogWidgetFile() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -51,6 +60,9 @@ public class SitarRipperConfigurationTest {
 		assertEquals("foo", config.getLogWidgetFile());
 	}
 	
+	/**
+	 * Test {@link SitarRipperConfiguration#setInitialWaitTime(int)}.
+	 */
 	@Test
 	public void testSetInitialWaitingTime() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -83,6 +95,11 @@ public class SitarRipperConfigurationTest {
 		assertArrayEquals(args, swtRipper.getApplication().getArgsToApp());
 	}
 
+	/**
+	 * Test {@link SitarRipperConfiguration#setUrls(URL[])}.
+	 * @throws SitarApplicationStartException
+	 * @throws MalformedURLException
+	 */
 	@Test
 	public void testURLs() throws SitarApplicationStartException, MalformedURLException {
 		final String fileName = "README";

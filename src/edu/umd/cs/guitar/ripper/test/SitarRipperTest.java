@@ -56,6 +56,9 @@ import edu.umd.cs.guitar.ripper.test.aut.SWTTwoWindowsApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTWindowApp;
 import edu.umd.cs.guitar.util.GUITARLog;
 
+/**
+ * Tests for {@code SitarRipper}.
+ */
 public class SitarRipperTest {
 	
 	private static final String DEFAULT_GUI_FILENAME = "testoutput.xml";
@@ -153,76 +156,121 @@ public class SitarRipperTest {
 		diff(getExpectedFilename(clazz), rip(clazz));
 	}
 	
+	/**
+	 * Rip {@link SWTBasicApp}.
+	 */
 	@Test
 	public void testBasicApp() {
 		ripAndDiff(SWTBasicApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTButtonApp}.
+	 */
 	@Test
 	public void testButtonApp() {
 		ripAndDiff(SWTButtonApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTCheckButtonApp}.
+	 */
 	@Test
 	public void testCheckButtonApp() {
 		ripAndDiff(SWTCheckButtonApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTHelloWorldApp}.
+	 */
 	@Test
 	public void testHelloWorld() {
 		ripAndDiff(SWTHelloWorldApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTLabelApp}.
+	 */
 	@Test
 	public void testLabelApp() {
 		ripAndDiff(SWTLabelApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTListApp}.
+	 */
 	@Test
 	public void testListApp() {
 		ripAndDiff(SWTListApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTMenuBarApp}.
+	 */
 	@Test
 	public void testMenuBarApp() {
 		ripAndDiff(SWTMenuBarApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTTwoWindowsApp}.
+	 */
 	@Test
 	public void testTwoWindowsApp() {
 		ripAndDiff(SWTTwoWindowsApp.class);
 	}
 
+	/**
+	 * Rip {@link SWTWindowApp}.
+	 */
 	@Test
 	public void testWindowApp() {
 		ripAndDiff(SWTWindowApp.class);
 	}
-		
+	
+	/**
+	 * Rip {@link SWTTabFolderApp}.
+	 */
 	@Test
 	public void testTabFolderApp() {
 		ripAndDiff(SWTTabFolderApp.class);
 	}
 	
+	/**
+	 * Rip {@link SWTTableApp}.
+	 */
 	@Test
 	public void testTableApp() {
 		ripAndDiff(SWTTableApp.class);
 	}
 	
+	/**
+	 * Rip {@link SWTTreeApp}.
+	 */
 	@Test
 	public void testTreeApp() {
 		ripAndDiff(SWTTreeApp.class);
 	}
 	
+	/**
+	 * Rip {@link SWTToolbarApp}.
+	 */
 	@Test
 	public void testToolbarApp() {
 		ripAndDiff(SWTToolbarApp.class);
 	}
 	
+	/**
+	 * Rip {@link SWTMultiWindowDynamicApp}.
+	 */
 	@Test
 	public void testMultiWindowDynamicApp() {
 		ripAndDiff(SWTMultiWindowDynamicApp.class);
 	}
 	
+	/**
+	 * Test ignoring components with configuration.xml file.
+	 */
 	@Test
 	public void testIgnoreComponents() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -236,6 +284,9 @@ public class SitarRipperTest {
 		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}
 	
+	/**
+	 * Test ignoring windows with configuration.xml file.
+	 */
 	@Test
 	public void testIgnoreComponentsWithWindow() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -248,7 +299,11 @@ public class SitarRipperTest {
 		
 		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}
-	
+
+	/**
+	 * Test {@link SitarRipper#SitarRipper(SitarRipperConfiguration)} with a
+	 * null configuration.
+	 */
 	@Test
 	public void testNullConfig() {
 		new SitarRipper(null, Thread.currentThread());

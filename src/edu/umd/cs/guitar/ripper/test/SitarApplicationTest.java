@@ -19,7 +19,8 @@
  */
 package edu.umd.cs.guitar.ripper.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,12 +37,18 @@ import edu.umd.cs.guitar.ripper.SitarRipper;
 import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 
+/**
+ * Tests for {@link SitarApplication}.
+ */
 public class SitarApplicationTest {
 	
 	private final static String TEST_CLASS_NAME = SWTBasicApp.class.getName();
 	
 	private Display display;
 	
+	/**
+	 * Set up the display.
+	 */
 	@Before
 	public void setUp() {
 		if (display == null || display.isDisposed()) {
@@ -49,11 +56,17 @@ public class SitarApplicationTest {
 		}
 	}
 	
+	/**
+	 * Dispose the display.
+	 */
 	@After
 	public void tearDown() {
 		display.dispose();
 	}
 	
+	/**
+	 * Test {@link SitarApplication#getAllWindow()}
+	 */
 	@Test
 	public void testGetAllWindow() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -79,6 +92,9 @@ public class SitarApplicationTest {
 		assertEquals(0, app.getAllWindow().size());
 	}
 	
+	/**
+	 * Test {@link SitarApplication#addURLs(URL[])}
+	 */
 	@Test
 	public void testAddURLs() throws MalformedURLException {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();

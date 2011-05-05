@@ -30,6 +30,9 @@ import org.eclipse.swt.widgets.TrayItem;
 
 //Code based on example found at http://dev.eclipse.org/viewcvs/viewvc.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet143.java?view=co
 
+/**
+ * Sample application that uses a {@code Tray}.
+ */
 public class SWTTrayApp {
 
 	public static void main(String[] args) {

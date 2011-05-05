@@ -24,32 +24,52 @@ import org.junit.Test;
 import edu.umd.cs.guitar.ripper.SitarRipperMain;
 import edu.umd.cs.guitar.ripper.test.aut.SWTBasicApp;
 
+/**
+ * Test for {@link SitarRipperMain}.
+ * 
+ */
 public class SitarRipperMainTest {
 
+	/**
+	 * Test {@link SitarRipperMain#main(String[])} with no arguments.
+	 */
 	@Test
 	public void testMainNoArgs() {
 //		SitarRipperMain.main(new String[0]);
 		// TODO test output by redirecting stdout?
 	}
 
+	/**
+	 * Test {@link SitarRipperMain#main(String[])} with a nonexistent main
+	 * class.
+	 */
 	@Test
 	public void testMain() {
 		SitarRipperMain.main(new String[] { "-c", "NOSUCHCLASS" });
 		// TODO how do we test this if it handles the exception itself?
 	}
 	
+	/**
+	 * Test {@link SitarRipperMain#main(String[])} with really bad arguments.
+	 */
 	@Test
 	public void testMainBadArgs() {
 		SitarRipperMain.main(new String[] { "-lksdfj", "laskjdfa" });
 		// TODO how do we test this if it handles the exception itself?
 	}
 
+	/**
+	 * Test {@link SitarRipperMain#main(String[])} with URL arguments.
+	 */
 	@Test
 	public void testMainURL() {
 		SitarRipperMain.main(new String[] { "-c", SWTBasicApp.class.getName(), "-u", "http://www.google.com/" });
 		// TODO how do we test this if it handles the exception itself?
 	}
 
+	/**
+	 * Test {@link SitarRipperMain#main(String[])} with bad URL arguments.
+	 */
 	@Test
 	public void testMainURLWithDash() {
 		SitarRipperMain.main(new String[] { "-u", "-http://www.google.com/" });

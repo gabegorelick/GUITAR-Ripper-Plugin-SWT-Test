@@ -22,6 +22,9 @@ package edu.umd.cs.guitar.ripper.test.aut;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * Sample application with a window.
+ */
 public class SWTWindowApp {
 	public SWTWindowApp(Display display) {
 		Shell shell = new Shell(display);

@@ -34,6 +34,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.Text;
 
+/**
+ * Sample application that's a little bigger than the others.
+ */
 public class SWTBasicApp {
 	public static void main(String[] args) {
 		Display display = new Display();

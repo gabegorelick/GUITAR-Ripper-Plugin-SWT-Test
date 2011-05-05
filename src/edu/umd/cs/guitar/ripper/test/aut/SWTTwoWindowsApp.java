@@ -24,6 +24,10 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * Sample application that has two windows.
+ *
+ */
 public class SWTTwoWindowsApp {
 
 	public SWTTwoWindowsApp(Display display) {

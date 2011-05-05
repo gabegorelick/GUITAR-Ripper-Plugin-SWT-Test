@@ -30,23 +30,35 @@ import org.junit.Test;
 import edu.umd.cs.guitar.model.swtwidgets.SitarDecorations;
 import edu.umd.cs.guitar.model.swtwidgets.SitarWidgetFactory;
 
-
+/**
+ * Tests for {@link SitarWidgetFactory}.
+ */
 public class SitarWidgetFactoryTest {
 
 	private Display display;
 	private SitarWidgetFactory factory;
 	
+	/**
+	 * Set up the display.
+	 */
 	@Before
 	public void setUp() {
 		display = new Display();
 		factory = SitarWidgetFactory.INSTANCE;
 	}
 	
+	/**
+	 * Tear down the display.
+	 */
 	@After
 	public void tearDown() {
 		display.dispose();
 	}
-	
+
+	/**
+	 * Test
+	 * {@link SitarWidgetFactory#getWidgetAdapter(org.eclipse.swt.widgets.Widget)}.
+	 */
 	@Test
 	public void testGetWidgetAdapter() {		
 		Shell shell = new Shell(display);

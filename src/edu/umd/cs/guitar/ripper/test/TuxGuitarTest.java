@@ -15,9 +15,14 @@ import edu.umd.cs.guitar.ripper.SitarRipper;
 import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
 import edu.umd.cs.guitar.ripper.SitarRunner;
 
-
+/**
+ * Tests for TuxGuitar.
+ */
 public class TuxGuitarTest {
 
+	/**
+	 * Rip TuxGuitar.
+	 */
 	@Test
 	@Ignore
 	public void testRipTuxGuitar() {

@@ -33,6 +33,9 @@ import org.eclipse.swt.widgets.Text;
 
 //Source code found at http://www.mkyong.com/swt/swt-tabfolder-example/ 
 
+/**
+ * Sample application that has a {@link TabFolder}.
+ */
 public class SWTTabFolderApp {
 	public static void main(String[] args) {
 		Display display = new Display();

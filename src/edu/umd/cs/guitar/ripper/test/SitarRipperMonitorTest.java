@@ -33,11 +33,16 @@ import edu.umd.cs.guitar.model.SitarWindow;
 import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
 import edu.umd.cs.guitar.ripper.SitarRipperMonitor;
 
-
+/**
+ * Test for {@link SitarRipperMonitor}.
+ */
 public class SitarRipperMonitorTest {
 	
 	private Display display;
 	
+	/**
+	 * Set up the display.
+	 */
 	@Before
 	public void setUp() {
 		if (display == null || display.isDisposed()) {
@@ -45,11 +50,17 @@ public class SitarRipperMonitorTest {
 		}
 	}
 	
+	/**
+	 * Tear down the display.
+	 */
 	@After
 	public void tearDown() {
 		display.dispose();
 	}
 	
+	/**
+	 * Test {@link SitarRipperMonitor#getOpenedWindowCache()}.
+	 */
 	@Test
 	public void testGetOpenedWindowCache() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -58,6 +69,9 @@ public class SitarRipperMonitorTest {
 		assertTrue(new SitarRipperMonitor(config, app).getOpenedWindowCache().isEmpty());
 	}
 	
+	/**
+	 * Test {@link SitarRipperMonitor#isWindowClosed()}.
+	 */
 	@Test
 	public void testIsWindowClosed() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -65,7 +79,12 @@ public class SitarRipperMonitorTest {
 		
 		assertFalse(new SitarRipperMonitor(config, app).isWindowClosed());
 	}
-	
+
+	/**
+	 * Verify
+	 * {@link SitarRipperMonitor#closeWindow(edu.umd.cs.guitar.model.GWindow)}
+	 * throws a {@link NullPointerException}.
+	 */
 	@Test(expected = NullPointerException.class)
 	public void testCloseWindow() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
@@ -74,6 +93,9 @@ public class SitarRipperMonitorTest {
 		new SitarRipperMonitor(config, app).closeWindow(null);
 	}
 	
+	/**
+	 * Test {@link SitarRipperMonitor#isIgnoredWindow(edu.umd.cs.guitar.model.GWindow)}.
+	 */
 	@Test
 	public void testIsIgnoredWindow() {
 		Shell shell = new Shell(display);
@@ -84,7 +106,12 @@ public class SitarRipperMonitorTest {
 		
 		assertFalse(monitor.isIgnoredWindow(new SitarWindow(shell)));
 	}
-	
+
+	/**
+	 * Test
+	 * {@link SitarRipperMonitor#SitarRipperMonitor(SitarRipperConfiguration, SitarApplication)}
+	 * with a null configuration.
+	 */
 	@Test
 	public void testNullConfig() {
 		SitarRipperConfiguration config = new SitarRipperConfiguration();

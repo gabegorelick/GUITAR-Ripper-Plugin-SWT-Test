@@ -24,6 +24,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+/**
+ * Hello world, SWT style.
+ *
+ */
 public class SWTHelloWorldApp {
 
 	public static void main(String[] args) {

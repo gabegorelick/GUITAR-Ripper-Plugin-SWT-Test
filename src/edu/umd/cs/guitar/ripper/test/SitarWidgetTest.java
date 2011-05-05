@@ -41,12 +41,17 @@ import edu.umd.cs.guitar.model.SitarWindow;
 import edu.umd.cs.guitar.model.swtwidgets.SitarWidget;
 import edu.umd.cs.guitar.model.swtwidgets.SitarWidgetFactory;
 
-
+/**
+ * Tests for {@link SitarWidget}.
+ */
 public class SitarWidgetTest {
 
 	private Display display;
 	private SitarWidgetFactory factory;
-	
+
+	/**
+	 * Set up the display.
+	 */
 	@Before
 	public void setUp() {
 		factory = SitarWidgetFactory.INSTANCE;
@@ -55,11 +60,17 @@ public class SitarWidgetTest {
 		}
 	}
 	
+	/**
+	 * Dispose of the display.
+	 */
 	@After
 	public void tearDown() {
 		display.dispose();
 	}
 	
+	/**
+	 * Test {@link SitarWidget#isTerminal()}.
+	 */
 	@Test
 	public void testIsTerminal() {
 		final Shell shell = new Shell(display);

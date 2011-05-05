@@ -22,6 +22,9 @@ package edu.umd.cs.guitar.ripper.test.aut;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.*;
 
+/**
+ * Sample application with a check button.
+ */
 public class SWTCheckButtonApp {
 	public SWTCheckButtonApp(Display display) {
 		Shell shell = new Shell(display);

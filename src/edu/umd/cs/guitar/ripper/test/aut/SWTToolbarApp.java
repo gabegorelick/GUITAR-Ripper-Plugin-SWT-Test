@@ -28,6 +28,9 @@ import org.eclipse.swt.widgets.ToolItem;
 
 // Based on code found at http://dev.eclipse.org/viewcvs/viewvc.cgi/org.eclipse.swt.snippets/src/org/eclipse/swt/snippets/Snippet18.java?view=co
 
+/**
+ * Sample application that uses a {@link ToolBar}.
+ */
 public class SWTToolbarApp {
 
 	public static void main(String[] args) {

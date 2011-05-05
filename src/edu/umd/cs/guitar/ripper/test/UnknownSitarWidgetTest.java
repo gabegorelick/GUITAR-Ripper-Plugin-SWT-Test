@@ -33,12 +33,17 @@ import edu.umd.cs.guitar.model.swtwidgets.UnknownSitarWidget;
 import edu.umd.cs.guitar.model.swtwidgets.SitarWidget;
 import edu.umd.cs.guitar.model.swtwidgets.SitarWidgetFactory;
 
-
+/**
+ * Tests for {@link UnknownSitarWidget}.
+ */
 public class UnknownSitarWidgetTest {
 	
 	private Display display;
 	private SitarWidgetFactory factory = SitarWidgetFactory.INSTANCE;
 	
+	/**
+	 * Set up the display.
+	 */
 	@Before
 	public void setUp() {
 		if (display == null || display.isDisposed()) {
@@ -46,11 +51,17 @@ public class UnknownSitarWidgetTest {
 		}
 	}
 	
+	/**
+	 * Dispose of the display.
+	 */
 	@After
 	public void tearDown() {
 		display.dispose();
 	}
 	
+	/**
+	 * Test {@link UnknownSitarWidget#isEnabled()}.
+	 */
 	@Test
 	public void testIsEnabled() {
 		Shell shell = new Shell(display);
@@ -64,6 +75,9 @@ public class UnknownSitarWidgetTest {
 		assertTrue(widget.isEnabled());
 	}
 	
+	/**
+	 * Test {@link UnknownSitarWidget#getChildren()}.
+	 */
 	@Test
 	public void testGetChildren() {
 		Shell shell = new Shell(display);

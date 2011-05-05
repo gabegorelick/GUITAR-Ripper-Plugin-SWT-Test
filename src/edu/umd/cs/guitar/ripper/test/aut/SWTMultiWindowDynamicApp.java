@@ -29,6 +29,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * Sample application with buttons windows that open when a button is clicked.
+ */
 public class SWTMultiWindowDynamicApp {
 	private ArrayList<Shell> shellList = new ArrayList<Shell>();
 	private Display globalDisplay = null;

@@ -29,6 +29,9 @@ import org.eclipse.swt.widgets.TableItem;
 
 //Based off of code found at http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/TableExample.htm
 
+/**
+ * Sample application that uses a {@link Table}.
+ */
 public class SWTTableApp {
 	public static void main(String[] argv) {
 		Display display = new Display();

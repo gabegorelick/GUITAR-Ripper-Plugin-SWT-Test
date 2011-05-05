@@ -22,6 +22,10 @@ package edu.umd.cs.guitar.ripper.test.aut;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.*;
 
+/**
+ * Sample menu bar application.
+ *
+ */
 public class SWTMenuBarApp {
 	public SWTMenuBarApp(Display display) {
 		Shell shell = new Shell(display);

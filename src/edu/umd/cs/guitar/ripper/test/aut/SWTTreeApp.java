@@ -27,6 +27,9 @@ import org.eclipse.swt.widgets.TreeItem;
 
 //Written from the template found at http://www.java2s.com/Code/Java/SWT-JFace-Eclipse/SWTTree.htm
 
+/**
+ * Sample application that uses a {@link Tree}.
+ */
 public class SWTTreeApp {
 	public static void main(String[] args) {
 		Display display = new Display();
