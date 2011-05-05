@@ -32,8 +32,8 @@ import org.junit.Test;
 import edu.umd.cs.guitar.model.SitarApplicationStartException;
 import edu.umd.cs.guitar.ripper.SitarRipper;
 import edu.umd.cs.guitar.ripper.SitarRipperConfiguration;
+import edu.umd.cs.guitar.ripper.test.aut.DummyApp;
 import edu.umd.cs.guitar.ripper.test.aut.SWTArgumentApp;
-import edu.umd.cs.guitar.ripper.test.aut.SWTURLApp;
 
 /**
  * Tests for {@link SitarRipperConfigurationTest}.
@@ -108,13 +108,13 @@ public class SitarRipperConfigurationTest {
 		assertTrue(file.exists());
 				
 		SitarRipperConfiguration config = new SitarRipperConfiguration();
-		config.setMainClass(SWTURLApp.class.getName());
+		config.setMainClass(DummyApp.class.getName());
 		config.setArguments(new String[] { fileName });
 		config.setUrls(new URL[0]);
 		
 		SitarRipper ripper = new SitarRipper(config);
 		
-		// SWTURLApp doesn't block forever, so can start it on this thread
+		// DummyApp doesn't block forever, so can start it on this thread
 		ripper.getApplication().startGUI();
 				
 		config.setUrls(new URL[] { file.toURI().toURL()});

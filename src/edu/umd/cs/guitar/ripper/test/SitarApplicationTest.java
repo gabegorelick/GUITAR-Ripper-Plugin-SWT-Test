@@ -94,6 +94,7 @@ public class SitarApplicationTest {
 	
 	/**
 	 * Test {@link SitarApplication#addURLs(URL[])}
+	 * @throws MalformedURLException 
 	 */
 	@Test
 	public void testAddURLs() throws MalformedURLException {
