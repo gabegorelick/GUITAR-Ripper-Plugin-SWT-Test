@@ -249,4 +249,12 @@ public class SitarRipperTest {
 		diff("expected/SWTListAppIgnoreList.xml", DEFAULT_GUI_FILENAME);
 	}
 	
+	@Test
+	public void testNullConfig() {
+		new SitarRipper(null, Thread.currentThread());
+		
+		// TODO need equals for config to test this, 
+		// but still good to test that it doesn't throw exception
+	}
+	
 }

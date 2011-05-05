@@ -85,4 +85,13 @@ public class SitarRipperMonitorTest {
 		assertFalse(monitor.isIgnoredWindow(new SitarWindow(shell)));
 	}
 	
+	@Test
+	public void testNullConfig() {
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
+		SitarApplication app = new SitarApplication(config.getMainClass(), Thread.currentThread());
+		new SitarRipperMonitor(null, app);
+		
+		// TODO need to add equals method to config to test this
+	}
+	
 }

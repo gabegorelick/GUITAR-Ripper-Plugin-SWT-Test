@@ -19,7 +19,11 @@
  */
 package edu.umd.cs.guitar.ripper.test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -73,5 +77,21 @@ public class SitarApplicationTest {
 		
 		shell1.dispose();
 		assertEquals(0, app.getAllWindow().size());
+	}
+	
+	@Test
+	public void testAddURLs() throws MalformedURLException {
+		SitarRipperConfiguration config = new SitarRipperConfiguration();
+		config.setInitialWaitTime(200);
+		config.setMainClass(TEST_CLASS_NAME);
+		SitarRipper ripper = new SitarRipper(config, Thread.currentThread());
+		
+		SitarApplication app = ripper.getMonitor().getApplication();
+		URL[] urls = new URL[1];
+		urls[0] = new URL("http://www.google.com/");
+		
+		app.addURLs(urls);
+		
+		assertTrue(Arrays.asList(app.getURLs()).contains(urls[0]));
 	}
 }
